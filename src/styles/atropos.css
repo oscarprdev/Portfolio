@@ -1,0 +1,21 @@
+.atropos-banner {
+    width: 65vw;
+    height: 90vh;
+}
+
+.atropos-banner img {
+    object-fit: contain;
+    display: block;
+    z-index: 1;
+    transform-style: preserve-3d;
+    pointer-events: none;
+}
+
+.atropos-banner .atropos-shadow {
+    filter: blur(50px);
+    opacity: 0.1;
+    background: rgba(0, 0, 0, 0);
+}
+.atropos-banner .atropos-highlight {
+    z-index: 100;
+}

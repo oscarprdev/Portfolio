@@ -1,0 +1,156 @@
+---
+interface Props {
+    title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta
+            name="description"
+            content="Astro description"
+        />
+        <meta
+            name="viewport"
+            content="width=device-width"
+        />
+        <link
+            rel="icon"
+            type="image/svg+xml"
+            href="/favicon.svg"
+        />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap"
+            rel="stylesheet"
+        />
+
+        <meta
+            name="generator"
+            content={Astro.generator}
+        />
+        <title>{title}</title>
+    </head>
+    <body>
+        <main>
+            <slot />
+        </main>
+    </body>
+    <style is:global>
+        @import '../styles/main.css';
+
+        @tailwind base;
+        @tailwind components;
+        @tailwind utilities;
+
+        @font-face {
+            font-family: 'cormorant';
+            src: url('./public/fonts/Cormorant-Light.ttf') format('truetype');
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'neue montreal';
+            src: url('./public/fonts/NeueMontreal-Light.ttf') format('otf');
+            font-display: swap;
+        }
+
+        @layer components {
+            .noise {
+                background-position: 50%;
+                background-repeat: repeat;
+                background-image: url(public/assets/noise.png);
+                background-size: 140px 100px;
+            }
+
+            .bg-glow {
+                background: radial-gradient(
+                        80% 55% at 50% 0%,
+                        #ffffff49 0,
+                        transparent 100%
+                    ),
+                    radial-gradient(47% 43% at 2% 100%, #4c4c4c6d 0, transparent 100%);
+                background-color: rgba(23, 23, 23, 0.126);
+            }
+
+            .border-grad,
+            .border-grad-small {
+                position: relative;
+                border-top: 0.8rem;
+            }
+
+            .border-grad::before,
+            .border-grad-small::before {
+                content: '';
+                position: absolute;
+                inset: 0;
+                padding: 2px;
+                background: linear-gradient(to bottom, #d6d6d68c, #48484800);
+                -webkit-mask:
+                    linear-gradient(#fff 0 0) content-box,
+                    linear-gradient(#fff 0 0);
+                -webkit-mask-composite: xor;
+                mask-composite: exclude;
+            }
+
+            .border-grad::before {
+                border-radius: 1rem;
+            }
+
+            .border-grad-small::before {
+                border-radius: 0.6rem;
+            }
+
+            .border-glare {
+                z-index: 10;
+                background-image: linear-gradient(
+                    to right,
+                    rgba(0, 0, 0, 0) 5%,
+                    rgba(255, 255, 255, 1) 35%,
+                    #fff 50%,
+                    rgba(255, 255, 255, 1) 65%,
+                    rgba(0, 0, 0, 0) 95%
+                );
+                position: absolute;
+                top: 0%;
+                bottom: auto;
+                left: 0%;
+                right: 0%;
+            }
+
+            .card-buttons {
+                -webkit-backdrop-filter: blur(15px);
+                backdrop-filter: blur(15px);
+                background-color: rgba(242, 242, 242, 0.05);
+                border: 1px solid rgba(242, 242, 242, 0.1);
+                border-radius: 24px;
+                justify-content: space-between;
+                align-items: center;
+                padding-left: 6px;
+                padding-right: 6px;
+                transition:
+                    box-shadow 1s cubic-bezier(0.23, 1, 0.32, 1),
+                    border 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+                display: flex;
+                position: relative;
+                box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+            }
+        }
+
+        html {
+            font-family: 'Neue Montreal', sans-serif;
+            background: #13151a;
+            background-size: 224px;
+        }
+
+        @layer base {
+            :root {
+                --atra-font: 'cormorant';
+                --card-button-bg: rgba(255, 255, 255, 0.5);
+            }
+        }
+    </style>
+</html>

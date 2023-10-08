@@ -1,0 +1,22 @@
+{
+    "env": {
+        "browser": true,
+        "es2021": true,
+        "node": true
+    },
+    "extends": ["standard-with-typescript", "@typescript-eslint/parser"],
+    "parserOptions": {
+        "ecmaVersion": "latest",
+        "sourceType": "module",
+        "project": "./tsconfig.json",
+        "tsconfigRootDir": "./",
+        "extraFileExtensions": [".tsx"],
+        "parser": "@typescript-eslint/parser"
+    },
+    "rules": {
+        "@typescript-eslint/member-delimiter-style": 0,
+        "@typescript-eslint/semi": 0,
+        "@typescript-eslint/strict-boolean-expressions": 0,
+        "@typescript-eslint/no-invalid-void-type": 0
+    }
+}
