@@ -1,4 +1,5 @@
 import { IconBrandTailwind, IconBrandVue } from '@tabler/icons-react';
+import { AstroIcon } from '../utils/icons';
 
 const images = [
     'public/assets/nft-ape-1.png',
@@ -26,12 +27,13 @@ export const CardNft = () => {
                     NFT Market
                 </p>
             </section>
-            <section className="absolute right-10 top-10 flex flex-col justify-center">
-                <IconBrandTailwind
+            <section className="absolute right-10 top-10 flex flex-col justify-center gap-1">
+                <AstroIcon />
+                <IconBrandVue
                     className="text-gray-400"
                     size="32"
                 />
-                <IconBrandVue
+                <IconBrandTailwind
                     className="text-gray-400"
                     size="32"
                 />

@@ -1,4 +1,5 @@
 import { IconBrandTailwind, IconBrandNodejs, IconBrandVue } from '@tabler/icons-react';
+import { AstroIcon } from '../utils/icons';
 
 export const CardAtra = () => {
     return (
@@ -22,16 +23,17 @@ export const CardAtra = () => {
                     Jaume Perez Llopis
                 </p>
             </section>
-            <section className="absolute right-10 top-10 flex flex-col justify-center">
+            <section className="absolute right-10 top-10 flex flex-col justify-center gap-1">
+                <AstroIcon />
                 <IconBrandNodejs
                     className="text-gray-400"
                     size="32"
                 />
-                <IconBrandTailwind
+                <IconBrandVue
                     className="text-gray-400"
                     size="32"
                 />
-                <IconBrandVue
+                <IconBrandTailwind
                     className="text-gray-400"
                     size="32"
                 />
