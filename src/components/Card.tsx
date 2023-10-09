@@ -53,9 +53,9 @@ export const Card = ({
                 </div>
                 <img
                     src={mainImage}
-                    className="w-[60vw]"
+                    className="absolute bottom-[-0.5rem] w-[60vw]"
                 />
-                <span className="absolute h-[57vh] w-[49vw] rounded-lg border border-[#ffffff32] bg-[#ffffff12]" />
+                <span className="absolute h-[56vh] w-[49vw] rounded-lg border border-[#ffffff32] bg-[#ffffff12]" />
             </section>
             {children}
             <section
