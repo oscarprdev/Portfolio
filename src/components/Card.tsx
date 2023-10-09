@@ -66,18 +66,20 @@ export const Card = ({
                 <a
                     href={githubUrl}
                     target="_blank"
-                    className="flex cursor-pointer items-center justify-center gap-3 rounded-full border border-gray-500 px-8  py-4 text-gray-200 backdrop-blur-2xl transition-all duration-75 ease-in hover:bg-gray-200 hover:text-gray-600"
+                    className="hover:bg-glow-hover group relative flex cursor-pointer items-center justify-center gap-3 rounded-full border border-gray-500 px-8  py-4 text-gray-200 backdrop-blur-2xl transition-all duration-75 ease-in"
                 >
                     Code
                     <IconBrandGithub size="24" />
+                    <span className="border-glare left-[15%] hidden h-[1px] w-[70%] transition-opacity duration-300 ease-in group-hover:inline-block" />
                 </a>
                 <a
                     href={appUrl}
                     target="_blank"
-                    className="flex cursor-pointer items-center justify-center gap-3 rounded-full border border-gray-500 px-8 py-4 text-gray-200 backdrop-blur-2xl transition-all duration-75 ease-in hover:bg-gray-200 hover:text-gray-600"
+                    className="hover:bg-glow-hover group relative flex cursor-pointer items-center justify-center gap-3 rounded-full border border-gray-500 px-8  py-4 text-gray-200 backdrop-blur-2xl transition-all duration-75 ease-in"
                 >
                     App
                     <IconWorldWww size="24" />
+                    <span className="border-glare left-[15%] hidden h-[1px] w-[70%] transition-opacity duration-300 ease-in group-hover:inline-block" />
                 </a>
             </section>
         </Atropos>
