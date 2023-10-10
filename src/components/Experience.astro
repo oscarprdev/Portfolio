@@ -1,0 +1,71 @@
+---
+import Data from './Data.astro';
+---
+
+<section
+    id="experience"
+    class="relative mb-10 flex h-screen flex-col items-center justify-center gap-10"
+>
+    <div class="w-[70vw] px-10">
+        <h2 class="section-title text-[2.5rem]">Experience</h2>
+        <p class="section-title text-[1.5rem]">Fast resume about my professional life.</p>
+    </div>
+    <article
+        class="bg-glow-dark opacity-1 border-grad relative grid h-[70vh] w-[70vw] place-items-center rounded-[1rem] border border-[#ffffff32] px-5"
+    >
+        <div class="relative flex h-[90%] w-full items-center">
+            <Data
+                year={2015}
+                left="left-[2%]"
+                dotTop={20}
+                dotQuantity={1}
+            />
+            <p class="absolute left-[7.5%] top-[15%] text-[var(--white-color-nav)]">
+                Trainee
+            </p>
+            <span
+                class="absolute left-[4%] top-[21.5%] h-[1px] w-[13%] bg-gradient-to-r from-transparent via-[var(--white-color-nav)] to-transparent"
+            ></span>
+            <span
+                class="absolute left-[8%] top-[21.5%] h-[1px] w-[5%] bg-gradient-to-r from-transparent via-white to-transparent"
+            ></span>
+            <Data
+                year={2016}
+                left="left-[15%]"
+                dotTop={40}
+                dotQuantity={1}
+            />
+            <p class="absolute left-[27.2%] top-[35%] text-[var(--white-color-nav)]">
+                Industrial engineer
+            </p>
+            <span
+                class="absolute left-[17%] top-[41.5%] h-[1px] w-[35%] bg-gradient-to-r from-transparent via-[var(--white-color-nav)] to-transparent"
+            ></span>
+            <span
+                class="absolute left-[24%] top-[41.5%] h-[1px] w-[20%] bg-gradient-to-r from-transparent via-white to-transparent"
+            ></span>
+            <Data
+                year={2022}
+                left="left-[50%]"
+                dotTop={60}
+                dotQuantity={2}
+            />
+            <p class="absolute left-[67.3%] top-[75.5%] text-[var(--white-color-nav)]">
+                Frontend developer
+            </p>
+            <span
+                class="absolute left-[52%] top-[81.5%] h-[1px] w-[45%] bg-gradient-to-r from-transparent via-[var(--white-color-nav)] to-transparent"
+            ></span>
+            <span
+                class="absolute left-[64.5%] top-[81.5%] h-[1px] w-[20%] bg-gradient-to-r from-transparent via-white to-transparent"
+            ></span>
+            <Data
+                year={2024}
+                left="left-[95%]"
+                dotQuantity={1}
+            />
+        </div>
+
+        <span class="border-glare top-0 h-[1px] w-full"></span>
+    </article>
+</section>
