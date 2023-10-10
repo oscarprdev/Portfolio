@@ -13,7 +13,7 @@ export const CardNft = () => {
         <>
             <article
                 data-atropos-offset="10"
-                className="absolute bottom-[12rem] left-[12rem] flex h-[30vh] w-[30vw]"
+                className="absolute bottom-[8rem] left-[11rem] z-[10] flex h-[25vh] w-[25vw]"
             >
                 {images.map((img, index) => (
                     <img
@@ -22,7 +22,7 @@ export const CardNft = () => {
                         className="h-full w-full rounded-lg"
                     />
                 ))}
-                <p className="absolute left-[12rem] top-[-3rem] font-kaushan text-4xl text-white">
+                <p className="absolute left-[9rem] top-[-3rem] w-[30vw] font-kaushan text-4xl text-white">
                     NFT Market
                 </p>
             </article>

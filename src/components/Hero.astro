@@ -1,9 +1,46 @@
+---
+import { IconBrandGithub } from '@tabler/icons-react';
+import { IconBrandLinkedin } from '@tabler/icons-react';
+---
+
 <section
     id="home"
-    class="bg-hero-glow grid h-screen w-full place-items-center"
+    class="bg-hero-glow relative grid h-screen w-full place-items-center"
 >
     <h1 class="text-center text-[6rem] text-white">
         Oscar Perez Romero.<br />
         <span class="hero-text">Frontend developer.</span>
     </h1>
+    <div class="absolute bottom-[15%] flex w-full items-center justify-center gap-5">
+        <a
+            href="https://github.com/oscarprdev"
+            target="_blank"
+            class="border-glow group relative flex items-center gap-2 rounded-full border border-[var(--white-color-nav)] bg-[#13151a] px-4 py-2 text-[var(--white-color-nav)]"
+            ><p
+                class="transition-colors duration-150 ease-in group-hover:text-[var(--text-social)]"
+            >
+                Github
+            </p>
+            <IconBrandGithub
+                size="24"
+                className="group-hover:text-[var(--text-social)]"
+                client:load
+            /></a
+        >
+        <a
+            href="https://www.linkedin.com/in/oscarperez8/"
+            target="_blank"
+            class="border-glow group relative flex items-center gap-2 rounded-full border border-[var(--white-color-nav)] bg-[#13151a] px-4 py-2 text-[var(--white-color-nav)]"
+            ><p
+                class="transition-colors duration-150 ease-in group-hover:text-[var(--text-social)]"
+            >
+                Linkedin
+            </p>
+            <IconBrandLinkedin
+                size="24"
+                className="group-hover:text-[var(--text-social)]"
+                client:load
+            /></a
+        >
+    </div>
 </section>

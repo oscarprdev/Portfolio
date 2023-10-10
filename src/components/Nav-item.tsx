@@ -39,7 +39,7 @@ export const NavItem = ({ to, text }: Props) => {
                 href={to}
                 className={`text-${
                     currentHash === to ? 'white' : '[var(--white-color-nav)]'
-                } `}
+                } transition-colors duration-200 ease-out hover:text-[var(--text-social)]`}
             >
                 {text}
                 <span

@@ -1,35 +1,83 @@
 @import './atropos.css';
 
-.circle-wrapper {
-    position: relative;
+.border-glow:hover {
+    cursor: pointer;
+    animation: moveBorderGlow 0.7s linear forwards;
 }
 
-.circle-wrapper::before {
+@keyframes moveBorderGlow {
+    0%,
+    100% {
+        box-shadow: -0.5px -0.5px 1.5px rgba(255, 255, 255, 0.975);
+    }
+    14% {
+        box-shadow: 1px 0 1.5px rgba(255, 255, 255, 0.975);
+    }
+    29% {
+        box-shadow: 1.5px 1.5px 1.5px rgba(255, 255, 255, 0.975);
+    }
+    44% {
+        box-shadow: 0 1.5px 1.5px rgba(255, 255, 255, 0.975);
+    }
+    59% {
+        box-shadow: -1.5px 1px 1.5px rgba(255, 255, 255, 0.975);
+    }
+    74% {
+        box-shadow: -1.5px 0px 1.5px rgba(255, 255, 255, 0.975);
+    }
+}
+
+.border-glow::before {
     content: '';
     position: absolute;
-    border: 1px solid rgba(31, 206, 241, 0.1);
+    width: 105%;
+    height: 105%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.4) 0%, transparent 70%);
     border-radius: 50%;
     pointer-events: none;
-    top: -8px;
-    right: -8px;
-    bottom: -8px;
-    left: -8px;
     opacity: 0;
-    transition:
-        opacity 0.3s ease-in-out,
-        transform 0.7s linear;
-    transform-origin: center center;
+    z-index: -1;
 }
 
-.circle-wrapper:hover::before {
+.border-glow:hover::before {
+    animation: glowLight 0.7s linear forwards;
     opacity: 1;
-    transform: rotate(360deg);
-    box-shadow:
-        0 0 1px rgba(31, 206, 241, 0.5),
-        1px 1px 1px rgba(31, 206, 241, 0.8) inset;
+}
+
+@keyframes glowLight {
+    0% {
+        transform: translate(-20%, 0%);
+    }
+    14% {
+        transform: translate(10%, 8%);
+    }
+    29% {
+        transform: translate(0%, 15%);
+    }
+    44% {
+        transform: translate(-18%, 15%);
+    }
+    59% {
+        transform: translate(-25%, 10%);
+    }
+    74% {
+        transform: translate(-30%, 10%);
+    }
+    84% {
+        transform: translate(-35%, 0%);
+    }
+    100% {
+        transform: translate(-34%, -10%);
+    }
 }
 
 .bg-white-blur {
     background: radial-gradient(40% 95% at 50% 100%, #ffffff49 0, transparent 100%);
     background-color: transparent;
+}
+
+.section-title {
+    background: radial-gradient(50% 75% at 10% 10%, #f1f1f192 0, #ffffff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }

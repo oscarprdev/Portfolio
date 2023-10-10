@@ -6,19 +6,19 @@ export const CardAtra = () => {
         <>
             <article
                 data-atropos-offset="10"
-                className="absolute bottom-[12rem] right-[5rem] h-[30vh] w-[30vw]"
+                className="absolute bottom-[8rem] right-[7rem] z-[10] h-[25vh] w-[25vw]"
             >
                 <img
                     src="public/assets/atra-image.png"
                     className="h-full w-full"
                 />
-                <p className="absolute left-[-50%] top-0 font-cormorant text-2xl text-black">
+                <p className="absolute left-[-52%] top-[5%] font-cormorant text-2xl text-black">
                     ATRA
                 </p>
-                <p className="absolute left-[-50%] top-[15%] w-[18vw] font-cormorant text-xl text-black">
+                <p className="absolute left-[-52%] top-[18%] w-[18vw] font-cormorant text-lg text-black">
                     Asistència tècnica en rehabilitació i arquitectura
                 </p>
-                <p className="absolute left-[-50%] top-[50%] font-cormorant text-lg text-black">
+                <p className="absolute left-[-52%] top-[50%] font-cormorant text-lg text-black">
                     Jaume Perez Llopis
                 </p>
             </article>

@@ -40,8 +40,8 @@ export const Card = ({
                 data-atropos-offset="2"
                 className="absolute top-0 grid h-full w-full place-items-center"
             >
-                <h2 className="absolute left-10 top-10 text-2xl text-white">{title}</h2>
-                <div className="absolute left-10 top-20 flex items-center gap-3">
+                <h2 className="absolute left-10 top-9 text-2xl text-white">{title}</h2>
+                <div className="absolute left-10 top-[4.6rem] flex items-center gap-3">
                     <p className=" text-lg text-slate-200">
                         <i>{date}</i>
                     </p>
@@ -52,19 +52,19 @@ export const Card = ({
                 </div>
                 <img
                     src={mainImage}
-                    className="absolute bottom-[-0.5rem] w-[60vw]"
+                    className="absolute bottom-[-1rem] w-[48vw]"
                 />
-                <span className="absolute h-[56vh] w-[49vw] rounded-lg border border-[#ffffff32] bg-[#ffffff12]" />
+                <span className="absolute top-[22%] h-[45vh] w-[39.4vw] rounded-lg border border-[#ffffff32] bg-[#ffffff12]" />
             </article>
             {children}
             <article
                 data-atropos-offset="10"
-                className="absolute bottom-10 left-[12%] flex items-center gap-3 p-2"
+                className="absolute bottom-[0.8rem] left-[15%] flex items-center gap-3 p-2"
             >
                 <a
                     href={githubUrl}
                     target="_blank"
-                    className="hover:bg-glow-hover group relative flex cursor-pointer items-center justify-center gap-3 rounded-full border border-gray-500 px-8  py-4 text-gray-200 backdrop-blur-2xl transition-all duration-75 ease-in"
+                    className="hover:bg-glow-hover group relative flex cursor-pointer items-center justify-center gap-3 rounded-full border border-gray-500 px-6  py-3 text-[var(--white-color-nav)] backdrop-blur-2xl transition-all duration-75 ease-in hover:text-[var(--text-social)]"
                 >
                     Code
                     <IconBrandGithub size="24" />
@@ -73,7 +73,7 @@ export const Card = ({
                 <a
                     href={appUrl}
                     target="_blank"
-                    className="hover:bg-glow-hover group relative flex cursor-pointer items-center justify-center gap-3 rounded-full border border-gray-500 px-8  py-4 text-gray-200 backdrop-blur-2xl transition-all duration-75 ease-in"
+                    className="hover:bg-glow-hover group relative flex cursor-pointer items-center justify-center gap-3 rounded-full border border-gray-500 px-6  py-3 text-[var(--white-color-nav)] backdrop-blur-2xl transition-all duration-75 ease-in hover:text-[var(--text-social)]"
                 >
                     App
                     <IconWorldWww size="24" />

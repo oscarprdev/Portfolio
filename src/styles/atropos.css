@@ -1,6 +1,7 @@
 .atropos-banner {
-    width: 65vw;
-    height: 90vh;
+    max-width: 1000px;
+    width: 57vw;
+    height: 73vh;
 }
 
 .atropos-banner:hover .bg-glow {
