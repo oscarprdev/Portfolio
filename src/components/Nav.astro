@@ -1,0 +1,43 @@
+---
+import { NavItem } from './Nav-item';
+
+interface NavItem {
+    to: string;
+    text: string;
+}
+
+const navItems: NavItem[] = [
+    {
+        to: '#home',
+        text: 'Home'
+    },
+    {
+        to: '#work',
+        text: 'Work'
+    },
+    {
+        to: '#experience',
+        text: 'Experience'
+    },
+    {
+        to: '#about',
+        text: 'About me'
+    }
+];
+---
+
+<nav class="fixed top-5 z-[20] flex w-full justify-center">
+    <ul
+        class="flex h-[3rem] items-center gap-5 rounded-full border border-gray-700 p-2 backdrop-blur-md"
+    >
+        {
+            navItems.map(({ to, text }) => (
+                <NavItem
+                    to={to}
+                    text={text}
+                    client:only
+                />
+            ))
+        }
+    </ul>
+</nav>

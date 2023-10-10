@@ -76,6 +76,15 @@ const { title } = Astro.props;
                 background-color: rgba(23, 23, 23, 0.126);
             }
 
+            .bg-hero-glow {
+                background: radial-gradient(
+                    60% 60% at 2% 0%,
+                    rgba(31, 206, 241, 0.15) 0,
+                    transparent 100%
+                );
+                background-color: rgba(23, 23, 23, 0.126);
+            }
+
             .bg-glow-hover {
                 background: radial-gradient(
                     45% 85% at 50% 0%,
@@ -130,30 +139,15 @@ const { title } = Astro.props;
                 right: 0%;
             }
 
-            .card-buttons {
-                -webkit-backdrop-filter: blur(15px);
-                backdrop-filter: blur(15px);
-                background-color: rgba(242, 242, 242, 0.05);
-                border: 1px solid rgba(242, 242, 242, 0.1);
-                border-radius: 24px;
-                justify-content: space-between;
-                align-items: center;
-                padding-left: 6px;
-                padding-right: 6px;
-                transition:
-                    box-shadow 1s cubic-bezier(0.23, 1, 0.32, 1),
-                    border 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
-                display: flex;
-                position: relative;
-                box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-            }
-
-            .bg-shadow-glare {
-                background: radial-gradient(
-                    circle,
-                    rgba(255, 255, 255, 0.7) 0%,
-                    rgba(255, 255, 255, 0) 100%
+            .hero-text {
+                background: linear-gradient(
+                    100.93deg,
+                    #1fcff1 15%,
+                    #234cb6 45%,
+                    #1fcff1 80%
                 );
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
             }
         }
 
@@ -161,6 +155,7 @@ const { title } = Astro.props;
             font-family: 'Neue Montreal', sans-serif;
             background: #13151a;
             background-size: 224px;
+            scroll-behavior: smooth;
         }
 
         @layer base {
@@ -168,6 +163,7 @@ const { title } = Astro.props;
                 --atra-font: 'cormorant';
                 --nft-font: 'Kaushan script';
                 --card-button-bg: rgba(255, 255, 255, 0.5);
+                --white-color-nav: rgb(220, 220, 220, 0.5);
             }
         }
     </style>

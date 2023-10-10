@@ -11,8 +11,7 @@ const images = [
 export const CardNft = () => {
     return (
         <>
-            <section
-                id="card-project-details"
+            <article
                 data-atropos-offset="10"
                 className="absolute bottom-[12rem] left-[12rem] flex h-[30vh] w-[30vw]"
             >
@@ -26,8 +25,8 @@ export const CardNft = () => {
                 <p className="absolute left-[12rem] top-[-3rem] font-kaushan text-4xl text-white">
                     NFT Market
                 </p>
-            </section>
-            <section className="absolute right-10 top-10 flex flex-col justify-center gap-1">
+            </article>
+            <article className="absolute right-10 top-10 flex flex-col justify-center gap-1">
                 <AstroIcon />
                 <IconBrandVue
                     className="text-gray-400"
@@ -37,7 +36,7 @@ export const CardNft = () => {
                     className="text-gray-400"
                     size="32"
                 />
-            </section>
+            </article>
         </>
     );
 };

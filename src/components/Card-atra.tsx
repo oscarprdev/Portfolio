@@ -4,8 +4,7 @@ import { AstroIcon } from '../utils/icons';
 export const CardAtra = () => {
     return (
         <>
-            <section
-                id="card-project-details"
+            <article
                 data-atropos-offset="10"
                 className="absolute bottom-[12rem] right-[5rem] h-[30vh] w-[30vw]"
             >
@@ -22,8 +21,8 @@ export const CardAtra = () => {
                 <p className="absolute left-[-50%] top-[50%] font-cormorant text-lg text-black">
                     Jaume Perez Llopis
                 </p>
-            </section>
-            <section className="absolute right-10 top-10 flex flex-col justify-center gap-1">
+            </article>
+            <article className="absolute right-10 top-10 flex flex-col justify-center gap-1">
                 <AstroIcon />
                 <IconBrandNodejs
                     className="text-gray-400"
@@ -37,7 +36,7 @@ export const CardAtra = () => {
                     className="text-gray-400"
                     size="32"
                 />
-            </section>
+            </article>
         </>
     );
 };

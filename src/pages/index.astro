@@ -1,33 +1,13 @@
 ---
 import { Card } from '../components/Card';
 import Layout from '../layouts/Layout.astro';
-import { CardAtra } from '../components/Card-atra';
-import { CardNft } from '../components/Card-nft';
+import ProjectsList from '../components/Projects-list.astro';
+import Hero from '../components/Hero.astro';
+import Nav from '../components/Nav.astro';
 ---
 
 <Layout title="Welcome to Astro.">
-    <section class="mt-10 flex flex-col items-center justify-center gap-40">
-        <Card
-            title="Atra Architecture"
-            date="2023 10 05"
-            description="Professional architecture portfolio with CMS"
-            mainImage="public/assets/atra-bg.png"
-            githubUrl="https://github.com/oscarprdev/Atra-architecture-web"
-            appUrl="https://atra-architecture.vercel.app/"
-            client:load
-        >
-            <CardAtra client:load />
-        </Card>
-        <Card
-            title="NFT Market"
-            date="2023 9 17"
-            description="NFT marketplace UI design with View Transitions API"
-            mainImage="public/assets/nft-bg.png"
-            githubUrl="https://github.com/oscarprdev/Atra-architecture-web"
-            appUrl="https://atra-architecture.vercel.app/"
-            client:load
-        >
-            <CardNft client:load />
-        </Card>
-    </section>
+    <Nav />
+    <Hero />
+    <ProjectsList />
 </Layout>

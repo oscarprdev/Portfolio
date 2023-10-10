@@ -1,5 +1,35 @@
 @import './atropos.css';
 
-.a {
-    background-color: #ffffff80;
+.circle-wrapper {
+    position: relative;
+}
+
+.circle-wrapper::before {
+    content: '';
+    position: absolute;
+    border: 1px solid rgba(31, 206, 241, 0.1);
+    border-radius: 50%;
+    pointer-events: none;
+    top: -8px;
+    right: -8px;
+    bottom: -8px;
+    left: -8px;
+    opacity: 0;
+    transition:
+        opacity 0.3s ease-in-out,
+        transform 0.7s linear;
+    transform-origin: center center;
+}
+
+.circle-wrapper:hover::before {
+    opacity: 1;
+    transform: rotate(360deg);
+    box-shadow:
+        0 0 1px rgba(31, 206, 241, 0.5),
+        1px 1px 1px rgba(31, 206, 241, 0.8) inset;
+}
+
+.bg-white-blur {
+    background: radial-gradient(40% 95% at 50% 100%, #ffffff49 0, transparent 100%);
+    background-color: transparent;
 }

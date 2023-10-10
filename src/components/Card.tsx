@@ -24,20 +24,19 @@ export const Card = ({
 }: Props) => {
     return (
         <Atropos className="atropos-banner">
-            <section
-                id="card-brackground"
+            <article
                 data-atropos-offset="0"
                 className="border-grad absolute top-0 grid h-full w-full place-items-center "
             >
                 <span className="border-glare h-[1.5px] w-full" />
-                <span className="bg-glow absolute h-full w-full rounded-[1rem]" />
+                <span className="bg-glow opacity-1 absolute h-full w-full rounded-[1rem]" />
+                <span className="bg-glow-hover absolute h-full w-full rounded-[1rem] opacity-0" />
                 <div className="border-grad-small absolute h-[98%] w-[98.5%]">
                     <span className="border-glare h-[1.5px] w-full" />
                 </div>
                 <span className="noise z-[-10] h-full w-full rounded-[1rem] content-none" />
-            </section>
-            <section
-                id="card-project"
+            </article>
+            <article
                 data-atropos-offset="2"
                 className="absolute top-0 grid h-full w-full place-items-center"
             >
@@ -56,11 +55,10 @@ export const Card = ({
                     className="absolute bottom-[-0.5rem] w-[60vw]"
                 />
                 <span className="absolute h-[56vh] w-[49vw] rounded-lg border border-[#ffffff32] bg-[#ffffff12]" />
-            </section>
+            </article>
             {children}
-            <section
+            <article
                 data-atropos-offset="10"
-                id="card-buttons"
                 className="absolute bottom-10 left-[12%] flex items-center gap-3 p-2"
             >
                 <a
@@ -81,7 +79,7 @@ export const Card = ({
                     <IconWorldWww size="24" />
                     <span className="border-glare left-[15%] hidden h-[1px] w-[70%] transition-opacity duration-300 ease-in group-hover:inline-block" />
                 </a>
-            </section>
+            </article>
         </Atropos>
     );
 };
