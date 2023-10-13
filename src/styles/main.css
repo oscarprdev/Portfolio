@@ -89,3 +89,22 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
+
+.bg-glow-dark {
+    background: radial-gradient(
+            60% 55% at 1% 0%,
+            rgba(31, 206, 241, 0.15) 0,
+            transparent 100%
+        ),
+        radial-gradient(47% 43% at 95% 100%, rgba(31, 206, 241, 0.15) 0, transparent 100%);
+    background-color: rgba(23, 23, 23, 0.126);
+}
+
+.bg-blue-blur {
+    background: radial-gradient(
+        40% 95% at 50% 100%,
+        rgba(31, 206, 241, 0.15) 0,
+        transparent 100%
+    );
+    background-color: transparent;
+}
