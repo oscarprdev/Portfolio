@@ -81,3 +81,9 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
+
+.period-text {
+    background: linear-gradient(100deg, #ffffff85 1%, #f1f1f1d9 5%, #ffffff85 80%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}

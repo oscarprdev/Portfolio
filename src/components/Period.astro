@@ -1,0 +1,69 @@
+---
+interface Props {
+    year: number;
+    month?: string;
+    left: number;
+    width?: number;
+    top?: number;
+    title?: string;
+    text?: string;
+}
+
+const { year, month, left, width, top, title, text } = Astro.props;
+
+const hasInfoBox = width && top && title && text;
+---
+
+<div
+    style={{
+        left: `${left}%`
+    }}
+    class="absolute flex h-full w-[5%] flex-col items-center"
+    '
+>
+    <p class="flex w-[5rem] justify-center font-light text-[var(--white-color-nav)]">
+        {`${month ? month : ''} ${year}`}
+    </p>
+    <span
+        id="year-line"
+        class="h-full w-[1px] bg-gradient-to-b from-transparent via-[var(--white-color-nav)] to-transparent"
+    ></span>
+</div>
+{
+    hasInfoBox && (
+        <>
+            <article
+                style={{
+                    left: `${left + 2.5}%`,
+                    top: `${top - 12}%`,
+                    width: `${width}%`,
+                    height: `18%`
+                }}
+                class="bg-white-blur absolute grid place-items-center"
+            >
+                <div class="flex flex-col items-center">
+                    <p class="period-text font-light">{title}</p>
+                    <p class="period-text font-light text-[var(--white-color-nav)]">
+                        {text}
+                    </p>
+                </div>
+            </article>
+            <span
+                style={{
+                    left: `${left + 2.5}%`,
+                    top: `${top + 5}%`,
+                    width: `${width}%`
+                }}
+                class="absolute h-[1px] bg-gradient-to-r from-transparent via-[var(--white-color-nav)] to-transparent"
+            />
+            <span
+                style={{
+                    left: `${left + 2.5}%`,
+                    top: `${top + 5}%`,
+                    width: `${width}%`
+                }}
+                class="absolute left-[8%] top-[21.5%] h-[1px] w-[5%] bg-gradient-to-r from-transparent via-white to-transparent"
+            />
+        </>
+    )
+}
