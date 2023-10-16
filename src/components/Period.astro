@@ -7,11 +7,12 @@ interface Props {
     top?: number;
     title?: string;
     text?: string;
+    content?: string[];
 }
 
-const { year, month, left, width, top, title, text } = Astro.props;
+const { year, month, left, width, top, title, text, content } = Astro.props;
 
-const hasInfoBox = width && top && title && text;
+const hasInfoBox = width && top && title && text && content;
 ---
 
 <div
@@ -39,13 +40,28 @@ const hasInfoBox = width && top && title && text;
                     width: `${width}%`,
                     height: `18%`
                 }}
-                class="bg-white-soft-blur absolute grid place-items-center"
+                class="bg-white-soft-blur group absolute grid cursor-pointer place-items-center"
             >
                 <div class="flex flex-col items-center">
                     <p class="period-text font-light">{title}</p>
                     <p class="period-text font-light text-[var(--white-color-nav)]">
                         {text}
                     </p>
+                </div>
+                <div
+                    class:list={[
+                        { 'border-grad-bottom top-[100%]': year < 2020 },
+                        { 'border-grad top-[-170%]': year > 2020 },
+                        'absolute z-[10] block w-[98%] rounded-xl p-4 opacity-0 transition-opacity duration-200 ease-in group-hover:opacity-100'
+                    ]}
+                >
+                    <ul class="flex flex-col items-center justify-center rounded-xl">
+                        {content.map((item) => (
+                            <li class="text-sm font-light text-[var(--white-color-nav)]">
+                                {item}
+                            </li>
+                        ))}
+                    </ul>
                 </div>
             </article>
             <span
