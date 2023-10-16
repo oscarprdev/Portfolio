@@ -76,6 +76,11 @@
     background-color: transparent;
 }
 
+.bg-white-soft-blur {
+    background: radial-gradient(40% 95% at 50% 100%, #ffffff19 0, transparent 100%);
+    background-color: transparent;
+}
+
 .section-title {
     background: radial-gradient(50% 75% at 10% 10%, #f1f1f192 0, #ffffff);
     background-clip: text;
@@ -93,10 +98,14 @@
 .bg-glow-dark {
     background: radial-gradient(
             60% 55% at 1% 0%,
-            rgba(31, 206, 241, 0.15) 0,
+            rgba(220, 229, 231, 0.15) 0,
             transparent 100%
         ),
-        radial-gradient(47% 43% at 95% 100%, rgba(31, 206, 241, 0.15) 0, transparent 100%);
+        radial-gradient(
+            47% 43% at 95% 100%,
+            rgba(240, 241, 241, 0.15) 0,
+            transparent 100%
+        );
     background-color: rgba(23, 23, 23, 0.126);
 }
 

@@ -13,9 +13,11 @@ import Period from './Period.astro';
         </p>
     </div>
     <article
-        class="bg-glow-dark opacity-1 border-grad relative box-content grid h-[70vh] w-[60vw] max-w-4xl place-items-center rounded-[1rem]"
+        class="bg-glow-dark opacity-1 border-grad relative box-content grid h-[70vh] w-[60vw] max-w-4xl place-items-center rounded-[1rem] p-[0.3rem]"
     >
-        <div class="relative flex h-[90%] w-full items-center">
+        <div
+            class="border-grad relative flex h-full w-full items-center rounded-[0.2rem] pt-6"
+        >
             <Period
                 year={2015}
                 left={2}
@@ -54,6 +56,8 @@ import Period from './Period.astro';
                 year={2024}
                 left={93}
             />
+            <span class="border-glare left-[5%] h-[1px] w-[90%]"></span>
         </div>
+        <span class="border-glare left-[5%] h-[1px] w-[90%]"></span>
     </article>
 </section>
