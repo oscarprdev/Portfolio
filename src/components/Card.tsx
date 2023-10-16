@@ -59,7 +59,7 @@ export const Card = ({
             {children}
             <article
                 data-atropos-offset="10"
-                className="absolute bottom-[0.8rem] left-[15%] flex items-center gap-3 p-2"
+                className="absolute bottom-[0.8rem] left-[16%] flex items-center gap-3 p-2"
             >
                 <a
                     href={githubUrl}

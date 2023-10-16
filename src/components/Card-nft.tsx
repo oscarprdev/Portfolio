@@ -13,7 +13,7 @@ export const CardNft = () => {
         <>
             <article
                 data-atropos-offset="10"
-                className="absolute bottom-[8rem] left-[11rem] z-[10] flex h-[25vh] w-[25vw]"
+                className="absolute bottom-[8rem] left-[12.5rem] z-[10] flex h-[25vh] w-[25vw]"
             >
                 {images.map((img, index) => (
                     <img
