@@ -2,10 +2,10 @@ import { IconBrandTailwind, IconBrandVue } from '@tabler/icons-react';
 import { AstroIcon } from '../utils/icons';
 
 const images = [
-    'public/assets/nft-ape-1.png',
-    'public/assets/nft-ape-2.png',
-    'public/assets/nft-ape-3.png',
-    'public/assets/nft-ape-4.png'
+    '../assets/nft-ape-1.png',
+    '../assets/nft-ape-2.png',
+    '../assets/nft-ape-3.png',
+    '../assets/nft-ape-4.png'
 ];
 
 export const CardNft = () => {
