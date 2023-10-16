@@ -9,7 +9,7 @@ export const CardAtra = () => {
                 className="absolute bottom-[8rem] right-[7rem] z-[10] h-[25vh] w-[25vw]"
             >
                 <img
-                    src="../assets/atra-image.png"
+                    src="../assets/images/atra-image.png"
                     className="h-full w-full"
                 />
                 <p className="absolute left-[-52%] top-[5%] font-cormorant text-2xl text-black">
