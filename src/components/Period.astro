@@ -50,15 +50,18 @@ const hasInfoBox = width && top && title && text && content;
                 </div>
                 <div
                     class:list={[
-                        { 'border-grad-bottom top-[100%]': year < 2020 },
-                        { 'border-grad top-[-170%]': year > 2020 },
-                        'absolute z-[10] block w-[98%] rounded-xl p-4 opacity-0 transition-opacity duration-200 ease-in group-hover:opacity-100'
+                        { 'top-[100%]': year < 2020 },
+                        { ' top-[-80%]': year > 2020 },
+                        'absolute z-[10] block  rounded-xl p-4'
                     ]}
                 >
-                    <ul class="flex flex-col items-center justify-center rounded-xl">
+                    <ul class="flex flex-col items-start justify-center rounded-xl">
                         {content.map((item) => (
-                            <li class="text-sm font-light text-[var(--white-color-nav)]">
-                                {item}
+                            <li class="flex items-center gap-2">
+                                <span class="h-[0.3rem] w-[0.3rem] rounded-full bg-[var(--white-color-nav)]" />
+                                <p class="w-full text-sm font-light text-[var(--white-color-nav)]">
+                                    {item}
+                                </p>
                             </li>
                         ))}
                     </ul>
