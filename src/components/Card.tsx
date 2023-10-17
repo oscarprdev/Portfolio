@@ -54,7 +54,7 @@ export const Card = ({
                 </div>
                 <img
                     src={mainImage}
-                    className="absolute bottom-[2.5rem] w-full md:bottom-[-1rem] md:w-[48vw]"
+                    className="absolute bottom-[2.5rem] w-full md:bottom-[-3.2%] md:w-[48vw]"
                 />
                 <span className="absolute top-[37%] h-[42%] w-[85%] rounded-lg border border-[#ffffff32] bg-[#ffffff12] md:top-[22%] md:h-[45vh] md:w-[39.4vw]" />
             </article>

@@ -6,7 +6,7 @@ export const CardAtra = () => {
         <>
             <article
                 data-atropos-offset="10"
-                className="absolute bottom-[3rem] right-[-9.5rem] z-[10] h-[40%] w-[90%] md:bottom-[8rem] md:right-[7rem] md:h-[25vh] md:w-[25vw]"
+                className="absolute bottom-[3rem] right-[-9.5rem] z-[10] h-[40%] w-[90%] md:bottom-[25%] md:right-[15%] md:h-[25vh] md:w-[25vw]"
             >
                 <img
                     src="../assets/images/atra-image.png"
@@ -15,10 +15,10 @@ export const CardAtra = () => {
                 <p className="absolute left-[-40%] top-[1%] font-cormorant text-sm text-black md:left-[-52%] md:top-[5%] md:text-2xl">
                     ATRA
                 </p>
-                <p className="absolute left-[-40%] top-[14%] w-[39%] font-cormorant text-[0.8rem] text-black md:left-[-52%] md:top-[18%] md:w-[18vw] md:text-lg">
+                <p className="absolute left-[-40%] top-[14%] w-[39%] font-cormorant text-[0.8rem] text-black md:left-[-52%] md:top-[25%] md:w-[15vw] md:text-lg">
                     Asistència tècnica en rehabilitació i arquitectura
                 </p>
-                <p className="absolute left-[-40%] top-[48%] font-cormorant text-sm text-black md:left-[-52%] md:top-[50%] md:text-lg">
+                <p className="absolute left-[-40%] top-[48%] font-cormorant text-sm text-black md:left-[-52%] md:top-[58%] md:text-lg">
                     Jaume Perez Llopis
                 </p>
             </article>
