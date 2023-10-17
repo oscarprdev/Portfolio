@@ -40,31 +40,33 @@ export const Card = ({
                 data-atropos-offset="2"
                 className="absolute top-0 grid h-full w-full place-items-center"
             >
-                <h2 className="absolute left-10 top-9 text-2xl text-white">{title}</h2>
-                <div className="absolute left-10 top-[4.6rem] flex items-center gap-3">
-                    <p className=" text-lg text-slate-200">
+                <h2 className="absolute left-5 top-5 text-2xl text-white md:left-10 md:top-9">
+                    {title}
+                </h2>
+                <div className="absolute left-5 top-[4rem] flex flex-col items-start gap-3 md:left-10 md:top-[4.6rem] md:flex-row md:items-center">
+                    <p className="text-sm text-slate-200 md:text-lg">
                         <i>{date}</i>
                     </p>
                     <span className=" h-[1px] w-[30px] bg-slate-200 content-none" />
-                    <p className=" text-lg text-gray-400">
+                    <p className="text-sm text-gray-400 md:text-lg">
                         <i>{description}</i>
                     </p>
                 </div>
                 <img
                     src={mainImage}
-                    className="absolute bottom-[-1rem] w-[48vw]"
+                    className="absolute bottom-[2.5rem] w-full md:bottom-[-1rem] md:w-[48vw]"
                 />
-                <span className="absolute top-[22%] h-[45vh] w-[39.4vw] rounded-lg border border-[#ffffff32] bg-[#ffffff12]" />
+                <span className="absolute top-[37%] h-[42%] w-[85%] rounded-lg border border-[#ffffff32] bg-[#ffffff12] md:top-[22%] md:h-[45vh] md:w-[39.4vw]" />
             </article>
             {children}
             <article
                 data-atropos-offset="10"
-                className="absolute bottom-[0.8rem] left-[16%] flex items-center gap-3 p-2"
+                className="absolute bottom-[0.4rem] left-[5%] flex items-center gap-3 p-2 md:bottom-[0.8rem] md:left-[16%]"
             >
                 <a
                     href={githubUrl}
                     target="_blank"
-                    className="hover:bg-glow-hover group relative flex cursor-pointer items-center justify-center gap-3 rounded-full border border-gray-500 px-6  py-3 text-[var(--white-color-nav)] backdrop-blur-2xl transition-all duration-75 ease-in hover:text-[var(--text-social)]"
+                    className="hover:bg-glow-hover group relative flex cursor-pointer items-center justify-center gap-3 rounded-full border border-gray-500 px-10 py-4 text-[var(--white-color-nav)]  backdrop-blur-2xl transition-all duration-75 ease-in hover:text-[var(--text-social)] md:px-6 md:py-3"
                 >
                     Code
                     <IconBrandGithub size="24" />
@@ -73,7 +75,7 @@ export const Card = ({
                 <a
                     href={appUrl}
                     target="_blank"
-                    className="hover:bg-glow-hover group relative flex cursor-pointer items-center justify-center gap-3 rounded-full border border-gray-500 px-6  py-3 text-[var(--white-color-nav)] backdrop-blur-2xl transition-all duration-75 ease-in hover:text-[var(--text-social)]"
+                    className="hover:bg-glow-hover group relative flex cursor-pointer items-center justify-center gap-3 rounded-full border border-gray-500 px-10 py-4 text-[var(--white-color-nav)]  backdrop-blur-2xl transition-all duration-75 ease-in hover:text-[var(--text-social)] md:px-6 md:py-3"
                 >
                     App
                     <IconWorldWww size="24" />

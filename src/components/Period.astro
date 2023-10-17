@@ -22,7 +22,9 @@ const hasInfoBox = width && top && title && text && content;
     class="absolute flex h-full w-[5%] flex-col items-center"
     '
 >
-    <p class="flex w-[5rem] justify-center font-light text-[var(--white-color-nav)]">
+    <p
+        class="flex w-[5rem] justify-center text-[0.8rem] font-light text-[var(--white-color-nav)] md:text-[1rem]"
+    >
         {`${month ? month : ''} ${year}`}
     </p>
     <span
@@ -43,8 +45,10 @@ const hasInfoBox = width && top && title && text && content;
                 class="bg-white-soft-blur group absolute grid cursor-pointer place-items-center"
             >
                 <div class="flex flex-col items-center">
-                    <p class="period-text font-light">{title}</p>
-                    <p class="period-text font-light text-[var(--white-color-nav)]">
+                    <p class="period-text w-[150%] text-center text-[0.8rem] font-light md:w-full md:text-[1rem]">
+                        {title}
+                    </p>
+                    <p class=" period-text w-[150%] text-center text-[0.7rem] font-light text-[var(--white-color-nav)] md:w-full md:text-[1rem]">
                         {text}
                     </p>
                 </div>
@@ -55,7 +59,7 @@ const hasInfoBox = width && top && title && text && content;
                         'absolute z-[10] block  rounded-xl p-4'
                     ]}
                 >
-                    <ul class="flex flex-col items-start justify-center rounded-xl">
+                    <ul class="hidden flex-col items-start justify-center rounded-xl md:flex">
                         {content.map((item) => (
                             <li class="flex items-center gap-2">
                                 <span class="h-[0.3rem] w-[0.3rem] rounded-full bg-[var(--white-color-nav)]" />

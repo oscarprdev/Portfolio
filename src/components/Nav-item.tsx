@@ -34,7 +34,11 @@ export const NavItem = ({ to, text }: Props) => {
     }, []);
 
     return (
-        <li className={`${currentHash === to && 'bg-white-blur'} relative px-4 py-2`}>
+        <li
+            className={`${
+                currentHash === to && 'bg-white-blur'
+            } relative px-2 py-1 md:px-4 md:py-2`}
+        >
             <a
                 href={to}
                 className={`text-${
