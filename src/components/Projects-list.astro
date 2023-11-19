@@ -2,13 +2,14 @@
 import { Card } from './Card';
 import { CardAtra } from './Card-atra';
 import { CardNft } from './Card-nft';
+import { CardTwitter } from './Card-twitter';
 ---
 
 <section
     id="work"
     class="flex h-full w-full flex-col items-center justify-center gap-20 pt-8 md:mb-40 md:gap-40"
 >
-    <div class="mb-[-2rem] w-full px-10 md:mb-[-7rem] md:w-[65vw]">
+    <div class="show-animation mb-[-2rem] w-full px-10 md:mb-[-7rem] md:w-[65vw]">
         <h2 class="section-title text-[2.5rem]">Work</h2>
         <p class="section-title text-[1rem] md:text-[1.5rem]">
             Check it out some of my side projects.
@@ -21,9 +22,20 @@ import { CardNft } from './Card-nft';
         mainImage="../assets/images/atra-bg.png"
         githubUrl="https://github.com/oscarprdev/Atra-architecture-web"
         appUrl="https://atra-architecture.vercel.app/"
+        deployed
         client:load
     >
         <CardAtra client:load />
+    </Card>
+    <Card
+        title="X clone"
+        date="2023 11 18"
+        description="X clone app in real time with Sockets"
+        mainImage="../assets/images/twitter.png"
+        githubUrl="https://github.com/oscarprdev/Twitter-clone"
+        client:load
+    >
+        <CardTwitter client:load />
     </Card>
     <Card
         title="NFT Market"
@@ -32,6 +44,7 @@ import { CardNft } from './Card-nft';
         mainImage="../assets/images/nft-bg.png"
         githubUrl="https://github.com/oscarprdev/Nft-market-transitions"
         appUrl="https://nft-market-transitions.netlify.app/"
+        deployed
         client:load
     >
         <CardNft client:load />

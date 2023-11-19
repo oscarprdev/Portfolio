@@ -1,7 +1,7 @@
 import 'atropos/css';
 import Atropos from 'atropos/react';
 import { IconBrandGithub } from '@tabler/icons-react';
-import { IconWorldWww } from '@tabler/icons-react';
+import { IconWorldWww, IconMedal } from '@tabler/icons-react';
 
 interface Props {
     children: any;
@@ -10,7 +10,8 @@ interface Props {
     mainImage: string;
     description: string;
     githubUrl: string;
-    appUrl: string;
+    appUrl?: string;
+    deployed?: boolean;
 }
 
 export const Card = ({
@@ -20,10 +21,11 @@ export const Card = ({
     mainImage,
     description,
     githubUrl,
-    appUrl
+    appUrl,
+    deployed
 }: Props) => {
     return (
-        <Atropos className="atropos-banner">
+        <Atropos className="atropos-banner show-animation">
             <article
                 data-atropos-offset="0"
                 className="border-grad absolute top-0 grid h-full w-full place-items-center "
@@ -40,9 +42,18 @@ export const Card = ({
                 data-atropos-offset="2"
                 className="absolute top-0 grid h-full w-full place-items-center"
             >
-                <h2 className="absolute left-5 top-5 text-2xl text-white md:left-10 md:top-9">
-                    {title}
-                </h2>
+                <div className="absolute left-5 top-5 flex items-center gap-2 md:left-10 md:top-9">
+                    <h2 className=" text-2xl text-white ">{title}</h2>
+                    {deployed && (
+                        <>
+                            <IconMedal
+                                size={24}
+                                color="gold"
+                            />
+                        </>
+                    )}
+                </div>
+
                 <div className="absolute left-5 top-[4rem] flex flex-col items-start gap-3 md:left-10 md:top-[4.6rem] md:flex-row md:items-center">
                     <p className="text-sm text-slate-200 md:text-lg">
                         <i>{date}</i>
@@ -72,15 +83,17 @@ export const Card = ({
                     <IconBrandGithub size="24" />
                     <span className="border-glare left-[15%] hidden h-[1px] w-[70%] transition-opacity duration-300 ease-in group-hover:inline-block" />
                 </a>
-                <a
-                    href={appUrl}
-                    target="_blank"
-                    className="hover:bg-glow-hover group relative flex cursor-pointer items-center justify-center gap-3 rounded-full border border-gray-500 px-10 py-4 text-[var(--white-color-nav)]  backdrop-blur-2xl transition-all duration-75 ease-in hover:text-[var(--text-social)] md:px-6 md:py-3"
-                >
-                    App
-                    <IconWorldWww size="24" />
-                    <span className="border-glare left-[15%] hidden h-[1px] w-[70%] transition-opacity duration-300 ease-in group-hover:inline-block" />
-                </a>
+                {appUrl && (
+                    <a
+                        href={appUrl}
+                        target="_blank"
+                        className="hover:bg-glow-hover group relative flex cursor-pointer items-center justify-center gap-3 rounded-full border border-gray-500 px-10 py-4 text-[var(--white-color-nav)]  backdrop-blur-2xl transition-all duration-75 ease-in hover:text-[var(--text-social)] md:px-6 md:py-3"
+                    >
+                        App
+                        <IconWorldWww size="24" />
+                        <span className="border-glare left-[15%] hidden h-[1px] w-[70%] transition-opacity duration-300 ease-in group-hover:inline-block" />
+                    </a>
+                )}
             </article>
         </Atropos>
     );

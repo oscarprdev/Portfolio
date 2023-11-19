@@ -117,3 +117,25 @@
     );
     background-color: transparent;
 }
+
+@keyframes show {
+    from {
+        opacity: 0;
+        transform: translateY(55%);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0%);
+    }
+}
+
+.show-animation {
+    view-timeline-name: --show;
+    view-timeline-axis: block;
+
+    animation-timeline: --show;
+    animation-name: show;
+    animation-range: entry 25% cover 70%;
+    animation-fill-mode: both;
+}
