@@ -19,7 +19,7 @@
     background-color: rgba(23, 23, 23, 0.126);
 }
 
-.atropos-banner:hover .bg-glow-hover {
+.atropos-banner:hover .bg-card-glow-hover {
     opacity: 1;
     transition: all 1s ease-in-out;
 }
