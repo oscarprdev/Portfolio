@@ -9,7 +9,7 @@
     transition: all 1s ease-in-out;
 }
 
-.bg-glow-hover {
+.bg-card-glow-hover {
     background: radial-gradient(
             80% 55% at 50% 0%,
             rgba(31, 206, 241, 0.25) 0,
