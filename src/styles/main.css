@@ -39,38 +39,6 @@
     z-index: -1;
 }
 
-.border-glow:hover::before {
-    animation: glowLight 0.7s linear forwards;
-    opacity: 1;
-}
-
-@keyframes glowLight {
-    0% {
-        transform: translate(-20%, 0%);
-    }
-    14% {
-        transform: translate(10%, 8%);
-    }
-    29% {
-        transform: translate(0%, 15%);
-    }
-    44% {
-        transform: translate(-18%, 15%);
-    }
-    59% {
-        transform: translate(-25%, 10%);
-    }
-    74% {
-        transform: translate(-30%, 10%);
-    }
-    84% {
-        transform: translate(-35%, 0%);
-    }
-    100% {
-        transform: translate(-34%, -10%);
-    }
-}
-
 .bg-white-blur {
     background: radial-gradient(40% 95% at 50% 100%, #ffffff49 0, transparent 100%);
     background-color: transparent;
@@ -78,6 +46,15 @@
 
 .bg-white-soft-blur {
     background: radial-gradient(40% 95% at 50% 100%, #ffffff19 0, transparent 100%);
+    background-color: transparent;
+}
+
+.bg-current-soft-blur {
+    background: radial-gradient(
+        40% 95% at 50% 100%,
+        rgba(31, 206, 241, 0.3) 0,
+        transparent 100%
+    );
     background-color: transparent;
 }
 
@@ -97,15 +74,10 @@
 
 .bg-glow-dark {
     background: radial-gradient(
-            60% 55% at 1% 0%,
-            rgba(220, 229, 231, 0.15) 0,
-            transparent 100%
-        ),
-        radial-gradient(
-            47% 43% at 95% 100%,
-            rgba(240, 241, 241, 0.15) 0,
-            transparent 100%
-        );
+        50% 80% at 100% 0%,
+        rgba(220, 229, 231, 0.15) 0,
+        transparent 100%
+    );
     background-color: rgba(23, 23, 23, 0.126);
 }
 
@@ -136,6 +108,6 @@
 
     animation-timeline: --show;
     animation-name: show;
-    animation-range: entry 25% cover 70%;
+    animation-range: entry 20% cover 60%;
     animation-fill-mode: both;
 }

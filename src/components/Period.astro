@@ -1,4 +1,6 @@
 ---
+import { CurrentIcon } from '../utils/icons';
+
 interface Props {
     year: number;
     month?: string;
@@ -8,9 +10,10 @@ interface Props {
     title?: string;
     text?: string;
     content?: string[];
+    current?: boolean;
 }
 
-const { year, month, left, width, top, title, text, content } = Astro.props;
+const { year, month, left, width, top, title, text, content, current } = Astro.props;
 
 const hasInfoBox = width && top && title && text && content;
 ---
@@ -42,15 +45,24 @@ const hasInfoBox = width && top && title && text && content;
                     width: `${width}%`,
                     height: `18%`
                 }}
-                class="bg-white-soft-blur group absolute grid cursor-pointer place-items-center"
+                class:list={[
+                    { 'bg-current-soft-blur': current },
+                    { 'bg-white-soft-blur': !current }
+                ]}
+                class="group absolute grid place-items-center"
             >
-                <div class="flex flex-col items-center">
+                <div class="relative flex flex-col items-center">
                     <p class="period-text w-[150%] text-center text-[0.8rem] font-light md:w-full md:text-[1rem]">
                         {title}
                     </p>
                     <p class=" period-text w-[150%] text-center text-[0.7rem] font-light text-[var(--white-color-nav)] md:w-full md:text-[1rem]">
                         {text}
                     </p>
+                    {current && (
+                        <p class="absolute bottom-[-2.3rem] text-zinc-400">
+                            <CurrentIcon />
+                        </p>
+                    )}
                 </div>
                 <div
                     class:list={[
