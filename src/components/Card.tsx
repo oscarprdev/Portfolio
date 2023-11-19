@@ -70,7 +70,10 @@ export const Card = ({
                 <span className="absolute top-[37%] h-[42%] w-[85%] rounded-lg border border-[#ffffff32] bg-[#ffffff12] md:top-[22%] md:h-[45vh] md:w-[39.4vw]" />
             </article>
             {children}
-            <article className="absolute bottom-[0.4rem] left-[5%] z-20 flex items-center gap-3 p-2 md:bottom-[0.8rem] md:left-[16%]">
+            <article
+                data-atropos-offset="10"
+                className="absolute bottom-[0.4rem] left-[5%] z-20 flex items-center gap-3 p-2 md:bottom-[0.8rem] md:left-[16%]"
+            >
                 <a
                     href={githubUrl}
                     target="_blank"
