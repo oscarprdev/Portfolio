@@ -3,7 +3,6 @@ import SharedLinks from './SharedLinks.astro';
 ---
 
 <article class="hero_presentation">
-    <SharedLinks />
     <div class="info">
         <h1>Oscar Perez Romero</h1>
         <p>
@@ -11,33 +10,34 @@ import SharedLinks from './SharedLinks.astro';
             por más de 6 años, decidí hacer un cambio en mi carrera profesional y
             adentrarme en el mundo del desarrollo web a través de un bootcamp. <br />
             <br /> Desde entonces puedo decir que he encontrado mi verdadera pasion por la
-            que dedico todo mi tiempo en aprender desarrollo web.
+            que dedico todo mi tiempo libre en aprender todo lo relacionado con el desarrollo
+            web.
         </p>
     </div>
+    <SharedLinks />
 </article>
 
 <style>
     .hero_presentation {
         display: flex;
         align-items: start;
-        width: fit-content;
+        justify-content: space-between;
         gap: 1rem;
-        margin-top: -2rem;
     }
 
     h1 {
-        font-size: 3.5rem;
+        font-size: clamp(1.2rem, 6.5vw, 3.5rem);
         width: 100%;
         text-wrap: pretty;
         text-transform: uppercase;
         font-weight: bold;
-        line-height: 0%;
+        margin-top: 1rem;
     }
 
     p {
         max-width: 70ch;
-        font-size: 0.8rem;
+        font-size: 0.9rem;
         text-wrap: pretty;
-        margin-top: -2.5rem;
+        margin-top: -3.5rem;
     }
 </style>

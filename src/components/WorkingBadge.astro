@@ -1,6 +1,7 @@
 ---
-import ArrowUpRight from '../icons/ArrowUpRight.astro';
 import FireBlack from '../icons/FireBlack.astro';
+import ArrowAnimated from './ArrowAnimated.astro';
+import ArrowUpRight from '../icons/ArrowUpRight.astro';
 ---
 
 <article class="working_badge">
@@ -11,14 +12,7 @@ import FireBlack from '../icons/FireBlack.astro';
     >
         <div class="working_badge__content">
             <p>Web developer en <span class="company">ADHARA</span></p>
-            <div class="icon-container">
-                <span class="icon">
-                    <ArrowUpRight />
-                </span>
-                <span class="icon-2">
-                    <ArrowUpRight />
-                </span>
-            </div>
+            <ArrowAnimated up><ArrowUpRight /></ArrowAnimated>
         </div>
     </a>
     <div class="working_badge__date">
@@ -28,7 +22,7 @@ import FireBlack from '../icons/FireBlack.astro';
 </article>
 
 <style>
-    å :root {
+    :root {
         --padding: 3px;
         --border-radius: 11px;
     }
@@ -103,31 +97,6 @@ import FireBlack from '../icons/FireBlack.astro';
         transform-origin: left;
     }
 
-    .icon-container {
-        position: relative;
-        display: grid;
-        place-content: center;
-        width: 15px;
-        height: 15px;
-        padding-top: 5px;
-        background-color: rgba(255, 255, 255, 0);
-        transform: scale(0.8);
-        overflow: hidden;
-    }
-
-    .icon {
-        width: fit-content;
-        transition: transform 0.3s ease;
-    }
-
-    .icon-2 {
-        position: absolute;
-        bottom: -1.4rem;
-        left: -1rem;
-        width: fit-content;
-        transition: transform 0.3s ease;
-    }
-
     .working_badge__date {
         display: flex;
         align-items: center;
@@ -148,14 +117,19 @@ import FireBlack from '../icons/FireBlack.astro';
     .working_badge__container:hover .working_badge__content .company::after {
         transform: scaleX(1);
     }
-    .working_badge__container:hover .working_badge__content .icon-container .icon,
-    .working_badge__container:hover .working_badge__content .icon-container .icon-2 {
+
+    .working_badge__container:hover
+        .working_badge__content
+        :global(.icon-container .icon),
+    .working_badge__container:hover
+        .working_badge__content
+        :global(.icon-container .icon-2) {
         transform: translateY(-55%) translateX(50%);
     }
 
     @keyframes shine {
         to {
-            background-position: 18rem;
+            background-position: 16rem;
         }
     }
 </style>

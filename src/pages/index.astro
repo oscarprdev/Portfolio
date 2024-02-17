@@ -5,33 +5,18 @@ import Layout from '../layouts/Layout.astro';
 
 <Layout title="Welcome to Astro.">
     <main class="viewport">
-        <section class="main-content">
-            <Hero />
-        </section>
+        <Hero />
     </main>
 </Layout>
 
 <style>
     .viewport {
-        position: fixed;
-
-        width: 100vw;
-        height: 100vh;
-
-        padding-top: var(--app-padding);
-        padding-bottom: var(--app-padding);
-        padding-left: 3rem;
-
-        overflow: scroll;
-    }
-
-    .main-content {
-        position: relative;
-
         display: flex;
+        flex-direction: column;
         align-items: center;
-
-        width: var(--app-width);
-        height: 100%;
+        justify-content: center;
+        padding: 2rem;
+        width: 100vw;
+        box-sizing: border-box;
     }
 </style>

@@ -1,5 +1,5 @@
 ---
-import ArrowDownRight from '../icons/ArrowDownRight.astro';
+import HeroAboutTitle from './HeroAboutTitle.astro';
 import WorkingBadge from './WorkingBadge.astro';
 ---
 
@@ -11,13 +11,7 @@ import WorkingBadge from './WorkingBadge.astro';
         />
     </picture>
     <section class="hero_about__content">
-        <header class="hero_about__content__header">
-            <h3>Sobre mi</h3>
-            <span class="arrow-icon">
-                <ArrowDownRight />
-            </span>
-        </header>
-        <h2>Frontend developer</h2>
+        <HeroAboutTitle />
         <WorkingBadge />
     </section>
 </article>
@@ -25,17 +19,20 @@ import WorkingBadge from './WorkingBadge.astro';
 <style>
     .hero_about {
         width: fit-content;
-        height: 350px;
+        height: 45vh;
         display: flex;
         align-items: start;
         gap: 2rem;
     }
 
     .hero_about__image {
+        position: relative;
+
         display: grid;
         place-items: center;
         border-radius: 50%;
         width: 300px;
+        max-width: 30vw;
         box-shadow: var(--box-shadow);
 
         img {
@@ -50,26 +47,6 @@ import WorkingBadge from './WorkingBadge.astro';
         flex-direction: column;
         justify-content: space-between;
         gap: 1rem;
-
         height: 100%;
-    }
-
-    .hero_about__content__header {
-        display: flex;
-        align-items: center;
-        gap: 0.3rem;
-    }
-
-    h3 {
-        font-weight: lighter;
-    }
-
-    h2 {
-        line-height: 0%;
-        margin-top: 0.5rem;
-        font-size: 5rem;
-        text-wrap: pretty;
-        text-transform: uppercase;
-        font-weight: bold;
     }
 </style>

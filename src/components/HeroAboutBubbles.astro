@@ -1,0 +1,127 @@
+---
+import Ts from '../icons/Ts.astro';
+import React from '../icons/React.astro';
+import Vue from '../icons/Vue.astro';
+import Javascript from '../icons/Javascript.astro';
+import Next from '../icons/Next.astro';
+import Golang from '../icons/Golang.astro';
+---
+
+<section class="bubbles-container">
+    <div class="bubble bubble-1">
+        <span><Ts /></span>
+    </div>
+    <div class="bubble bubble-2">
+        <span class="bubble-content"><React /></span>
+    </div>
+    <div class="bubble bubble-3">
+        <span class="bubble-content"><Vue /></span>
+    </div>
+    <div class="bubble bubble-4">
+        <span class="bubble-content"><Javascript /></span>
+    </div>
+    <div class="bubble bubble-5">
+        <span class="bubble-content"><Golang /></span>
+    </div>
+    <div class="bubble bubble-6">
+        <span class="bubble-content"><Next /></span>
+    </div>
+</section>
+
+<style>
+    .bubbles-container {
+        position: relative;
+        opacity: 0;
+    }
+
+    .bubble {
+        display: grid;
+        place-items: center;
+        padding: 0.1rem;
+        box-shadow: var(--box-shadow);
+
+        animation: movement 2s linear infinite;
+    }
+
+    .bubble-1 {
+        position: absolute;
+        left: 7%;
+        bottom: -0.5rem;
+
+        border-radius: 6px;
+        background: linear-gradient(to right top, #2f74c0, #74b6fd);
+    }
+
+    .bubble-2 {
+        position: absolute;
+        left: 58%;
+        bottom: 2.4rem;
+
+        border-radius: 50%;
+        background: linear-gradient(to left bottom, #0a7a9f, #74b6fd);
+        animation-delay: 0.2s;
+    }
+
+    .bubble-3 {
+        position: absolute;
+        left: 75%;
+        bottom: -0.2rem;
+
+        border-radius: 50%;
+        background: linear-gradient(to left bottom, #36a173, #87ffcb);
+
+        animation-delay: 0.4s;
+    }
+
+    .bubble-4 {
+        position: absolute;
+        left: 43%;
+        bottom: 1.2rem;
+
+        border-radius: 50%;
+        background: linear-gradient(to right bottom, #baa509, #ffe946);
+        animation-delay: 0.6s;
+    }
+
+    .bubble-5 {
+        position: absolute;
+        left: 90%;
+        bottom: 2.2rem;
+
+        border-radius: 50%;
+        background: linear-gradient(to left bottom, #67cfde, #1e7e8c);
+        animation-delay: 0.6s;
+    }
+
+    .bubble-6 {
+        position: absolute;
+        left: 20%;
+        bottom: 2.2rem;
+
+        border-radius: 50%;
+        background: linear-gradient(to left top, #000000, #2e2e2e);
+        animation-delay: 0.6s;
+    }
+
+    span {
+        display: grid;
+        place-items: center;
+        width: 2rem;
+        height: 2rem;
+        color: white;
+    }
+
+    @keyframes movement {
+        0% {
+            transform: translateY(5px);
+        }
+
+        50% {
+            transform: translateY(-5px);
+        }
+
+        100% {
+            transform: translateY(5px);
+        }
+    }
+</style>

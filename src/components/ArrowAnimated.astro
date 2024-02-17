@@ -1,0 +1,52 @@
+---
+interface Props {
+    up?: boolean;
+    down?: boolean;
+}
+
+const { up, down } = Astro.props;
+---
+
+<div class="icon-container">
+    <span class="icon">
+        <slot />
+    </span>
+    <span class:list={['icon-2', { up }, { down }]}>
+        <slot />
+    </span>
+</div>
+
+<style>
+    .icon-container {
+        position: relative;
+        display: grid;
+        place-content: center;
+        width: 15px;
+        height: 15px;
+        padding-top: 5px;
+        background-color: rgba(255, 255, 255, 0);
+        transform: scale(0.8);
+        overflow: hidden;
+    }
+
+    .icon {
+        width: fit-content;
+        transition: transform 0.3s ease;
+    }
+
+    .icon-2 {
+        position: absolute;
+        width: fit-content;
+        transition: transform 0.3s ease;
+    }
+
+    .up {
+        bottom: -1.4rem;
+        left: -1rem;
+    }
+
+    .down {
+        top: -1.4rem;
+        left: -1rem;
+    }
+</style>

@@ -1,10 +1,13 @@
 ---
+import Tooltip from './Tooltip.astro';
+
 interface Props {
     href: string;
     download?: string;
+    tooltip?: string;
 }
 
-const { href, download } = Astro.props;
+const { href, download, tooltip } = Astro.props;
 ---
 
 <a
@@ -13,6 +16,15 @@ const { href, download } = Astro.props;
     download={download}
 >
     <slot />
+    {
+        tooltip && (
+            <div class="tooltip-container">
+                <Tooltip>
+                    <p>{tooltip}</p>
+                </Tooltip>
+            </div>
+        )
+    }
 </a>
 
 <style>
@@ -35,7 +47,7 @@ const { href, download } = Astro.props;
     a::after {
         content: '';
         height: var(--thickness);
-        width: 200%;
+        width: 150%;
         background-color: var(--bg-screen);
         position: absolute;
         z-index: 1;
@@ -43,7 +55,7 @@ const { href, download } = Astro.props;
 
     a::before {
         content: '';
-        height: 200%;
+        height: 150%;
         width: var(--thickness);
         background-color: var(--bg-screen);
         position: absolute;
@@ -53,6 +65,31 @@ const { href, download } = Astro.props;
     a:hover::before,
     a:hover::after {
         animation: rotate 2s linear infinite;
+    }
+
+    .tooltip-container {
+        display: grid;
+        place-items: center;
+
+        position: absolute;
+        top: 1.5rem;
+        left: -10rem;
+        transform: translateY(-70%);
+
+        width: 180px;
+        color: var(--default-color-light);
+
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+        font-weight: 100;
+        font-style: italic;
+    }
+
+    a:hover .tooltip-container {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(-70%);
     }
 
     @keyframes rotate {
