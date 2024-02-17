@@ -1,0 +1,20 @@
+---
+import HeroAbout from './HeroAbout.astro';
+import HeroPresentation from './HeroPresentation.astro';
+---
+
+<section class="hero">
+    <HeroAbout />
+    <HeroPresentation />
+</section>
+
+<style>
+    .hero {
+        position: relative;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        gap: 1rem;
+    }
+</style>

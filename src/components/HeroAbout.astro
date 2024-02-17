@@ -1,0 +1,72 @@
+---
+import ArrowDownRight from '../icons/ArrowDownRight.astro';
+import WorkingBadge from './WorkingBadge.astro';
+---
+
+<article class="hero_about">
+    <picture class="hero_about__image">
+        <img
+            src="/assets/me.webp"
+            alt="Personal image"
+        />
+    </picture>
+    <section class="hero_about__content">
+        <header class="hero_about__content__header">
+            <h3>Sobre mi</h3>
+            <span class="arrow-icon">
+                <ArrowDownRight />
+            </span>
+        </header>
+        <h2>Frontend developer</h2>
+        <WorkingBadge />
+    </section>
+</article>
+
+<style>
+    .hero_about {
+        width: 100vw;
+        display: flex;
+        align-items: start;
+        gap: 2rem;
+    }
+
+    .hero_about__image {
+        display: grid;
+        place-items: center;
+        border-radius: 50%;
+        width: 20%;
+        box-shadow: var(--box-shadow);
+
+        img {
+            aspect-ratio: 400/420;
+            border-radius: 50%;
+        }
+    }
+
+    .hero_about__content {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100%;
+    }
+
+    .hero_about__content__header {
+        display: flex;
+        align-items: center;
+        gap: 0.3rem;
+    }
+
+    h3 {
+        font-weight: lighter;
+    }
+
+    h2 {
+        margin-top: -1.5rem;
+        font-size: clamp(1rem, 6vw, 7rem);
+        width: 100%;
+        text-wrap: pretty;
+        text-transform: uppercase;
+        font-weight: bold;
+    }
+</style>

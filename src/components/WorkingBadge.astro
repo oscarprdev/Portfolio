@@ -1,0 +1,160 @@
+---
+import ArrowUpRight from '../icons/ArrowUpRight.astro';
+import FireBlack from '../icons/FireBlack.astro';
+---
+
+<article class="working_badge">
+    <a
+        class="working_badge__container"
+        href="https://www.adhara.io/"
+        target="_blank"
+    >
+        <div class="working_badge__content">
+            <p>Web developer en <span class="company">ADHARA</span></p>
+            <div class="icon-container">
+                <span class="icon">
+                    <ArrowUpRight />
+                </span>
+                <span class="icon-2">
+                    <ArrowUpRight />
+                </span>
+            </div>
+        </div>
+    </a>
+    <div class="working_badge__date">
+        <span><FireBlack /></span>
+        <p>Desde Octubre 2022</p>
+    </div>
+</article>
+
+<style>
+    :root {
+        --padding: 3px;
+        --border-radius: 11px;
+    }
+
+    .working_badge {
+        display: flex;
+        flex-direction: column;
+        align-items: end;
+        width: fit-content;
+    }
+
+    .working_badge__container {
+        cursor: pointer;
+
+        display: grid;
+        place-items: center;
+        box-shadow: var(--box-shadow);
+
+        background: linear-gradient(
+            to right,
+            var(--badge-container-dark),
+            var(--badge-container-light)
+        );
+
+        border: none;
+        border-radius: var(--border-radius);
+        padding: var(--padding);
+        width: fit-content;
+    }
+
+    .working_badge__content {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.2rem;
+
+        background-image: linear-gradient(
+            to right,
+            var(--badge-dark),
+            var(--badge-light)
+        );
+
+        padding: 0.2rem 1rem;
+        width: 100%;
+
+        border-radius: calc(var(--border-radius) - var(--padding));
+
+        color: white;
+        font-size: clamp(0.2rem, 3vw, 1rem);
+    }
+
+    .company {
+        width: fit-content;
+        position: relative;
+
+        transition: color 0.3s ease;
+    }
+
+    .company:after {
+        content: '';
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: -2px;
+        height: 1px;
+        width: 100%;
+        background-color: white;
+        transform: scaleX(0);
+        transition: transform 0.3s ease;
+        transform-origin: left;
+    }
+
+    .icon-container {
+        position: relative;
+        display: grid;
+        place-content: center;
+        width: 15px;
+        height: 15px;
+        padding-top: 5px;
+        background-color: rgba(255, 255, 255, 0);
+        transform: scale(0.8);
+        overflow: hidden;
+    }
+
+    .icon {
+        width: fit-content;
+        transition: transform 0.3s ease;
+    }
+
+    .icon-2 {
+        position: absolute;
+        bottom: -1.4rem;
+        left: -1rem;
+        width: fit-content;
+        transition: transform 0.3s ease;
+    }
+
+    .working_badge__date {
+        display: flex;
+        align-items: center;
+        gap: 0.6rem;
+        transform: scale(0.8);
+        width: fit-content;
+        margin-top: -0.5rem;
+
+        p {
+            color: var(--default-color);
+        }
+    }
+
+    .working_badge__container:hover {
+        animation: shine 1s linear infinite;
+    }
+
+    .working_badge__container:hover .working_badge__content .company::after {
+        transform: scaleX(1);
+    }
+    .working_badge__container:hover .working_badge__content .icon-container .icon,
+    .working_badge__container:hover .working_badge__content .icon-container .icon-2 {
+        transform: translateY(-55%) translateX(50%);
+    }
+
+    @keyframes shine {
+        to {
+            background-position: 18rem;
+        }
+    }
+</style>
