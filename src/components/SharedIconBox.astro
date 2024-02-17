@@ -1,0 +1,63 @@
+---
+interface Props {
+    href: string;
+    download?: string;
+}
+
+const { href, download } = Astro.props;
+---
+
+<a
+    href={href}
+    target="_blank"
+    download={download}
+>
+    <slot />
+</a>
+
+<style>
+    :root {
+        --thickness: 20px;
+    }
+
+    a {
+        position: relative;
+        display: grid;
+        place-items: center;
+
+        padding: 0.2rem;
+        border: 1px solid var(--default-color);
+        z-index: 0;
+
+        cursor: pointer;
+    }
+
+    a::after {
+        content: '';
+        height: var(--thickness);
+        width: 200%;
+        background-color: var(--bg-screen);
+        position: absolute;
+        z-index: 1;
+    }
+
+    a::before {
+        content: '';
+        height: 200%;
+        width: var(--thickness);
+        background-color: var(--bg-screen);
+        position: absolute;
+        z-index: 1;
+    }
+
+    a:hover::before,
+    a:hover::after {
+        animation: rotate 2s linear infinite;
+    }
+
+    @keyframes rotate {
+        to {
+            transform: rotate(360deg);
+        }
+    }
+</style>

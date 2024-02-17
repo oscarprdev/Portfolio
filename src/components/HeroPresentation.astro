@@ -1,20 +1,43 @@
+---
+import SharedLinks from './SharedLinks.astro';
+---
+
 <article class="hero_presentation">
-    <h1>Oscar Perez Romero</h1>
+    <SharedLinks />
+    <div class="info">
+        <h1>Oscar Perez Romero</h1>
+        <p>
+            Tras haber trabajado como ingeniero de automoción en empresas Tier 1 de España
+            por más de 6 años, decidí hacer un cambio en mi carrera profesional y
+            adentrarme en el mundo del desarrollo web a través de un bootcamp. <br />
+            <br /> Desde entonces puedo decir que he encontrado mi verdadera pasion por la
+            que dedico todo mi tiempo en aprender desarrollo web.
+        </p>
+    </div>
 </article>
 
 <style>
     .hero_presentation {
-        margin-top: -3rem;
         display: flex;
-        align-items: center;
-        gap: 2rem;
+        align-items: start;
+        width: fit-content;
+        gap: 1rem;
+        margin-top: -2rem;
     }
 
     h1 {
-        font-size: clamp(1rem, 3vw, 5rem);
+        font-size: 3.5rem;
         width: 100%;
         text-wrap: pretty;
         text-transform: uppercase;
         font-weight: bold;
+        line-height: 0%;
+    }
+
+    p {
+        max-width: 70ch;
+        font-size: 0.8rem;
+        text-wrap: pretty;
+        margin-top: -2.5rem;
     }
 </style>

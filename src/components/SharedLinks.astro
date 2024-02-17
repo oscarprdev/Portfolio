@@ -1,0 +1,28 @@
+---
+import Cv from '../icons/Cv.astro';
+import Linkedin from '../icons/Linkedin.astro';
+import Github from '../icons/Github.astro';
+import SharedIconBox from './SharedIconBox.astro';
+---
+
+<div class="shared-links">
+    <SharedIconBox href="">
+        <Cv />
+    </SharedIconBox>
+    <SharedIconBox href="https://www.linkedin.com/in/oscarperez8/">
+        <Linkedin />
+    </SharedIconBox>
+    <SharedIconBox href="https://github.com/oscarprdev">
+        <Github />
+    </SharedIconBox>
+</div>
+
+<style>
+    .shared-links {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        gap: 1rem;
+        margin-top: 3.8rem;
+    }
+</style>
