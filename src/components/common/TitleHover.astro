@@ -55,4 +55,17 @@ const { header, title1, title2 } = Astro.props;
         top: -5rem;
         transition: transform 0.3s ease;
     }
+
+    @media (width <= 550px) {
+        .title__header {
+            width: 90vw;
+        }
+
+        .title__main {
+            h2 {
+                width: 90vw;
+                font-size: 2rem;
+            }
+        }
+    }
 </style>

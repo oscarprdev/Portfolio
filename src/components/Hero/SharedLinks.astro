@@ -29,4 +29,12 @@ import SharedIconBox from './SharedIconBox.astro';
         margin-top: 7rem;
         gap: 1rem;
     }
+
+    @media (width <= 800px) {
+        .shared-links {
+            flex-direction: row;
+            margin-top: 0;
+            align-self: end;
+        }
+    }
 </style>

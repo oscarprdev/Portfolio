@@ -44,4 +44,37 @@ import SharedLinks from './SharedLinks.astro';
         margin-top: -3.5rem;
         color: var(--text-secondary);
     }
+
+    @media (width <= 800px) {
+        .hero_presentation {
+            flex-direction: column;
+            margin-top: 10rem;
+        }
+
+        p {
+            margin-top: -2rem;
+        }
+    }
+
+    @media (width <= 550px) {
+        .hero_presentation {
+            flex-direction: column;
+            margin-top: 0;
+
+            p {
+                margin-top: -1.5rem;
+            }
+        }
+    }
+
+    @media (width <= 350px) {
+        .hero_presentation {
+            margin-top: -3rem;
+
+            p {
+                margin-top: 1.5rem;
+                font-size: 0.9rem;
+            }
+        }
+    }
 </style>
