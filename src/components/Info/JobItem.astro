@@ -1,0 +1,71 @@
+---
+interface Props {
+    date: string;
+    title: string;
+    company: string;
+}
+
+const { date, title, company } = Astro.props;
+---
+
+<li class="job job-1">
+    <span class="dot"></span>
+    <article class="job-content">
+        <p class="date">{date}</p>
+        <p class="company">{company}</p>
+        <p class="title">{title}</p>
+        <slot name="description" />
+    </article>
+</li>
+
+<style>
+    .job {
+        display: flex;
+        align-items: start;
+        gap: 1.5rem;
+        margin-left: -3rem;
+        width: 50vw;
+    }
+
+    .job-content {
+        display: flex;
+        flex-direction: column;
+        margin-top: -1rem;
+        width: 100%;
+    }
+
+    .dot {
+        position: relative;
+        width: 1rem;
+        height: 1rem;
+        background-color: white;
+        border-radius: 50%;
+
+        box-shadow: var(--box-shadow);
+    }
+
+    .dot:before {
+        position: absolute;
+        border-radius: 50%;
+        content: '';
+        width: 2rem;
+        height: 2rem;
+        top: -0.5rem;
+        margin-left: -0.5rem;
+        background-color: rgba(255, 255, 255, 0.161);
+    }
+
+    .date {
+        font-size: 0.8rem;
+        color: rgb(181, 181, 181);
+    }
+
+    .title {
+        margin-top: -0.5rem;
+    }
+
+    .company {
+        text-transform: uppercase;
+        margin-top: -0.5rem;
+    }
+</style>

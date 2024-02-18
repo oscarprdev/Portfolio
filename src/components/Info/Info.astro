@@ -1,0 +1,135 @@
+---
+import Crown from '../../icons/Crown.astro';
+import Notebook from '../../icons/Notebook.astro';
+import Card from './Card.astro';
+import JobItem from './JobItem.astro';
+---
+
+<section class="info show">
+    <Card title="Experiencia">
+        <span
+            class="crown"
+            slot="icon"
+            ><Crown /></span
+        >
+        <div
+            class="experience-content"
+            slot="content"
+        >
+            <span class="line"></span>
+            <ul class="jobs">
+                <JobItem
+                    date="Octubre 2022 - Actualmente (1.5 anos)"
+                    title="Frontend developer"
+                    company="Adhara"
+                    ><p
+                        class="description"
+                        slot="description"
+                    >
+                        Desarrollo de librería de componentes con <span
+                            class="color-text"
+                        >
+                            Vue
+                        </span>, aplicando clean architecture y buenas prácticas con
+                        <span class="color-text">TypeScript, Playwright y Vitest</span>.
+                    </p>
+                </JobItem>
+                <JobItem
+                    date="Julio 2022 - Octubre 2022 (3 meses)"
+                    title="Frontend developer"
+                    company="Minsait"
+                    ><p
+                        class="description"
+                        slot="description"
+                    >
+                        Primer trabajo como desarrollador web, actualizando libreria de
+                        componentes de <span class="color-text"
+                            >Polymer a Lit con web components</span
+                        >.
+                    </p></JobItem
+                >
+                <JobItem
+                    date="Mayo 2016 - Julio 2022 (+6 anos)"
+                    title="Ingeniero automocion"
+                    company="Btechc"
+                    ><p
+                        class="description"
+                        slot="description"
+                    >
+                        Desarrollo de componentes de <span class="color-text"
+                            >automoción</span
+                        > con software 3D para empresas Tier 1 de España, <span
+                            class="color-text">liderando y gestionando</span
+                        >
+                        equipos de +5 personas.
+                    </p></JobItem
+                >
+            </ul>
+        </div>
+    </Card>
+    <Card title="Formacion"
+        ><span
+            class="notebook"
+            slot="icon"
+            ><Notebook /></span
+        >
+    </Card>
+</section>
+
+<style>
+    .info {
+        display: flex;
+        align-items: start;
+        gap: 2rem;
+        padding: 2rem;
+
+        height: 100vh;
+        width: 80vw;
+    }
+
+    .crown {
+        color: var(--badge-container-dark);
+    }
+
+    .notebook {
+        color: var(--badge-container-light);
+    }
+
+    span {
+        margin-top: -2rem;
+    }
+
+    .experience-content {
+        position: relative;
+        display: flex;
+        align-items: center;
+        height: 100%;
+        width: 100%;
+    }
+
+    .jobs {
+        position: relative;
+        display: flex;
+        gap: 2.5rem;
+        flex-direction: column;
+    }
+
+    .line {
+        content: '';
+        width: 1px;
+        height: 85%;
+
+        -webkit-mask:
+            linear-gradient(#fff 0 0) content-box,
+            linear-gradient(#fff 0 0);
+        background: linear-gradient(to bottom, #d6d6d68c 50%, #48484800);
+    }
+
+    .description {
+        width: 50%;
+        text-wrap: pretty;
+        font-size: 0.8rem;
+        margin-top: -0.5rem;
+        color: rgb(181, 181, 181);
+    }
+</style>

@@ -1,0 +1,94 @@
+---
+interface Props {
+    title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<article class="card">
+    <span class="border"></span>
+    <div class="card-content">
+        <span class="border"></span>
+        <header><slot name="icon" /><p class="section-title">{title}</p></header>
+        <div class="experience-line">
+            <slot name="content" />
+        </div>
+    </div>
+</article>
+
+<style>
+    .border {
+        z-index: 10;
+        background-image: linear-gradient(
+            to right,
+            rgba(0, 0, 0, 0) 5%,
+            rgba(255, 255, 255, 1) 35%,
+            #fff 50%,
+            rgba(255, 255, 255, 1) 65%,
+            rgba(0, 0, 0, 0) 95%
+        );
+        position: absolute;
+        top: 0%;
+        bottom: auto;
+        left: 0%;
+        right: 0%;
+        width: 100%;
+        height: 1px;
+    }
+
+    .card {
+        position: relative;
+        border-top: 0.8rem;
+
+        width: 100%;
+        height: 85vh;
+        border-radius: 0.8rem;
+        padding: 0.4rem;
+        box-shadow: var(--box-shadow);
+
+        background: radial-gradient(80% 55% at 50% 0%, var(--bg-glow) 0, transparent 100%),
+            radial-gradient(47% 43% at 2% 100%, var(--bg-glow) 0, transparent 100%);
+        background-color: rgba(23, 23, 23, 0.087);
+    }
+
+    .card-content {
+        position: relative;
+        height: 98%;
+
+        display: flex;
+        flex-direction: column;
+        padding: 2rem;
+    }
+
+    .card::before,
+    .card-content::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        padding: 1px;
+        border-radius: 0.8rem;
+
+        -webkit-mask:
+            linear-gradient(#fff 0 0) content-box,
+            linear-gradient(#fff 0 0);
+        mask-composite: exclude;
+        background: linear-gradient(to bottom, #d6d6d68c, #48484800);
+    }
+
+    header {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+
+        p {
+            font-size: 1.5rem;
+            text-transform: uppercase;
+            margin-top: -0.5rem;
+        }
+    }
+
+    .experience-line {
+        height: 100%;
+    }
+</style>
