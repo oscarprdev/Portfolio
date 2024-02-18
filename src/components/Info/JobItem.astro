@@ -8,7 +8,7 @@ interface Props {
 const { date, title, company } = Astro.props;
 ---
 
-<li class="job job-1">
+<li class="job show">
     <span class="dot"></span>
     <article class="job-content">
         <p class="date">{date}</p>
@@ -61,11 +61,13 @@ const { date, title, company } = Astro.props;
     }
 
     .title {
-        margin-top: -0.5rem;
+        margin-top: -0.2rem;
+        font-size: 1.1rem;
     }
 
     .company {
         text-transform: uppercase;
-        margin-top: -0.5rem;
+        margin-top: -0.2rem;
+        font-size: 1rem;
     }
 </style>

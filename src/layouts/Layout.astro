@@ -41,6 +41,8 @@ const { title } = Astro.props;
         /* Colors */
         --red-light: #ff1e0b;
 
+        --text-secondary: rgb(181, 181, 181);
+
         /* --default-color: #333; */
         --default-color: #dedede;
         --default-color-light: #b5b5b5;
@@ -49,9 +51,10 @@ const { title } = Astro.props;
         --badge-light: #773e9d;
 
         --badge-container-dark: #6982ff;
-        --badge-container-light: #dca7ff;
+        --badge-container-light: #8e55ff;
 
         --bg-glow: #6982ff1a;
+        --bg-glow-dark: #8e55ff10;
         /* Backgrounds */
         /* --bg-screen: #ededed; */
         --bg-screen: #13151a;
@@ -145,6 +148,39 @@ const { title } = Astro.props;
         );
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
+    }
+
+    .border {
+        z-index: 10;
+        position: absolute;
+        top: 0%;
+        bottom: auto;
+        left: 0%;
+        right: 0%;
+        width: 100%;
+        height: 1px;
+    }
+
+    .border--light {
+        background-image: linear-gradient(
+            to right,
+            rgba(0, 0, 0, 0) 5%,
+            rgba(255, 255, 255, 1) 35%,
+            #fff 50%,
+            rgba(255, 255, 255, 1) 65%,
+            rgba(0, 0, 0, 0) 95%
+        );
+    }
+
+    .border--dark {
+        background-image: linear-gradient(
+            to right,
+            rgba(0, 0, 0, 0) 5%,
+            rgb(192, 192, 192) 35%,
+            #dcdcdc 50%,
+            rgb(192, 192, 192) 65%,
+            rgba(0, 0, 0, 0) 95%
+        );
     }
 
     .show {

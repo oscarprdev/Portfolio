@@ -6,50 +6,61 @@ interface Props {
 const { title } = Astro.props;
 ---
 
-<article class="card">
-    <span class="border"></span>
+<article class="card noise">
+    <span class="border border--light"></span>
     <div class="card-content">
-        <span class="border"></span>
+        <span class="border border--light"></span>
         <header><slot name="icon" /><p class="section-title">{title}</p></header>
-        <div class="experience-line">
-            <slot name="content" />
-        </div>
+        <slot name="content" />
     </div>
+    <div class="blob"></div>
+    <div class="fakeblob"></div>
 </article>
 
-<style>
-    .border {
-        z-index: 10;
-        background-image: linear-gradient(
-            to right,
-            rgba(0, 0, 0, 0) 5%,
-            rgba(255, 255, 255, 1) 35%,
-            #fff 50%,
-            rgba(255, 255, 255, 1) 65%,
-            rgba(0, 0, 0, 0) 95%
-        );
-        position: absolute;
-        top: 0%;
-        bottom: auto;
-        left: 0%;
-        right: 0%;
-        width: 100%;
-        height: 1px;
-    }
+<script>
+    const all = document.querySelectorAll('.card');
 
+    window.addEventListener('mousemove', (ev) => {
+        all.forEach((e) => {
+            const blob = e.querySelector('.blob');
+            const fblob = e.querySelector('.fakeblob');
+            const rec = fblob.getBoundingClientRect();
+            blob.style.opacity = '1';
+
+            blob.animate(
+                [
+                    {
+                        transform: `translate(${
+                            ev.clientX - rec.left - rec.width / 2
+                        }px,${ev.clientY - rec.top - rec.height / 2}px)`
+                    }
+                ],
+                {
+                    duration: 300,
+                    fill: 'forwards'
+                }
+            );
+        });
+    });
+</script>
+
+<style>
     .card {
         position: relative;
         border-top: 0.8rem;
 
-        width: 100%;
-        height: 85vh;
-        border-radius: 0.8rem;
+        width: 50%;
+        height: fit-content;
+        border-radius: 1rem;
         padding: 0.4rem;
         box-shadow: var(--box-shadow);
 
         background: radial-gradient(80% 55% at 50% 0%, var(--bg-glow) 0, transparent 100%),
             radial-gradient(47% 43% at 2% 100%, var(--bg-glow) 0, transparent 100%);
         background-color: rgba(23, 23, 23, 0.087);
+
+        overflow: hidden;
+        transition: all 300ms ease-in-out;
     }
 
     .card-content {
@@ -59,6 +70,18 @@ const { title } = Astro.props;
         display: flex;
         flex-direction: column;
         padding: 2rem;
+
+        backdrop-filter: blur(80px);
+        transition: all 300ms ease-in-out;
+        z-index: 10;
+    }
+
+    .card::before {
+        border-radius: 1.2rem;
+    }
+
+    .card-content::before {
+        border-radius: 0.8rem;
     }
 
     .card::before,
@@ -67,7 +90,6 @@ const { title } = Astro.props;
         position: absolute;
         inset: 0;
         padding: 1px;
-        border-radius: 0.8rem;
 
         -webkit-mask:
             linear-gradient(#fff 0 0) content-box,
@@ -88,7 +110,33 @@ const { title } = Astro.props;
         }
     }
 
-    .experience-line {
-        height: 100%;
+    .card:hover > .card-content {
+        background: rgba(23, 23, 23, 0.087);
+        backdrop-filter: blur(80px);
+    }
+
+    .blob {
+        filter: blur(90px);
+        position: absolute;
+        z-index: -1;
+        top: 0;
+        opacity: 0;
+        left: 0;
+        width: 500px;
+        height: 500px;
+        border-radius: 50%;
+        background: var(--bg-glow-dark);
+        transition: all 300ms ease-in-out;
+    }
+
+    .fakeblob {
+        display: hidden;
+        position: absolute;
+        z-index: -1;
+        top: 0;
+        left: 0;
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
     }
 </style>
