@@ -1,18 +1,14 @@
 ---
-import ArrowDownRight from '../../icons/ArrowDownRight.astro';
-import ArrowAnimated from './ArrowAnimated.astro';
+import TitleHover from '../common/TitleHover.astro';
 import HeroAboutBubbles from './HeroAboutBubbles.astro';
 ---
 
 <section class="hero_about_title">
-    <header class="hero_about_title__header">
-        <h3>Mi stack</h3>
-        <ArrowAnimated down><ArrowDownRight /></ArrowAnimated>
-    </header>
-    <div class="hero_about_title__main">
-        <h2 class="title section-title">Frontend developer</h2>
-        <h2 class="title-2 section-title">Fullstack developer</h2>
-    </div>
+    <TitleHover
+        header="Mi stack"
+        title1="Frontend developer"
+        title2="Fullstack developer"
+    />
     <HeroAboutBubbles />
 </section>
 
@@ -23,49 +19,13 @@ import HeroAboutBubbles from './HeroAboutBubbles.astro';
         max-width: 1000px;
     }
 
-    .hero_about_title__header {
-        display: flex;
-        align-items: center;
-        gap: 0.3rem;
-    }
-
-    h3 {
-        font-weight: lighter;
-    }
-
-    .hero_about_title__main {
-        position: relative;
-        overflow: hidden;
-        margin-top: -1rem;
-        height: 4.5rem;
-        width: 100%;
-    }
-
-    h2 {
-        margin-top: -0.5rem;
-        font-size: clamp(1rem, 4.5vw, 5rem);
-        text-wrap: pretty;
-        text-transform: uppercase;
-        font-weight: bold;
-    }
-
-    .title {
-        transition: transform 0.3s ease;
-    }
-
-    .title-2 {
-        position: absolute;
-        top: -5rem;
-        transition: transform 0.3s ease;
-    }
-
-    .hero_about_title:hover .hero_about_title__main .title-2,
-    .hero_about_title:hover .hero_about_title__main .title {
+    .hero_about_title:hover :global(.title__main .title-2),
+    .hero_about_title:hover :global(.title__main .title) {
         transform: translateY(5rem);
     }
 
-    .hero_about_title:hover .hero_about_title__header :global(.icon-container .icon),
-    .hero_about_title:hover .hero_about_title__header :global(.icon-container .icon-2) {
+    .hero_about_title:hover :global(.title__header .icon-container .icon),
+    .hero_about_title:hover :global(.title__header .icon-container .icon-2) {
         transform: translateY(70%) translateX(55%);
     }
 

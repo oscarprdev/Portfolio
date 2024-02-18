@@ -1,0 +1,45 @@
+---
+import TitleHover from '../common/TitleHover.astro';
+import Fires from './Fires.astro';
+---
+
+<section class="projects">
+    <div class="projects__title">
+        <TitleHover
+            header="A mover las manitas"
+            title1="Proyectos"
+            title2="Proyectazos"
+        />
+        <Fires />
+    </div>
+</section>
+
+<style>
+    .projects {
+        position: relative;
+        width: 90vw;
+        max-width: 1000px;
+        height: 100vh;
+    }
+
+    .projects__title {
+        position: relative;
+        width: 50vw;
+        max-width: 500px;
+    }
+
+    .projects:hover :global(.title__main .title-2),
+    .projects:hover :global(.title__main .title) {
+        transform: translateY(5rem);
+    }
+
+    .projects:hover :global(.title__header .icon-container .icon),
+    .projects:hover :global(.title__header .icon-container .icon-2) {
+        transform: translateY(70%) translateX(55%);
+    }
+
+    .projects:hover :global(.fires) {
+        opacity: 1;
+        transition: all 0.2s ease;
+    }
+</style>

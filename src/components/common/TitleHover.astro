@@ -1,0 +1,58 @@
+---
+import ArrowDownRight from '../../icons/ArrowDownRight.astro';
+import ArrowAnimated from './ArrowAnimated.astro';
+
+interface Props {
+    header: string;
+    title1: string;
+    title2: string;
+}
+const { header, title1, title2 } = Astro.props;
+---
+
+<header class="title__header">
+    <h3>{header}</h3>
+    <ArrowAnimated down><ArrowDownRight /></ArrowAnimated>
+</header>
+<div class="title__main">
+    <h2 class="title section-title">{title1}</h2>
+    <h2 class="title-2 section-title">{title2}</h2>
+</div>
+
+<style>
+    .title__header {
+        display: flex;
+        align-items: center;
+        gap: 0.3rem;
+    }
+
+    h3 {
+        font-weight: lighter;
+    }
+
+    .title__main {
+        position: relative;
+        overflow: hidden;
+        margin-top: -1rem;
+        height: 4.5rem;
+        width: 100%;
+    }
+
+    h2 {
+        margin-top: -0.5rem;
+        font-size: clamp(1rem, 4.5vw, 5rem);
+        text-wrap: pretty;
+        text-transform: uppercase;
+        font-weight: bold;
+    }
+
+    .title {
+        transition: transform 0.3s ease;
+    }
+
+    .title-2 {
+        position: absolute;
+        top: -5rem;
+        transition: transform 0.3s ease;
+    }
+</style>
