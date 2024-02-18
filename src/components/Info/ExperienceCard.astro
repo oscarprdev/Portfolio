@@ -129,4 +129,28 @@ import JobItem from './JobItem.astro';
             transform: translateY(0%);
         }
     }
+
+    @media (width <= 800px) {
+        .description {
+            width: 37ch;
+        }
+    }
+
+    @media (width <= 400px) {
+        .description {
+            width: 30ch;
+        }
+    }
+
+    @media (width <= 350px) {
+        .description {
+            width: 25ch;
+        }
+    }
+
+    @media (width <= 400px) {
+        .line {
+            margin-top: -3rem;
+        }
+    }
 </style>

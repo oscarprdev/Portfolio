@@ -136,4 +136,26 @@ import ExperienceCard from './ExperienceCard.astro';
         width: 3rem;
         height: 3rem;
     }
+
+    @media (width <= 800px) {
+        .info {
+            flex-direction: column;
+            align-items: center;
+            height: fit-content;
+        }
+    }
+
+    @media (width <= 450px) {
+        .item {
+            flex-direction: column;
+        }
+
+        .icon {
+            align-self: center;
+        }
+
+        .formation-content {
+            gap: 0;
+        }
+    }
 </style>

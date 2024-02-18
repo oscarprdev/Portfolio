@@ -114,4 +114,11 @@ import ProjectCard from './ProjectCard.astro';
     :global(.project-4) {
         grid-area: d;
     }
+
+    @media (width <= 800px) {
+        .projects__bento {
+            display: flex;
+            flex-direction: column;
+        }
+    }
 </style>
