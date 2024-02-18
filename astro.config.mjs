@@ -1,4 +1,15 @@
 import { defineConfig } from 'astro/config';
+import vercel from '@astrojs/vercel/serverless';
 
 // https://astro.build/config
-export default defineConfig({});
+export default defineConfig({
+    i18n: {
+        defaultLocale: 'es',
+        locales: ['es', 'en', 'ca'],
+        routing: {
+            prefixDefaultLocale: false
+        }
+    },
+    output: 'server',
+    adapter: vercel()
+});

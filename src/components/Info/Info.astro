@@ -5,11 +5,16 @@ import Upc from '../../icons/upc.astro';
 import Upv from '../../icons/upv.astro';
 import Card from './Card.astro';
 import ExperienceCard from './ExperienceCard.astro';
+
+import { getI18N } from '../../i18n';
+
+const { currentLocale } = Astro;
+const i18n = getI18N({ currentLocale });
 ---
 
 <section class="info show">
     <ExperienceCard />
-    <Card title="Formacion"
+    <Card title={i18n.INFO.FORMATION.TITLE}
         ><span
             class="notebook"
             slot="icon"
@@ -24,27 +29,33 @@ import ExperienceCard from './ExperienceCard.astro';
                 <span class="border border--dark"></span>
                 <span class="icon up-icon"><Up /></span>
                 <div class="text">
-                    <p class="date">Febrero 2022 - Julio 2022 (6 meses)</p>
-                    <p class="title">Upgrade Hub</p>
-                    <p class="name color-text">Bootcamp Fullstack Developer</p>
+                    <p class="date">{i18n.INFO.FORMATION.FORMATION_1.DATE}</p>
+                    <p class="title">{i18n.INFO.FORMATION.FORMATION_1.TITLE}</p>
+                    <p class="name color-text">
+                        {i18n.INFO.FORMATION.FORMATION_1.DESCRIPTION}
+                    </p>
                 </div>
             </div>
             <div class="item show">
                 <span class="border border--dark"></span>
                 <span class="icon upc-icon"><Upc /> </span>
                 <div class="text">
-                    <p class="date">Septiembre 2015 - Mayo 2016 (9 meses)</p>
-                    <p class="title">Universidad Politecnica de Catalunya</p>
-                    <p class="name color-text">Master Ingenieria Automocion</p>
+                    <p class="date">{i18n.INFO.FORMATION.FORMATION_2.DATE}</p>
+                    <p class="title">{i18n.INFO.FORMATION.FORMATION_2.TITLE}</p>
+                    <p class="name color-text">
+                        {i18n.INFO.FORMATION.FORMATION_2.DESCRIPTION}
+                    </p>
                 </div>
             </div>
             <div class="item show">
                 <span class="border border--dark"></span>
                 <span class="icon upv-icon"><Upv /></span>
                 <div class="text">
-                    <p class="date">Septiembre 2011 - Julio 2015 (4 anos)</p>
-                    <p class="title">Universidad Politecnica de Valencia</p>
-                    <p class="name color-text">Grado Ingenieria Diseno Industrial</p>
+                    <p class="date">{i18n.INFO.FORMATION.FORMATION_3.DATE}</p>
+                    <p class="title">{i18n.INFO.FORMATION.FORMATION_3.TITLE}</p>
+                    <p class="name color-text">
+                        {i18n.INFO.FORMATION.FORMATION_3.DESCRIPTION}
+                    </p>
                 </div>
             </div>
         </div>

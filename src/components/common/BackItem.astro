@@ -1,0 +1,44 @@
+---
+import ArrowUp from '../../icons/ArrowUp.astro';
+---
+
+<a
+    id="back"
+    class="back"
+    href="#hero"
+    ><span><ArrowUp /><p>Top</p></span></a
+>
+
+<script>
+    const backButton = document.getElementById('back') as HTMLElement;
+
+    function handleScroll() {
+        if (window.scrollY >= window.innerHeight) {
+            backButton.style.display = 'flex';
+        } else {
+            backButton.style.display = 'none';
+        }
+    }
+
+    window.addEventListener('scroll', handleScroll);
+</script>
+
+<style>
+    .back {
+        display: flex;
+        flex-direction: column;
+
+        color: rgb(255, 204, 1);
+
+        position: fixed;
+        bottom: 2rem;
+        left: 1rem;
+
+        p {
+            margin-top: 0.8rem;
+            writing-mode: vertical-rl;
+            text-orientation: upright;
+            text-transform: uppercase;
+        }
+    }
+</style>

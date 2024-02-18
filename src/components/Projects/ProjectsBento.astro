@@ -5,14 +5,19 @@ import React from '../../icons/React.astro';
 import Ts from '../../icons/Ts.astro';
 import Vue from '../../icons/Vue.astro';
 import ProjectCard from './ProjectCard.astro';
+
+import { getI18N } from '../../i18n';
+
+const { currentLocale } = Astro;
+const i18n = getI18N({ currentLocale });
 ---
 
 <section class="projects__bento">
     <ProjectCard
         order={1}
         src="/assets/atra.png"
-        title="Atra arquitectura"
-        description="Portfolio de estudio de arquitectura"
+        title={i18n.PROJECTS.PROJECT_1.TITLE}
+        description={i18n.PROJECTS.PROJECT_1.DESCRIPTION}
         projectLink="https://atra-architectura.vercel.app/"
         codeLink="https://github.com/oscarprdev/Atra-architecture"
     >
@@ -27,8 +32,8 @@ import ProjectCard from './ProjectCard.astro';
     <ProjectCard
         order={2}
         src="/assets/twitter.png"
-        title="Twitter clon"
-        description="Ejercicio clean arquitecture"
+        title={i18n.PROJECTS.PROJECT_2.TITLE}
+        description={i18n.PROJECTS.PROJECT_2.DESCRIPTION}
         projectLink="https://opr-twitter-clone.vercel.app/"
         codeLink="https://github.com/oscarprdev/Twitter_clone"
     >
@@ -44,8 +49,8 @@ import ProjectCard from './ProjectCard.astro';
     <ProjectCard
         order={3}
         src="/assets/url.png"
-        title="Short URL"
-        description="Acortador de URL con OAuth"
+        title={i18n.PROJECTS.PROJECT_3.TITLE}
+        description={i18n.PROJECTS.PROJECT_3.DESCRIPTION}
         projectLink="https://opr-short-url.vercel.app/"
         codeLink="https://github.com/oscarprdev/Short_url"
     >
@@ -61,8 +66,8 @@ import ProjectCard from './ProjectCard.astro';
     <ProjectCard
         order={4}
         src="/assets/ai.png"
-        title="Creative AI"
-        description="Diseno de landing page"
+        title={i18n.PROJECTS.PROJECT_4.TITLE}
+        description={i18n.PROJECTS.PROJECT_4.DESCRIPTION}
         projectLink="https://nft-ai-generator-two.vercel.app/"
         codeLink="https://github.com/oscarprdev/nft-ai-generator/tree/main/frontend"
     >

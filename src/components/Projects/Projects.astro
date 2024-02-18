@@ -2,14 +2,19 @@
 import TitleHover from '../common/TitleHover.astro';
 import Fires from './Fires.astro';
 import ProjectsBento from './ProjectsBento.astro';
+
+import { getI18N } from '../../i18n';
+
+const { currentLocale } = Astro;
+const i18n = getI18N({ currentLocale });
 ---
 
 <section class="projects">
     <div class="projects__title">
         <TitleHover
-            header="A mover las manitas"
-            title1="Proyectos"
-            title2="Proyectazos"
+            header={i18n.PROJECTS.SUBTITLE}
+            title1={i18n.PROJECTS.TITLE}
+            title2={i18n.PROJECTS.TITLE_2}
         />
         <Fires />
     </div>

@@ -2,6 +2,45 @@
 import Crown from '../../icons/Crown.astro';
 import Card from './Card.astro';
 import JobItem from './JobItem.astro';
+import { addSpanToWords } from '../../utils';
+
+import { getI18N } from '../../i18n';
+
+const { currentLocale } = Astro;
+const i18n = getI18N({ currentLocale });
+
+const wordsToHightlightWork1: Record<string, string[]> = {
+    es: ['Vue', 'TypeScript, Playwright y Vitest'],
+    en: ['Vue', 'TypeScript, Playwright and Vitest']
+};
+
+const modifiedDescriptionWork01 = addSpanToWords(
+    i18n.INFO.EXPERIENCE.JOB_1.DESCRIPTION,
+    wordsToHightlightWork1[currentLocale as string],
+    'color-text'
+);
+
+const wordsToHightlightWork2: Record<string, string[]> = {
+    es: ['Polymer a Lit con web components'],
+    en: ['Polymer to Lit with web components']
+};
+
+const modifiedDescriptionWork02 = addSpanToWords(
+    i18n.INFO.EXPERIENCE.JOB_2.DESCRIPTION,
+    wordsToHightlightWork2[currentLocale as string],
+    'color-text'
+);
+
+const wordsToHightlightWork3: Record<string, string[]> = {
+    es: ['automoción', 'liderando y gestionando'],
+    en: ['automotive', 'leading and managing']
+};
+
+const modifiedDescriptionWork03 = addSpanToWords(
+    i18n.INFO.EXPERIENCE.JOB_3.DESCRIPTION,
+    wordsToHightlightWork3[currentLocale as string],
+    'color-text'
+);
 ---
 
 <Card title="Experiencia">
@@ -17,48 +56,35 @@ import JobItem from './JobItem.astro';
         <span class="line show-line"></span>
         <ul class="jobs">
             <JobItem
-                date="Octubre 2022 - Actualmente (1.5 anos)"
-                title="Frontend developer"
-                company="Adhara"
+                date={i18n.INFO.EXPERIENCE.JOB_1.DATE}
+                title={i18n.INFO.EXPERIENCE.JOB_1.TITLE}
+                company={i18n.INFO.EXPERIENCE.JOB_1.COMPANY}
                 ><p
                     class="description"
                     slot="description"
-                >
-                    Desarrollo de aplicacion web con <span class="color-text">
-                        Vue
-                    </span>, aplicando clean architecture y buenas prácticas con
-                    <span class="color-text">TypeScript, Playwright y Vitest.</span>
-                </p>
+                    set:html={modifiedDescriptionWork01}
+                />
             </JobItem>
             <JobItem
-                date="Julio 2022 - Octubre 2022 (3 meses)"
-                title="Frontend developer"
-                company="Minsait"
+                date={i18n.INFO.EXPERIENCE.JOB_2.DATE}
+                title={i18n.INFO.EXPERIENCE.JOB_2.TITLE}
+                company={i18n.INFO.EXPERIENCE.JOB_2.COMPANY}
                 ><p
                     class="description"
                     slot="description"
-                >
-                    Primer trabajo como desarrollador web, actualizando libreria de
-                    componentes de <span class="color-text"
-                        >Polymer a Lit con web components.</span
-                    >
-                </p></JobItem
-            >
+                    set:html={modifiedDescriptionWork02}
+                />
+            </JobItem>
             <JobItem
-                date="Mayo 2016 - Julio 2022 (+6 anos)"
-                title="Ingeniero automocion"
-                company="Btechc"
+                date={i18n.INFO.EXPERIENCE.JOB_3.DATE}
+                title={i18n.INFO.EXPERIENCE.JOB_3.TITLE}
+                company={i18n.INFO.EXPERIENCE.JOB_3.COMPANY}
                 ><p
                     class="description"
                     slot="description"
-                >
-                    Desarrollo de componentes de <span class="color-text">automoción</span
-                    > con software 3D para empresas Tier 1 de España, <span
-                        class="color-text">liderando y gestionando</span
-                    >
-                    equipos de +5 personas.
-                </p></JobItem
-            >
+                    set:html={modifiedDescriptionWork03}
+                />
+            </JobItem>
         </ul>
     </div>
 </Card>

@@ -1,0 +1,77 @@
+{
+    "HERO": {
+        "ABOUT_TITLE": "Mi stack",
+        "DESCRIPTION": {
+            "TEXT_1": "Tras haber trabajado como ingeniero de automoción en empresas Tier 1 de España por más de 6 años, decidí hacer un cambio en mi carrera profesional y adentrarme en el mundo del desarrollo web a través de un bootcamp.",
+            "TEXT_2": "Desde entonces puedo decir que he encontrado mi verdadera pasión por la que dedico mi tiempo libre a aprender todo lo relacionado con el desarrollo web."
+        },
+        "DOWNLOAD_CV_MESSAGE": "¡Descarga mi CV!",
+        "BUTTON_CONTENT": "Web developer en ",
+        "BUTTON_FOOTER": "Desde Octubre 2022"
+    },
+    "INFO": {
+        "EXPERIENCE": {
+            "TITLE": "Experiencia",
+            "JOB_1": {
+                "TITLE": "Frontend developer",
+                "DATE": "Octubre 2022 - Actualmente (1.5 años)",
+                "COMPANY": "ADHARA",
+                "DESCRIPTION": "Desarrollo de aplicación web con Vue, aplicando clean architecture y buenas prácticas con TypeScript, Playwright y Vitest."
+            },
+            "JOB_2": {
+                "TITLE": "Frontend developer",
+                "DATE": "Julio 2022 - Octubre 2022 (3 meses)",
+                "COMPANY": "MINSAIT",
+                "DESCRIPTION": "Primer trabajo como desarrollador web, actualizando librería de componentes de Polymer a Lit con web components."
+            },
+            "JOB_3": {
+                "TITLE": "Ingeniero automoción",
+                "DATE": "Mayo 2016 - Julio 2022 (+6 años)",
+                "COMPANY": "BTECHC",
+                "DESCRIPTION": "Desarrollo de componentes de automoción con software 3D para empresas Tier 1 de España, liderando y gestionando equipos de +5 personas."
+            }
+        },
+        "FORMATION": {
+            "TITLE": "Formación",
+            "FORMATION_1": {
+                "DATE": "Febrero 2022 - Julio 2022 (6 meses)",
+                "TITLE": "Upgrade Hub",
+                "DESCRIPTION": "Bootcamp Fullstack Developer"
+            },
+            "FORMATION_2": {
+                "DATE": "Septiembre 2015 - Mayo 2016 (9 meses)",
+                "TITLE": "Universidad Politécnica de Cataluña",
+                "DESCRIPTION": "Máster Ingeniería Automoción"
+            },
+            "FORMATION_3": {
+                "DATE": "Septiembre 2011 - Julio 2015 (4 años)",
+                "TITLE": "Universidad Politécnica de Valencia",
+                "DESCRIPTION": "Grado Ingeniería Diseño Industrial"
+            }
+        }
+    },
+    "PROJECTS": {
+        "TITLE": "Proyectos",
+        "TITLE_2": "Proyectazos",
+        "SUBTITLE": "A mover las manitas",
+        "PROJECT_1": {
+            "TITLE": "Atra arquitectura",
+            "DESCRIPTION": "Portfolio de estudio de arquitectura"
+        },
+        "PROJECT_2": {
+            "TITLE": "Twitter clon",
+            "DESCRIPTION": "Ejercicio clean architecture"
+        },
+        "PROJECT_3": {
+            "TITLE": "Short URL",
+            "DESCRIPTION": "Acortador de URL con OAuth"
+        },
+        "PROJECT_4": {
+            "TITLE": "Creative AI",
+            "DESCRIPTION": "Diseño de landing page"
+        }
+    },
+    "FOOTER": {
+        "TEXT": "¡Gracias por llegar hasta aquí!"
+    }
+}

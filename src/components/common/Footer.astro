@@ -1,0 +1,30 @@
+---
+import SharedLinks from '../../components/Hero/SharedLinks.astro';
+import { getI18N } from '../../i18n';
+
+const { currentLocale } = Astro;
+const i18n = getI18N({ currentLocale });
+---
+
+<footer>
+    <h3>{i18n.FOOTER.TEXT}</h3>
+    <SharedLinks />
+</footer>
+
+<style>
+    footer {
+        margin-top: 3rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        padding: 5rem;
+    }
+
+    footer :global(.shared-links) {
+        display: flex;
+        flex-direction: row;
+        margin-top: 0;
+    }
+</style>

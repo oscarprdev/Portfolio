@@ -1,11 +1,15 @@
 ---
 import TitleHover from '../common/TitleHover.astro';
 import HeroAboutBubbles from './HeroAboutBubbles.astro';
+import { getI18N } from '../../i18n';
+
+const { currentLocale } = Astro;
+const i18n = getI18N({ currentLocale });
 ---
 
 <section class="hero_about_title">
     <TitleHover
-        header="Mi stack"
+        header={i18n.HERO.ABOUT_TITLE}
         title1="Frontend developer"
         title2="Fullstack developer"
     />

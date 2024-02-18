@@ -1,20 +1,46 @@
 ---
+import { getI18N } from '../../i18n';
+import { addSpanToWords } from '../../utils';
 import SharedLinks from './SharedLinks.astro';
+
+const { currentLocale } = Astro;
+const i18n = getI18N({ currentLocale });
+
+const description01 = i18n.HERO.DESCRIPTION.TEXT_1;
+const description02 = i18n.HERO.DESCRIPTION.TEXT_2;
+
+const wordsToHightlight: Record<string, Record<string, string[]>> = {
+    es: {
+        one: ['ingeniero de automoción'],
+        two: ['desarrollo web']
+    },
+    en: {
+        one: ['automotive engineer'],
+        two: ['web development']
+    }
+};
+
+const modifiedDescription01 = addSpanToWords(
+    description01,
+    wordsToHightlight[currentLocale as string].one,
+    'color-text'
+);
+
+const modifiedDescription02 = addSpanToWords(
+    description02,
+    wordsToHightlight[currentLocale as string].two,
+    'color-text'
+);
 ---
 
 <article class="hero_presentation">
     <div class="info">
         <h1 class="section-title">Oscar Perez Romero</h1>
         <p>
-            Tras haber trabajado como <span class="color-text"
-                >ingeniero de automoción</span
-            > en empresas Tier 1 de España por más de 6 años, decidí hacer un cambio en mi
-            carrera profesional y adentrarme en el mundo del desarrollo web a través de un
-            bootcamp. <br />
-            <br /> Desde entonces puedo decir que he encontrado mi verdadera pasion por la
-            que dedico mi tiempo libre a aprender todo lo relacionado con el <span
-                class="color-text">desarrollo web.</span
-            >
+            <span set:html={modifiedDescription01} />
+            <br />
+            <br />
+            <span set:html={modifiedDescription02} />
         </p>
     </div>
     <SharedLinks />

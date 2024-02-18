@@ -1,0 +1,77 @@
+{
+    "HERO": {
+        "ABOUT_TITLE": "My stack",
+        "DESCRIPTION": {
+            "TEXT_1": "After working as an automotive engineer in Tier 1 companies in Spain for more than 6 years, I decided to make a change in my career and delve into the world of web development through a bootcamp.",
+            "TEXT_2": "Since then, I can say that I have found my true passion, dedicating my free time to learning everything related to web development."
+        },
+        "DOWNLOAD_CV_MESSAGE": "Download my CV!",
+        "BUTTON_CONTENT": "Web developer at ",
+        "BUTTON_FOOTER": "Since October 2022"
+    },
+    "INFO": {
+        "EXPERIENCE": {
+            "TITLE": "Experience",
+            "JOB_1": {
+                "TITLE": "Frontend developer",
+                "DATE": "October 2022 - Present (1.5 years)",
+                "COMPANY": "ADHARA",
+                "DESCRIPTION": "Development of web application with Vue, applying clean architecture and best practices with TypeScript, Playwright, and Vitest."
+            },
+            "JOB_2": {
+                "TITLE": "Frontend developer",
+                "DATE": "July 2022 - October 2022 (3 months)",
+                "COMPANY": "MINSAIT",
+                "DESCRIPTION": "First job as a web developer, updating component library from Polymer to Lit with web components."
+            },
+            "JOB_3": {
+                "TITLE": "Automotive engineer",
+                "DATE": "May 2016 - July 2022 (+6 years)",
+                "COMPANY": "BTECHC",
+                "DESCRIPTION": "Development of automotive components with 3D software for Tier 1 companies in Spain, leading and managing teams of +5 people."
+            }
+        },
+        "FORMATION": {
+            "TITLE": "Education",
+            "FORMATION_1": {
+                "DATE": "February 2022 - July 2022 (6 months)",
+                "TITLE": "Upgrade Hub",
+                "DESCRIPTION": "Fullstack Developer Bootcamp"
+            },
+            "FORMATION_2": {
+                "DATE": "September 2015 - May 2016 (9 months)",
+                "TITLE": "Polytechnic University of Catalonia",
+                "DESCRIPTION": "Master's in Automotive Engineering"
+            },
+            "FORMATION_3": {
+                "DATE": "September 2011 - July 2015 (4 years)",
+                "TITLE": "Polytechnic University of Valencia",
+                "DESCRIPTION": "Bachelor's in Industrial Design Engineering"
+            }
+        }
+    },
+    "PROJECTS": {
+        "TITLE": "Projects",
+        "TITLE_2": "Awesome Projects",
+        "SUBTITLE": "Let's get our hands dirty",
+        "PROJECT_1": {
+            "TITLE": "Atra Architecture",
+            "DESCRIPTION": "Architecture studio portfolio"
+        },
+        "PROJECT_2": {
+            "TITLE": "Twitter Clone",
+            "DESCRIPTION": "Clean architecture exercise"
+        },
+        "PROJECT_3": {
+            "TITLE": "Short URL",
+            "DESCRIPTION": "URL shortener with OAuth"
+        },
+        "PROJECT_4": {
+            "TITLE": "Creative AI",
+            "DESCRIPTION": "Landing page design"
+        }
+    },
+    "FOOTER": {
+        "TEXT": "Thanks for getting here!"
+    }
+}
