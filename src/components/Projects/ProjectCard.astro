@@ -113,4 +113,20 @@ const { order, src, title, description, projectLink, codeLink } = Astro.props;
     .project__card:hover img {
         transform: scale(1.1);
     }
+
+    @media (width <= 800px) {
+        .links {
+            padding: 0.8rem 1rem;
+            gap: 1rem;
+        }
+
+        .project__card {
+            height: 20rem;
+        }
+
+        .title,
+        .project__card :global(.links) {
+            transform: translateX(0%);
+        }
+    }
 </style>

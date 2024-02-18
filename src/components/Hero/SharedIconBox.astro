@@ -97,4 +97,11 @@ const { href, download, tooltip } = Astro.props;
             transform: rotate(360deg);
         }
     }
+
+    @media (width <= 500px) {
+        .tooltip-container {
+            opacity: 1;
+            visibility: visible;
+        }
+    }
 </style>
