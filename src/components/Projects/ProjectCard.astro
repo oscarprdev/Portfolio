@@ -1,0 +1,116 @@
+---
+import ProjectLink from './ProjectLink.astro';
+
+interface Props {
+    src: string;
+    order: number;
+    title: string;
+    description: string;
+    projectLink: string;
+    codeLink: string;
+}
+
+const { order, src, title, description, projectLink, codeLink } = Astro.props;
+---
+
+<article class={`project__card project-${order}`}>
+    <span class="border border--light"></span>
+    <div class="title">
+        <div class="title-row">
+            <p>{title}</p>
+            <slot name="stack" />
+        </div>
+        <p class="description">{description}</p>
+    </div>
+    <div class="links">
+        <ProjectLink
+            link={codeLink}
+            text="Github"
+            kind="code"
+        />
+        <ProjectLink
+            link={projectLink}
+            text="Web"
+            kind="project"
+        />
+    </div>
+    <picture
+        ><img
+            src={src}
+            alt={title}
+        /></picture
+    >
+</article>
+
+<style>
+    .project__card {
+        position: relative;
+        display: grid;
+        place-items: center;
+        padding: 0.5rem;
+        border: 1px solid rgb(92, 92, 92);
+        border-radius: 1rem;
+        overflow: hidden;
+    }
+
+    picture {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        border-radius: 0.6rem;
+    }
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.8s ease;
+        offset-position: top;
+    }
+
+    .title {
+        position: absolute;
+        top: 0.5rem;
+        left: 0;
+        transform: translateX(-100%);
+        background-color: var(--bg-screen);
+        padding: 0 1rem;
+        transition: transform 0.4s ease;
+        z-index: 10;
+    }
+
+    .title-row {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .description {
+        font-size: 0.9rem;
+        color: var(--default-color-light);
+        margin-top: -0.4rem;
+    }
+
+    .links {
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        background-color: var(--bg-screen);
+        padding: 1rem 2rem;
+        transform: translateX(100%);
+        z-index: 10;
+        transition: transform 0.4s ease;
+    }
+
+    .project__card:hover .title,
+    .project__card:hover :global(.links) {
+        transform: translateX(0%);
+    }
+
+    .project__card:hover img {
+        transform: scale(1.1);
+    }
+</style>

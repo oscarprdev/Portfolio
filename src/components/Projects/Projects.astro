@@ -1,6 +1,7 @@
 ---
 import TitleHover from '../common/TitleHover.astro';
 import Fires from './Fires.astro';
+import ProjectsBento from './ProjectsBento.astro';
 ---
 
 <section class="projects">
@@ -12,20 +13,23 @@ import Fires from './Fires.astro';
         />
         <Fires />
     </div>
+    <ProjectsBento />
 </section>
 
 <style>
     .projects {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
         position: relative;
         width: 90vw;
-        max-width: 1000px;
-        height: 100vh;
+        max-width: 1200px;
+        height: 90vh;
     }
 
     .projects__title {
         position: relative;
-        width: 50vw;
-        max-width: 500px;
+        width: 500px;
     }
 
     .projects:hover :global(.title__main .title-2),
