@@ -24,22 +24,25 @@ const { title } = Astro.props;
         all.forEach((e) => {
             const blob = e.querySelector('.blob');
             const fblob = e.querySelector('.fakeblob');
-            const rec = fblob.getBoundingClientRect();
-            blob.style.opacity = '1';
 
-            blob.animate(
-                [
+            if (fblob) {
+                const rec = fblob.getBoundingClientRect();
+                (blob as HTMLElement).style.opacity = '1';
+
+                blob?.animate(
+                    [
+                        {
+                            transform: `translate(${
+                                ev.clientX - rec.left - rec.width / 2
+                            }px,${ev.clientY - rec.top - rec.height / 2}px)`
+                        }
+                    ],
                     {
-                        transform: `translate(${
-                            ev.clientX - rec.left - rec.width / 2
-                        }px,${ev.clientY - rec.top - rec.height / 2}px)`
+                        duration: 300,
+                        fill: 'forwards'
                     }
-                ],
-                {
-                    duration: 300,
-                    fill: 'forwards'
-                }
-            );
+                );
+            }
         });
     });
 </script>
