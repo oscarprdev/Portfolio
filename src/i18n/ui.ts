@@ -19,3 +19,12 @@ export const LANGUAGES: Record<
 
 export const defaultLang = 'es';
 export const showDefaultLang = false;
+
+export const ui = {
+    es: {
+        'nav.home': 'Accueil'
+    },
+    en: {
+        'nav.home': 'Home'
+    }
+} as const;

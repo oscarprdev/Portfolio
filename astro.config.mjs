@@ -5,7 +5,7 @@ import vercel from '@astrojs/vercel/serverless';
 export default defineConfig({
     i18n: {
         defaultLocale: 'es',
-        locales: ['es', 'en', 'ca'],
+        locales: ['es', 'en'],
         routing: {
             prefixDefaultLocale: false
         }
