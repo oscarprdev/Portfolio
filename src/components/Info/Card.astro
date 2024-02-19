@@ -94,12 +94,17 @@ const { title } = Astro.props;
         position: absolute;
         inset: 0;
         padding: 1px;
+    }
 
-        -webkit-mask:
-            linear-gradient(#fff 0 0) content-box,
-            linear-gradient(#fff 0 0);
-        mask-composite: exclude;
-        background: linear-gradient(to bottom, #d6d6d68c, #48484800);
+    @supports (-webkit-mask-composite: exclude) or (mask-composite: exclude) {
+        .card::before,
+        .card-content::before {
+            -webkit-mask:
+                linear-gradient(#fff 0 0) content-box,
+                linear-gradient(#fff 0 0);
+            mask-composite: exclude;
+            background: linear-gradient(to bottom, #d6d6d68c, #48484800);
+        }
     }
 
     header {
