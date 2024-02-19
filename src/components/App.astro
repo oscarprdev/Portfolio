@@ -1,0 +1,32 @@
+---
+import Hero from './Hero/Hero.astro';
+import Info from './Info/Info.astro';
+import Projects from './Projects/Projects.astro';
+import BackItem from './common/BackItem.astro';
+import LanguageSelector from './common/LanguageSelector.astro';
+---
+
+<main class="viewport">
+    <LanguageSelector />
+    <Hero />
+    <Info />
+    <Projects />
+    <BackItem />
+</main>
+
+<style>
+    .viewport {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 2rem;
+        gap: 5rem;
+        width: 100vw;
+        box-sizing: border-box;
+
+        background: radial-gradient(60% 60% at 2% 0%, var(--bg-glow) 0, transparent 100%);
+        background-color: rgba(23, 23, 23, 0.126);
+    }
+</style>
