@@ -1,0 +1,71 @@
+---
+import { getI18N } from '../i18n';
+
+const { currentLocale } = Astro;
+const i18n = getI18N({ currentLocale });
+---
+
+<section class="projects">
+	<h3 class="projects-title">{i18n.PROJECTS.TITLE}</h3>
+	<div class="projects-grid">
+		<div class="item"></div>
+		<div class="item"></div>
+		<div class="item"></div>
+		<div class="item"></div>
+	</div>
+</section>
+
+<style>
+	.projects {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		width: 100vw;
+		height: 100dvh;
+		max-width: 1100px;
+
+		.projects-title {
+			font-size: 25px;
+			font-weight: 100;
+			align-self: flex-start;
+		}
+
+		.projects-grid {
+			width: 100%;
+			height: 100%;
+			padding: 1rem;
+			display: grid;
+			grid-template-columns: repeat(5, 1fr);
+			grid-template-rows: auto;
+			gap: 0.5rem;
+			grid-template-areas:
+				'pr1 pr1 pr1 pr2 pr2'
+				'pr1 pr1 pr1 pr2 pr2'
+				'pr1 pr1 pr1 pr2 pr2'
+				'pr3 pr3 pr4 pr4 pr4'
+				'pr3 pr3 pr4 pr4 pr4'
+				'pr3 pr3 pr4 pr4 pr4';
+
+			.item {
+				border-radius: 1rem;
+				border: 1px solid;
+			}
+
+			.item:nth-child(1) {
+				grid-area: pr1;
+			}
+
+			.item:nth-child(2) {
+				grid-area: pr2;
+			}
+
+			.item:nth-child(3) {
+				grid-area: pr3;
+			}
+
+			.item:nth-child(4) {
+				grid-area: pr4;
+			}
+		}
+	}
+</style>

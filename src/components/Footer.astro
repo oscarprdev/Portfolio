@@ -1,0 +1,60 @@
+---
+import { getI18N } from '../i18n';
+import ArrowUpIcon from '../icons/ArrowUpIcon.astro';
+import GithubIcon from '../icons/GithubIcon.astro';
+import LinkedinIcon from '../icons/LinkedinIcon.astro';
+import { ContainerSize } from '../types';
+import ContainerHoverAnimation from './ContainerHoverAnimation.astro';
+import Link from './Link.astro';
+
+const { currentLocale } = Astro;
+const i18n = getI18N({ currentLocale });
+---
+
+<footer>
+	<div class="footer-item left">
+		<ContainerHoverAnimation size={ContainerSize.sm}>
+			<Link href={i18n.HERO.LINKS.GITHUB}><GithubIcon /></Link>
+		</ContainerHoverAnimation>
+		<ContainerHoverAnimation size={ContainerSize.sm}>
+			<Link href={i18n.HERO.LINKS.LINKEDIN}><LinkedinIcon /></Link>
+		</ContainerHoverAnimation>
+	</div>
+
+	<a class="footer-item center" href="#hero">Back to top <ArrowUpIcon /></a>
+
+	<div class="footer-item right">
+		<h3>Opr</h3>
+	</div>
+</footer>
+
+<style>
+	footer {
+		width: 100vw;
+		max-width: 1100px;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		padding: 2rem 1rem;
+
+		.footer-item {
+			width: 500px;
+			display: flex;
+			align-items: center;
+			gap: 0.5rem;
+		}
+
+		.left {
+			justify-content: left;
+		}
+
+		.center {
+			cursor: pointer;
+			justify-content: center;
+		}
+
+		.right {
+			justify-content: right;
+		}
+	}
+</style>
