@@ -1,33 +1,17 @@
 ---
 type Props = {
 	href: string;
-	isIcon?: boolean;
 };
 
-const { href, isIcon = false } = Astro.props;
+const { href } = Astro.props;
 ---
 
-<div id="link" class:list={['link', { icon: isIcon }]}>
-	<a href={href} target="_blank"><slot /></a>
-</div>
+<a href={href} target="_blank"><slot /></a>
 
 <style>
-	.link {
-		border: 1px solid;
-		border-radius: 2rem;
-		padding: 1rem 2rem;
+	a {
+		position: relative;
 		font-size: 18px;
-	}
-
-	.link:hover {
-		cursor: none;
-	}
-
-	.icon {
-		padding: 0.6rem;
+		z-index: 50;
 	}
 </style>
-
-<script>
-	const link = document.getElementById('link');
-</script>

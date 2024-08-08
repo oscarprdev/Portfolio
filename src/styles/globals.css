@@ -38,6 +38,14 @@ html.dark {
 	background-color: #000000;
 	color: #ffffff;
 	border-color: #ffffff;
+
+	.container:hover {
+		color: black;
+	}
+}
+
+.container:hover {
+	color: white;
 }
 
 body {
