@@ -1,0 +1,19 @@
+{
+	"HERO": {
+		"TITLE": {
+			"NAME": "Oscar Perez Romero",
+			"POSITION": "Frontend developer"
+		},
+		"TEXT": "Frontend developer with more than 2 years of professional experience.",
+		"COMPANY": {
+			"TEXT": "Currently working at: ",
+			"NAME": "Adhara",
+			"URL": "https://www.adhara.io/"
+		},
+		"LINKS": {
+			"EMAIL": "vlcoscar8@gmail.com",
+			"GITHUB": "https://github.com/oscarprdev",
+			"LINKEDIN": "https://www.linkedin.com/in/oscarperez8/"
+		}
+	}
+}

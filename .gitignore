@@ -22,5 +22,5 @@ pnpm-debug.log*
 
 # jetbrains setting folder
 .idea/
-.svcode
+.vscode
 pnpm-lock.yaml
