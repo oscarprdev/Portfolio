@@ -1,0 +1,25 @@
+---
+const { id, title, description, imageUrl } = Astro.props;
+---
+
+<section class="w-full grid place-items-center h-screen">
+	<div class="w-max max-w-[95vw] border-x border-dark2 flex flex-col gap-10 px-20 py-32">
+		<h2 class="text-5xl text-light1 italic">{title}</h2>
+		<p class="text-md text-light2 max-w-[70ch]">{description}</p>
+		<div class="flex flex-col sm:flex-row items-start mr-auto gap-5">
+			<picture transition:name="image" class="overflow-hidden border-none w-[90%] -mt-20 -ml-7">
+				<img src={imageUrl} class="rounded-lg w-full" />
+			</picture>
+			<div class="flex flex-col">
+				<div class="flex flex-col mt-3">
+					<h4 class="text-xl">Features</h4>
+					<slot name="features" />
+				</div>
+				<div class="flex flex-col mt-3">
+					<h4 class="text-xl">Stack</h4>
+					<slot name="stack" />
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
