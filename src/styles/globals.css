@@ -11,8 +11,26 @@
 }
 
 :root {
-	--accent-primary: #0a0c10;
+	--accent-primary: #060606;
 	--accent-secondary: #eb5757;
+
+	--max-width: 1200px;
+
+	--dark-0: #000000;
+	--dark-0-5: #101010f0;
+	--dark-1: #121212;
+	--dark-2: #181818;
+	--dark-3: #242424;
+	--dark-4: #303030;
+	--dark-5: #363636;
+
+	--light-0: #ffffff;
+	--light-1: #dddddd;
+	--light-2: #b3b3b3;
+	--light-3: #979797;
+	--light-4: #767676;
+	--light-5: #606060;
+	--light-5: #ffffff7a;
 }
 
 h1,
@@ -28,34 +46,18 @@ a {
 	font-family: 'Inter', system-ui, sans-serif;
 }
 
-html {
-	background-color: #ffffff;
-	color: #000000;
-	border-color: #000000;
-	scroll-behavior: smooth;
-}
-
-html.dark {
-	background-color: #000000;
-	color: #ffffff;
-	border-color: #ffffff;
-
-	.container:hover {
-		color: black;
-	}
-}
-
-.container:hover {
-	color: white;
-}
-
 body {
+	background-color: var(--dark-0);
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	scroll-behavior: smooth;
+	overflow-x: hidden;
 
 	width: 100%;
 	margin: 0 auto;
+
+	color: white;
 }
 
 section {
@@ -71,4 +73,21 @@ a {
 .icon {
 	display: grid;
 	place-items: center;
+}
+
+picture {
+	overflow: hidden;
+	border-radius: 1.5rem;
+	border: 1px solid;
+	padding: 0.3rem;
+
+	display: grid;
+	place-items: center;
+}
+
+img {
+	object-fit: cover;
+	width: 100%;
+	height: 100%;
+	border-radius: 1.2rem;
 }

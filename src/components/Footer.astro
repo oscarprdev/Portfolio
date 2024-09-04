@@ -1,60 +1,38 @@
 ---
-import { getI18N } from '../i18n';
-import ArrowUpIcon from '../icons/ArrowUpIcon.astro';
 import GithubIcon from '../icons/GithubIcon.astro';
+import HeartIcon from '../icons/HeartIcon.astro';
 import LinkedinIcon from '../icons/LinkedinIcon.astro';
-import { ContainerSize } from '../types';
-import ContainerHoverAnimation from './ContainerHoverAnimation.astro';
-import Link from './Link.astro';
-
-const { currentLocale } = Astro;
-const i18n = getI18N({ currentLocale });
 ---
 
-<footer>
-	<div class="footer-item left">
-		<ContainerHoverAnimation size={ContainerSize.sm}>
-			<Link href={i18n.HERO.LINKS.GITHUB}><GithubIcon /></Link>
-		</ContainerHoverAnimation>
-		<ContainerHoverAnimation size={ContainerSize.sm}>
-			<Link href={i18n.HERO.LINKS.LINKEDIN}><LinkedinIcon /></Link>
-		</ContainerHoverAnimation>
-	</div>
+<footer class="w-full grid place-items-center">
+	<div
+		class="w-max max-w-[95vw] border-x border-t border-dark2 flex flex-col items-center gap-10 px-2 sm:px-20 py-32">
+		<div class="w-[800px] max-w-[90vw] flex items-center justify-between">
+			<div class="flex flex-col items-start">
+				<h4 class="text-light2">Oscar Perez Romero</h4>
+				<p class="text-xs flex items-center text-light2">
+					Made with <span class="scale-75"><HeartIcon /></span> and a lot of coffes (no sugar)
+				</p>
+			</div>
+			<div class="flex items-center gap-2">
+				<div
+					class="p-3 w-fit grid place-items-center border border-dark3 rounded-full text-light2 hover:text-light1 duration-200">
+					oscarpr@protonmail.com
+				</div>
 
-	<a class="footer-item center" href="#hero">Back to top <ArrowUpIcon /></a>
-
-	<div class="footer-item right">
-		<h3>Opr</h3>
+				<a
+					href="https://github.com/oscarprdev"
+					target="_blank"
+					class="p-3 grid place-items-center border border-dark3 rounded-full text-light2 hover:text-light1 duration-200 cursor-pointer"
+					><GithubIcon /></a
+				>
+				<a
+					href="https://www.linkedin.com/in/oscarperez8"
+					target="_blank"
+					class="p-3 grid place-items-center border border-dark3 rounded-full text-light2 hover:text-light1 duration-200 cursor-pointer"
+					><LinkedinIcon /></a
+				>
+			</div>
+		</div>
 	</div>
 </footer>
-
-<style>
-	footer {
-		width: 100vw;
-		max-width: 1100px;
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
-		padding: 2rem 1rem;
-
-		.footer-item {
-			width: 500px;
-			display: flex;
-			align-items: center;
-			gap: 0.5rem;
-		}
-
-		.left {
-			justify-content: left;
-		}
-
-		.center {
-			cursor: pointer;
-			justify-content: center;
-		}
-
-		.right {
-			justify-content: right;
-		}
-	}
-</style>

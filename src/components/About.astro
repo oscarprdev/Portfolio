@@ -1,0 +1,192 @@
+---
+import TriangleIcon from '../icons/TriangleIcon.astro';
+import PlusIcon from '../icons/PlusIcon.astro';
+---
+
+<section class="w-full grid place-items-center">
+	<div class="w-max max-w-[95vw] border-x border-dark2 flex flex-col items-center gap-10 px-2 sm:px-20 py-32">
+		<h2 class="text-5xl text-light1 mr-auto">About me</h2>
+
+		<div class="flex flex-col w-[800px] max-w-[90vw] h-fit">
+			<h5 class="text-light text-lg">Oscar Perez Romero</h5>
+			<p class="w-[50ch] text-pretty text-light2 mb-5 mr-auto">
+				100% focused on becoming a world-class frontend developer.
+			</p>
+			<div class="flex flex-col items-start bg-dark">
+				<button
+					id="accordion-trigger-1"
+					class="py-5 flex items-center z-10 justify-between w-full text-light2 hover:text-light1 duration-200 text-lg group border border-transparent"
+					>Experience<span id="icon-1" class="rotate-180 duration-300"><PlusIcon /></span></button
+				>
+				<div class="group border-b border-dark3 w-full">
+					<ul
+						id="accordion-content-1"
+						class="list-disc flex flex-col gap-5 pl-2 md:pl-10 h-0 opacity-0 duration-200 ease-in translate-y-[-20px]">
+						<li class="flex flex-col items-start gap-2 -mt-5">
+							<div class="relative flex items-start gap-3 w-full justify-between">
+								<span class="absolute top-0 -left-6 scale-[0.3] -rotate-90"><TriangleIcon /></span>
+								<div class="flex flex-col gap-1">
+									<p class="text-md text-light">Frontend developer</p>
+									<p class="text-xs text-light3">Adhara blockchain</p>
+								</div>
+								<p class="text-xs text-light5 font-light">October 2022 - Now</p>
+							</div>
+							<p class="text-light2 text-sm">
+								Developing the UI of a banking management liquidity application. Applying clean
+								architecture, strong test coverage with unit tests and e2e tests and updating our own
+								Design System Library.
+							</p>
+						</li>
+						<li class="flex flex-col items-start gap-2">
+							<div class="relative flex items-start gap-3 w-full justify-between">
+								<span class="absolute top-0 -left-6 scale-[0.3] -rotate-90"><TriangleIcon /></span>
+								<div class="flex flex-col gap-1">
+									<p class="text-md text-light">Junior Frontend developer</p>
+									<p class="text-xs text-light3">Minsait</p>
+								</div>
+								<p class="text-xs text-light5 font-light">August 2022 - October 2022</p>
+							</div>
+							<p class="text-light2 text-sm">
+								Web components migrations using web components and Lit element.
+							</p>
+						</li>
+						<li class="flex flex-col items-start gap-2">
+							<div class="relative flex items-start gap-3 w-full justify-between">
+								<span class="absolute top-0 -left-6 scale-[0.3] -rotate-90"><TriangleIcon /></span>
+								<div class="flex flex-col gap-1">
+									<p class="text-md text-light">Automotive engineer</p>
+									<p class="text-xs text-light3">Btech</p>
+								</div>
+								<p class="text-xs text-light5 font-light">July 2016 - August 2022</p>
+							</div>
+							<p class="text-light2 text-sm">
+								Leading teams in highly demaning multidisciplinary and international environment
+								developing automotive components for Tier 1 companies.
+							</p>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="flex flex-col items-start">
+				<button
+					id="accordion-trigger-2"
+					class="py-5 flex items-center z-10 justify-between w-full text-light2 hover:text-light1 duration-200 text-lg group border border-transparent"
+					>Education<span id="icon-2" class="rotate-180 duration-300"><PlusIcon /></span></button
+				>
+				<div class="group border-b border-dark3 w-full">
+					<ul
+						id="accordion-content-2"
+						class="list-disc flex flex-col gap-5 pl-2 md:pl-10 h-0 opacity-0 duration-200 ease-in translate-y-[-20px]">
+						<li class="flex flex-col items-start gap-2 -mt-5">
+							<div class="relative flex items-start gap-3 w-full justify-between">
+								<span class="absolute top-0 -left-6 scale-[0.3] -rotate-90"><TriangleIcon /></span>
+								<div class="flex flex-col gap-1">
+									<p class="text-md text-light">Fullstack bootcamp</p>
+									<p class="text-xs text-light3">Upgrade hub</p>
+								</div>
+								<p class="text-xs text-light5 font-light">February 2022 - September 2022</p>
+							</div>
+						</li>
+						<li class="flex flex-col items-start gap-2">
+							<div class="relative flex items-start gap-3 w-full justify-between">
+								<span class="absolute top-0 -left-6 scale-[0.3] -rotate-90"><TriangleIcon /></span>
+								<div class="flex flex-col gap-1">
+									<p class="text-md text-light">Automotive engineering</p>
+									<p class="text-xs text-light3">Polythecnic University of Catalonia - UPC</p>
+								</div>
+								<p class="text-xs text-light5 font-light">September 2015 - July 2016</p>
+							</div>
+						</li>
+						<li class="flex flex-col items-start gap-2">
+							<div class="relative flex items-start gap-3 w-full justify-between">
+								<span class="absolute top-0 -left-6 scale-[0.3] -rotate-90"><TriangleIcon /></span>
+								<div class="flex flex-col gap-1">
+									<p class="text-md text-light">Industrial design engineering</p>
+									<p class="text-xs text-light3">Polythecnic University of Valencia - UPV</p>
+								</div>
+								<p class="text-xs text-light5 font-light">September 2011 - July 2015</p>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="flex flex-col items-start">
+				<button
+					id="accordion-trigger-3"
+					class="py-5 flex items-center z-10 justify-between w-full text-light2 hover:text-light1 duration-200 text-lg group border border-transparent"
+					>Things I Love<span id="icon-3" class="rotate-180 duration-300"><PlusIcon /></span></button
+				>
+				<div class="border-b border-dark3 w-full">
+					<div id="accordion-content-3" class="h-0 opacity-0 duration-200 ease-in translate-y-[-20px]">
+						<p class="text-md text-light3 font-light -mt-5">
+							I find inspiration in the world around me. I love to travel and experience different
+							cultures. When I'm not learning software skills, you can find me out hikking with my pet
+							Buddy 🐶, or shredding the slopes on my skiies during the winter season. Also a big fan of
+							brocoli 🥦 but never mind :)
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<script>
+	const accordionItems = [...Array(3)].map((_, i) => ({
+		id: `accordion-item-${i}`,
+		trigger: document.querySelector(`#accordion-trigger-${i + 1}`),
+		content: document.querySelector(`#accordion-content-${i + 1}`),
+		icon: document.querySelector(`#icon-${i + 1}`),
+	}));
+
+	accordionItems.forEach(({ id, trigger, content, icon }, i) => {
+		if (trigger && content && icon) {
+			trigger.addEventListener('click', () => {
+				icon.classList.toggle('icon-rotated');
+				content.classList.toggle('accordion-expanded');
+				content.classList.toggle(`item-${i + 1}`);
+				trigger.classList.toggle('trigger-selected');
+
+				const notSelectedItems = accordionItems.filter(item => item.id !== id);
+
+				notSelectedItems.forEach(({ id, trigger, content, icon }) => {
+					if (trigger && content && icon) {
+						icon.classList.remove('icon-rotated');
+						content.classList.remove('accordion-expanded');
+						content.classList.remove(`item-${accordionItems.findIndex(i => i.id === id) + 1}`);
+						trigger.classList.remove('trigger-selected');
+					}
+				});
+			});
+		}
+	});
+</script>
+
+<style>
+	.icon-rotated {
+		transform: rotate(45deg);
+		transition: transform 0.3s ease;
+	}
+
+	.accordion-expanded {
+		opacity: 100;
+		transform: translateY(20px);
+		transition: all 0.2s ease-in;
+	}
+
+	.item-1 {
+		height: 350px;
+	}
+
+	.item-2 {
+		height: 200px;
+	}
+
+	.item-3 {
+		height: 120px;
+	}
+
+	.trigger-selected {
+		color: var(--light);
+	}
+</style>
