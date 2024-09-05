@@ -2,7 +2,7 @@
 import ProjectHero from '../../components/ProjectHero.astro';
 import CheckIcon from '../../icons/CheckIcon.astro';
 import NextIcon from '../../icons/NextIcon.astro';
-import CloudflareIcon from '../../icons/CloudflareIcon.astro';
+import ProjectGallery from '../../components/ProjectGallery.astro';
 import SQLIcon from '../../icons/SQLIcon.astro';
 import TailwindIcon from '../../icons/TailwindIcon.astro';
 import TypescriptIcon from '../../icons/TypescriptIcon.astro';
@@ -15,7 +15,7 @@ import GolangIcon from '../../icons/GolangIcon.astro';
 		<ProjectHero
 			id="4"
 			title="OPlink"
-			imageUrl="https://pub-40348015f8234717ad672ff274c3fc81.r2.dev/492shots_so.png"
+			imageUrl="https://pub-40348015f8234717ad672ff274c3fc81.r2.dev/678shots_so.png"
 			description="Short url app and share and store your favourites urls. State management with Zustand and Tanstack Query and authentication implemented with OAuth.">
 			<ul class="flex flex-col items-start mr-auto text-light2 gap-2 mt-2" slot="features">
 				<li class="hover:text-light1 flex items-center gap-1 duration-200">
@@ -63,5 +63,41 @@ import GolangIcon from '../../icons/GolangIcon.astro';
 				</li>
 			</ul>
 		</ProjectHero>
+		<ProjectGallery>
+			<div class="flex flex-col items-center w-full h-full py-10 gap-5" slot="grid">
+				<picture
+					class="group relative overflow-hidden border-none w-[800px] grid place-items-center rounded-lg">
+					<img
+						src="https://pub-40348015f8234717ad672ff274c3fc81.r2.dev/511shots_so.png"
+						class="rounded-lg group-hover:scale-[1.05] duration-500"
+					/>
+				</picture>
+
+				<picture
+					class="group relative overflow-hidden border-none w-[800px] grid place-items-center rounded-lg">
+					<img
+						src="https://pub-40348015f8234717ad672ff274c3fc81.r2.dev/449shots_so.png"
+						class="rounded-lg group-hover:scale-[1.05] duration-500"
+					/>
+				</picture>
+
+				<div class="flex gap-5 w-[800px]">
+					<picture
+						class="group relative overflow-hidden border-none w-fit grid place-items-center rounded-lg">
+						<img
+							src="https://pub-40348015f8234717ad672ff274c3fc81.r2.dev/52shots_so.png"
+							class="rounded-lg group-hover:scale-[1.05] duration-500"
+						/>
+					</picture>
+					<picture
+						class="group relative overflow-hidden border-none grid w-fit place-items-center rounded-lg">
+						<img
+							src="https://pub-40348015f8234717ad672ff274c3fc81.r2.dev/841shots_so.png"
+							class="rounded-lg group-hover:scale-[1.05] duration-500"
+						/>
+					</picture>
+				</div>
+			</div>
+		</ProjectGallery>
 	</main>
 </Layout>

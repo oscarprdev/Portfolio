@@ -7,6 +7,7 @@ import SQLIcon from '../../icons/SQLIcon.astro';
 import TailwindIcon from '../../icons/TailwindIcon.astro';
 import TypescriptIcon from '../../icons/TypescriptIcon.astro';
 import Layout from '../../layouts/Layout.astro';
+import ProjectGallery from '../../components/ProjectGallery.astro';
 ---
 
 <Layout title="Resume builder">
@@ -14,7 +15,7 @@ import Layout from '../../layouts/Layout.astro';
 		<ProjectHero
 			id="3"
 			title="Resume builder"
-			imageUrl="https://pub-40348015f8234717ad672ff274c3fc81.r2.dev/766shots_so.png"
+			imageUrl="https://pub-40348015f8234717ad672ff274c3fc81.r2.dev/142shots_so.png"
 			description="Minimalistic resume builder app. Create, edit, store and download your own resume in a simple way.">
 			<ul class="flex flex-col items-start mr-auto text-light2 gap-2 mt-2" slot="features">
 				<li class="hover:text-light1 flex items-center gap-1 duration-200">
@@ -58,5 +59,49 @@ import Layout from '../../layouts/Layout.astro';
 				</li>
 			</ul>
 		</ProjectHero>
+		<ProjectGallery>
+			<div class="flex flex-col items-center w-full h-full py-10 gap-5" slot="grid">
+				<picture
+					class="group relative overflow-hidden border-none w-[800px] grid place-items-center rounded-lg">
+					<img
+						src="https://pub-40348015f8234717ad672ff274c3fc81.r2.dev/131shots_so.png"
+						class="rounded-lg group-hover:scale-[1.05] duration-500"
+					/>
+				</picture>
+
+				<div class="flex gap-5 w-[800px]">
+					<picture
+						class="group relative overflow-hidden border-none w-fit grid place-items-center rounded-lg">
+						<img
+							src="https://pub-40348015f8234717ad672ff274c3fc81.r2.dev/261shots_so.png"
+							class="rounded-lg group-hover:scale-[1.05] duration-500"
+						/>
+					</picture>
+					<picture
+						class="group relative overflow-hidden border-none grid w-fit place-items-center rounded-lg">
+						<img
+							src="https://pub-40348015f8234717ad672ff274c3fc81.r2.dev/134shots_so.png"
+							class="rounded-lg group-hover:scale-[1.05] duration-500"
+						/>
+					</picture>
+				</div>
+				<div class="flex gap-5 w-[800px]">
+					<picture
+						class="group relative overflow-hidden border-none w-fit grid place-items-center rounded-lg">
+						<img
+							src="https://pub-40348015f8234717ad672ff274c3fc81.r2.dev/172shots_so.png"
+							class="rounded-lg group-hover:scale-[1.05] duration-500"
+						/>
+					</picture>
+					<picture
+						class="group relative overflow-hidden border-none grid w-fit place-items-center rounded-lg">
+						<img
+							src="https://pub-40348015f8234717ad672ff274c3fc81.r2.dev/589shots_so.png"
+							class="rounded-lg group-hover:scale-[1.05] duration-500"
+						/>
+					</picture>
+				</div>
+			</div>
+		</ProjectGallery>
 	</main>
 </Layout>
