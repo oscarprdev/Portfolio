@@ -4,7 +4,7 @@ import PlusIcon from '../icons/PlusIcon.astro';
 ---
 
 <section class="w-full grid place-items-center">
-	<div class="w-max max-w-[95vw] border-x border-dark2 flex flex-col items-center gap-10 px-2 sm:px-20 py-32">
+	<div class="w-max max-w-[95vw] border-x border-dark2 flex flex-col items-center gap-10 px-2 sm:px-20 py-20">
 		<h2 class="text-5xl text-light1 mr-auto">About me</h2>
 
 		<div class="flex flex-col w-[800px] max-w-[90vw] h-fit">
@@ -25,9 +25,14 @@ import PlusIcon from '../icons/PlusIcon.astro';
 						<li class="flex flex-col items-start gap-2 -mt-5">
 							<div class="relative flex items-start gap-3 w-full justify-between">
 								<span class="absolute top-0 -left-6 scale-[0.3] -rotate-90"><TriangleIcon /></span>
-								<div class="flex flex-col gap-1">
+								<div class="flex items-center gap-3">
 									<p class="text-md text-light">Frontend developer</p>
-									<p class="text-xs text-light3">Adhara blockchain</p>
+									<a
+										href="https://www.adhara.io/"
+										target="_blank"
+										class="cursor-pointer hover:text-violet-300 hover:bg-violet-300/30 duration-300 text-xs text-violet-400 w-fit py-1 px-3 border border-violet-300/40 bg-violet-300/20 rounded-full grid place-items-center">
+										Adhara
+									</a>
 								</div>
 								<p class="text-xs text-light5 font-light">October 2022 - Now</p>
 							</div>
@@ -40,9 +45,14 @@ import PlusIcon from '../icons/PlusIcon.astro';
 						<li class="flex flex-col items-start gap-2">
 							<div class="relative flex items-start gap-3 w-full justify-between">
 								<span class="absolute top-0 -left-6 scale-[0.3] -rotate-90"><TriangleIcon /></span>
-								<div class="flex flex-col gap-1">
+								<div class="flex items-center gap-3">
 									<p class="text-md text-light">Junior Frontend developer</p>
-									<p class="text-xs text-light3">Minsait</p>
+									<a
+										href="https://www.minsait.com/"
+										target="_blank"
+										class="cursor-pointer hover:text-cyan-300 hover:bg-cyan-300/30 text-xs text-cyan-500 w-fit py-1 px-3 border border-cyan-300/40 bg-cyan-300/20 rounded-full grid place-items-center">
+										Minsait
+									</a>
 								</div>
 								<p class="text-xs text-light5 font-light">August 2022 - October 2022</p>
 							</div>
@@ -53,9 +63,14 @@ import PlusIcon from '../icons/PlusIcon.astro';
 						<li class="flex flex-col items-start gap-2">
 							<div class="relative flex items-start gap-3 w-full justify-between">
 								<span class="absolute top-0 -left-6 scale-[0.3] -rotate-90"><TriangleIcon /></span>
-								<div class="flex flex-col gap-1">
+								<div class="flex items-center gap-3">
 									<p class="text-md text-light">Automotive engineer</p>
-									<p class="text-xs text-light3">Btech</p>
+									<a
+										href="https://btechc.com/"
+										target="_blank"
+										class="cursor-pointer hover:text-emerald-300 hover:bg-emerald-300/30 text-xs text-emerald-500 w-fit py-1 px-3 border border-emerald-300/40 bg-emerald-300/20 rounded-full grid place-items-center">
+										Btech
+									</a>
 								</div>
 								<p class="text-xs text-light5 font-light">July 2016 - August 2022</p>
 							</div>
@@ -119,10 +134,9 @@ import PlusIcon from '../icons/PlusIcon.astro';
 				<div class="border-b border-dark3 w-full">
 					<div id="accordion-content-3" class="h-0 opacity-0 duration-200 ease-in translate-y-[-20px]">
 						<p class="text-md text-light3 font-light -mt-5">
-							I find inspiration in the world around me. I love to travel and experience different
-							cultures. When I'm not learning software skills, you can find me out hikking with my pet
-							Buddy 🐶, or shredding the slopes on my skiies during the winter season. Also a big fan of
-							brocoli 🥦 but never mind :)
+							I love to travel and experience different cultures. When I'm not learning software skills,
+							you can find me out hikking with my pet Buddy 🐶, or shredding the slopes on my skiies
+							during the winter season. Also a big fan of brocoli 🥦 but never mind :)
 						</p>
 					</div>
 				</div>
@@ -175,7 +189,7 @@ import PlusIcon from '../icons/PlusIcon.astro';
 	}
 
 	.item-1 {
-		height: 350px;
+		height: 280px;
 	}
 
 	.item-2 {
