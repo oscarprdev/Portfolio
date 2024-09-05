@@ -1,14 +1,42 @@
 ---
 import ArrowUpIcon from '../icons/ArrowUpIcon.astro';
 
-const { id, title, description, imageUrl, projectUrl, codeUrl } = Astro.props;
+interface Props {
+	id: string;
+	title: string;
+	description: string;
+	imageUrl: string;
+	projectUrl: string;
+	codeUrl: string;
+	ready: boolean;
+}
+
+const { id, title, description, imageUrl, projectUrl, codeUrl, ready } = Astro.props;
 ---
 
 <section class="w-full grid place-items-center h-fit">
 	<div
 		class="w-max max-w-[95vw] border-x border-dark2 flex flex-col gap-10 px-20 pt-32 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(54,54,54,0.3),rgba(54,54,54,0))]">
 		<div class="flex items-center w-full justify-between">
-			<h2 transition:name={`title-${id}`} class="text-5xl text-light1 italic">{title}</h2>
+			<div class="flex flex-col items-start gap-2">
+				<h2 transition:name={`title-${id}`} class="text-5xl text-light1 italic">{title}</h2>
+				<div class="flex items-center gap-2 py-2">
+					<div class="grid place-items-center">
+						<span
+							class:list={[
+								'size-2  rounded-full flex justify-center items-center animation-pulse',
+								{
+									['bg-emerald-500 text-emerald-300']: ready,
+									['text-orange-400 bg-orange-500']: !ready,
+								},
+							]}>
+						</span>
+					</div>
+					<p class:list={['text-xs', { ['text-emerald-500']: ready, ['text-orange-500']: !ready }]}>
+						{ready ? 'Production ready' : 'Work in progress'}
+					</p>
+				</div>
+			</div>
 			<div class="flex items-center gap-2">
 				<a
 					href={codeUrl}
@@ -24,7 +52,7 @@ const { id, title, description, imageUrl, projectUrl, codeUrl } = Astro.props;
 				>
 			</div>
 		</div>
-		<picture class="group relative overflow-hidden border-none w-full max-h-[75vh] rounded-xl">
+		<picture class="group relative overflow-hidden border-none w-full max-h-[75vh] rounded-xl -mt-7">
 			<img src={imageUrl} class="rounded-xl group-hover:scale-[1.05] duration-500" />
 		</picture>
 		<div class="flex flex-col gap-5 text-light1">
@@ -43,3 +71,25 @@ const { id, title, description, imageUrl, projectUrl, codeUrl } = Astro.props;
 		</div>
 	</div>
 </section>
+
+<style>
+	.animation-pulse {
+		animation: pulse 2s infinite;
+	}
+
+	@keyframes pulse {
+		0% {
+			transform: scale(0.8);
+			box-shadow: 0 0 0 0 currentColor;
+		}
+
+		70% {
+			transform: scale(1);
+			box-shadow: 0 0 0 15px rgba(229, 62, 62, 0);
+		}
+
+		100% {
+			transform: scale(0.8);
+		}
+	}
+</style>
