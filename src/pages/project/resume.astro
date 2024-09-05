@@ -8,6 +8,8 @@ import TailwindIcon from '../../icons/TailwindIcon.astro';
 import TypescriptIcon from '../../icons/TypescriptIcon.astro';
 import Layout from '../../layouts/Layout.astro';
 import ProjectGallery from '../../components/ProjectGallery.astro';
+import TestIcon from '../../icons/TestIcon.astro';
+import GithubIcon from '../../icons/GithubIcon.astro';
 ---
 
 <Layout title="Resume builder">
@@ -58,6 +60,16 @@ import ProjectGallery from '../../components/ProjectGallery.astro';
 					class="flex font-light text-sm items-center gap-2 duration-200 p-2 border border-dark3 rounded-xl hover:bg-dark1 hover:text-cyan-700">
 					<SQLIcon />
 					SQL
+				</li>
+				<li
+					class="flex font-light text-sm items-center gap-2 duration-200 p-2 border border-dark3 rounded-xl hover:bg-dark1 hover:text-emerald-600">
+					<TestIcon />
+					Playwright
+				</li>
+				<li
+					class="flex font-light text-sm items-center gap-2 duration-200 p-2 border border-dark3 rounded-xl hover:bg-dark1 hover:text-light2">
+					<GithubIcon />
+					CD/Ci
 				</li>
 			</ul>
 		</ProjectHero>
