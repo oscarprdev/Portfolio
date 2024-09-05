@@ -2,40 +2,37 @@
 import ProjectHero from '../../components/ProjectHero.astro';
 import CheckIcon from '../../icons/CheckIcon.astro';
 import NextIcon from '../../icons/NextIcon.astro';
-import PrismaIcon from '../../icons/PrismaIcon.astro';
+import CloudflareIcon from '../../icons/CloudflareIcon.astro';
 import SQLIcon from '../../icons/SQLIcon.astro';
 import TailwindIcon from '../../icons/TailwindIcon.astro';
 import TypescriptIcon from '../../icons/TypescriptIcon.astro';
 import Layout from '../../layouts/Layout.astro';
+import GolangIcon from '../../icons/GolangIcon.astro';
 ---
 
-<Layout title="Resssources dev">
+<Layout title="OPlink">
 	<main class="bg-dark w-screen flex flex-col items-center">
 		<ProjectHero
-			id="2"
-			title="Resssources dev"
-			imageUrl="https://pub-40348015f8234717ad672ff274c3fc81.r2.dev/137shots_so.png"
-			description="Store, find and share your favourite dev ressources in one place. List your favourites ressources to find them in a fast way.">
+			id="4"
+			title="OPlink"
+			imageUrl="https://pub-40348015f8234717ad672ff274c3fc81.r2.dev/492shots_so.png"
+			description="Short url app and share and store your favourites urls. State management with Zustand and Tanstack Query and authentication implemented with OAuth.">
 			<ul class="flex flex-col items-start mr-auto text-light2 gap-2 mt-2" slot="features">
 				<li class="hover:text-light1 flex items-center gap-1 duration-200">
 					<span class="scale-75"><CheckIcon /></span>
-					<p class="text-sm">Create your own user.</p>
+					<p class="text-sm">Short urls.</p>
 				</li>
 				<li class="hover:text-light1 flex items-center gap-1 duration-200">
 					<span class="scale-75"><CheckIcon /></span>
-					<p class="text-sm">Create your ressources.</p>
+					<p class="text-sm">Store urls for logged users.</p>
 				</li>
 				<li class="hover:text-light1 flex items-center gap-1 duration-200">
 					<span class="scale-75"><CheckIcon /></span>
-					<p class="text-sm">See the new ressources arrivals.</p>
+					<p class="text-sm">Remove urls for logged users.</p>
 				</li>
 				<li class="hover:text-light1 flex items-center gap-1 duration-200">
 					<span class="scale-75"><CheckIcon /></span>
-					<p class="text-sm">Manage your ressources as favourites or shared.</p>
-				</li>
-				<li class="hover:text-light1 flex items-center gap-1 duration-200">
-					<span class="scale-75"><CheckIcon /></span>
-					<p class="text-sm">Dashboard to edit, publish or unpublish ressources.</p>
+					<p class="text-sm">Update urls for logged users.</p>
 				</li>
 			</ul>
 			<ul class="flex flex-wrap items-start mr-auto text-light3 gap-2 mt-2" slot="stack">
@@ -45,7 +42,7 @@ import Layout from '../../layouts/Layout.astro';
 					Typescript
 				</li>
 				<li
-					class="flex font-light text-sm items-center gap-2 hover:text-light2 duration-200 p-2 border border-dark3 rounded-xl hover:bg-dark1">
+					class="flex font-light text-sm items-center gap-2 duration-200 p-2 border border-dark3 rounded-xl hover:bg-dark1 hover:text-light2">
 					<NextIcon />
 					NextJs
 				</li>
@@ -55,9 +52,9 @@ import Layout from '../../layouts/Layout.astro';
 					Tailwind
 				</li>
 				<li
-					class="flex font-light text-sm items-center gap-2 duration-200 p-2 border border-dark3 rounded-xl hover:bg-dark1 hover:text-light2">
-					<PrismaIcon />
-					Prisma
+					class="flex font-light text-sm items-center gap-2 duration-200 p-2 border border-dark3 rounded-xl hover:bg-dark1 hover:text-cyan-300">
+					<GolangIcon />
+					Golang
 				</li>
 				<li
 					class="flex font-light text-sm items-center gap-2 duration-200 p-2 border border-dark3 rounded-xl hover:bg-dark1 hover:text-cyan-700">
