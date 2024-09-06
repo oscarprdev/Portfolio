@@ -28,6 +28,20 @@ export default {
 			width: {
 				max: 'var(--max-width)',
 			},
+			keyframes: {
+				'fade-up': {
+					'0%': { opacity: '0', transform: 'translateY(20px)' },
+					'100%': { opacity: '1', transform: 'translateY(0)' },
+				},
+			},
+			animation: {
+				'fade-up': 'fade-up 0.5s ease-out forwards',
+			},
+			animationDelay: {
+				0: '0ms',
+				100: '100ms',
+				200: '200ms',
+			},
 		},
 	},
 	plugins: [],

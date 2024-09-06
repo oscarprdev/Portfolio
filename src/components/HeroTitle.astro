@@ -1,0 +1,225 @@
+<section id="text-container">
+	<canvas id="canvas"></canvas>
+	<h1 id="text"></h1>
+</section>
+
+<script>
+	window.addEventListener('load', () => {
+		const textContainer = document.getElementById('text-container');
+		const text = document.getElementById('text');
+		const canvas = document.getElementById('canvas');
+
+		if (!canvas || canvas instanceof HTMLCanvasElement !== true || !textContainer || !text) return;
+
+		const ctx = canvas?.getContext('2d');
+		canvas.width = textContainer.clientWidth;
+		canvas.height = textContainer.clientHeight;
+
+		if (!ctx) return;
+
+		class Particle {
+			readonly originX: number;
+			readonly originY: number;
+			readonly size: number;
+			private dx: number;
+			private dy: number;
+			private vx: number;
+			private vy: number;
+			private force: number;
+			private angle: number;
+			private distance: number;
+			private friction: number;
+			private ease: number;
+			private damping: number;
+
+			constructor(
+				private readonly effect: Effect,
+				public x: number,
+				public y: number,
+				private readonly color: string
+			) {
+				this.x = this.effect.canvasWidth / 2;
+				this.y = this.effect.canvasHeight / 2;
+				this.originX = x;
+				this.originY = y;
+				this.size = this.effect.gap * 1.2;
+				this.dx = 0;
+				this.dy = 0;
+				this.vx = 0;
+				this.vy = 0;
+				this.force = 0;
+				this.angle = 0;
+				this.distance = 0;
+				this.friction = Math.random() * 0.4 + 0.01;
+				this.ease = Math.random() * 0.3 + 0.07;
+				this.damping = 0.95;
+			}
+
+			draw() {
+				this.effect.context.fillStyle = this.color;
+
+				this.effect.context.fillRect(this.x, this.y, this.size, this.size);
+			}
+
+			update() {
+				const newDx = this.effect.mouse.x - this.x;
+				const newDy = this.effect.mouse.y - this.y;
+
+				const movementThreshold = 0.1;
+
+				if (Math.abs(newDx - this.dx) > movementThreshold || Math.abs(newDy - this.dy) > movementThreshold) {
+					this.dx = newDx;
+					this.dy = newDy;
+
+					this.distance = Math.sqrt(this.dx * this.dx + this.dy * this.dy);
+
+					if (this.distance < this.effect.mouse.radius && Math.random() < 0.25) {
+						this.force = -this.effect.mouse.radius / this.distance;
+						this.angle = Math.atan2(this.dy, this.dx);
+
+						this.vx += (this.force / 2) * Math.cos(this.angle) * 0.2;
+						this.vy += (this.force / 2) * Math.sin(this.angle) * 0.2;
+					}
+
+					this.x += (this.vx *= this.friction) + (this.originX - this.x) * this.ease;
+					this.y += (this.vy *= this.friction) + (this.originY - this.y) * this.ease;
+				} else {
+					this.vx *= this.damping;
+					this.vy *= this.damping;
+				}
+
+				const stopThreshold = 0.1;
+				if (Math.abs(this.vx) < stopThreshold) this.vx = 0;
+				if (Math.abs(this.vy) < stopThreshold) this.vy = 0;
+			}
+		}
+
+		class Effect {
+			readonly textX: number;
+			readonly textY: number;
+			readonly fontSize: number;
+			readonly lineHeight: number;
+			private particles: Particle[];
+			readonly gap: number;
+			readonly mouse: {
+				radius: number;
+				x: number;
+				y: number;
+			};
+
+			constructor(
+				readonly context: CanvasRenderingContext2D,
+				readonly canvasWidth: number,
+				readonly canvasHeight: number
+			) {
+				this.textX = this.canvasWidth / 2;
+				this.textY = this.canvasHeight / 2;
+				this.fontSize = 70;
+				this.lineHeight = this.fontSize * 0.95;
+
+				this.particles = [];
+				this.gap = 1;
+				this.mouse = {
+					radius: 7000,
+					x: 0,
+					y: 0,
+				};
+
+				window.addEventListener('mousemove', e => {
+					const rect = textContainer?.getBoundingClientRect();
+					if (rect) {
+						this.mouse.x = e.clientX - rect.left;
+						this.mouse.y = e.clientY - rect.top;
+					}
+				});
+			}
+
+			wrapText(text1: string, text2: string) {
+				const gradient = this.context.createLinearGradient(0, 0, this.canvasWidth, this.canvasHeight);
+				gradient.addColorStop(0.25, '#181818');
+				gradient.addColorStop(0.5, '#ffffff');
+				gradient.addColorStop(0.75, '#181818');
+
+				this.context.fillStyle = gradient;
+				this.context.font = this.fontSize + 'px Suisse, Helvetica';
+				this.context.textAlign = 'center';
+				this.context.textBaseline = 'middle';
+
+				this.context.fillText(text1, this.textX, this.textY - this.lineHeight / 2);
+				this.context.fillText(text2, this.textX, this.textY + this.lineHeight / 2);
+
+				this.convertToParticles();
+			}
+
+			convertToParticles() {
+				this.particles = [];
+				const pixels = this.context.getImageData(0, 0, this.canvasWidth, this.canvasHeight).data;
+
+				this.context.clearRect(0, 0, this.canvasWidth, this.canvasHeight);
+
+				for (let y = 0; y < this.canvasHeight; y += this.gap) {
+					for (let x = 0; x < this.canvasWidth; x += this.gap) {
+						const index = (y * this.canvasWidth + x) * 4;
+						const alpha = pixels[index + 3];
+						if (alpha > 0) {
+							const red = pixels[index];
+							const green = pixels[index + 1];
+							const blue = pixels[index + 2];
+
+							const color = `rgb(${red},${green},${blue})`;
+
+							this.particles.push(new Particle(this, x, y, color));
+						}
+					}
+				}
+			}
+
+			render() {
+				this.particles.forEach(particle => {
+					particle.update();
+					particle.draw();
+				});
+			}
+
+			cleanup() {
+				this.particles = [];
+				this.context.clearRect(0, 0, this.canvasWidth, this.canvasHeight);
+			}
+		}
+
+		let effect = new Effect(ctx, canvas.width, canvas.height);
+		effect.wrapText('OSCAR PEREZ ROMERO', 'FRONTEND DEVELOPER');
+		effect.render();
+
+		function animate() {
+			if (!ctx || !canvas || canvas instanceof HTMLCanvasElement !== true) return;
+
+			ctx.clearRect(0, 0, canvas.width, canvas.height);
+			effect.render();
+			requestAnimationFrame(animate);
+		}
+
+		animate();
+
+		function onRouteChange() {
+			if (effect) {
+				effect.cleanup();
+			}
+
+			if (!canvas || canvas instanceof HTMLCanvasElement !== true || !textContainer || !text) return;
+
+			const ctx = canvas?.getContext('2d');
+
+			if (!ctx) return;
+
+			canvas.width = textContainer.clientWidth;
+			canvas.height = textContainer.clientHeight;
+			effect = new Effect(ctx, canvas.width, canvas.height);
+			effect.wrapText('OSCAR PEREZ ROMERO', 'FRONTEND DEVELOPER');
+			animate();
+		}
+
+		window.addEventListener('hashchange', onRouteChange);
+		window.addEventListener('popstate', onRouteChange);
+	});
+</script>

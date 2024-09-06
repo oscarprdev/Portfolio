@@ -93,3 +93,7 @@ img {
 	height: 100%;
 	border-radius: 1.2rem;
 }
+
+.delay {
+	animation-delay: 0.2s;
+}
