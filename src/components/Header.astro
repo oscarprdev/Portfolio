@@ -1,7 +1,34 @@
 <header class="absolute bg-transparent top-0 w-screen grid place-items-center">
-	<div class="w-max border-x border-dark2 py-5 px-10">
+	<div class="w-max border-x border-dark2 py-5 px-10 flex items-center justify-between">
 		<a href="/" class="cursor-pointer">
 			<h3 class="uppercase text-light1">Opr</h3>
 		</a>
+		<nav class="flex items-center gap-5 text-sm text-light2">
+			<a href="#projects" class="nav-item relative overflow-hidden hover:text-light duration-200 cursor-pointer"
+				>Projects</a
+			>
+			<a href="#about" class="nav-item relative overflow-hidden hover:text-light duration-200 cursor-pointer"
+				>About</a
+			>
+		</nav>
 	</div>
 </header>
+
+<style>
+	.nav-item::before {
+		content: '';
+		position: absolute;
+		bottom: 0;
+		width: 0px;
+		height: 1px;
+		background-color: white;
+		transition: all 0.3s ease;
+	}
+
+	.nav-item:hover::before {
+		content: '';
+		width: 50%;
+		height: 1px;
+		background-color: white;
+	}
+</style>

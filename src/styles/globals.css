@@ -45,6 +45,9 @@ p,
 a {
 	font-family: 'Inter', system-ui, sans-serif;
 }
+html {
+	scroll-behavior: smooth;
+}
 
 body {
 	background-color: var(--dark-0);
