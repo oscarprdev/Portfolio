@@ -160,34 +160,38 @@ import PlusIcon from '../icons/PlusIcon.astro';
 	</div>
 </section>
 
-<script>
-	const accordionItems = [...Array(3)].map((_, i) => ({
-		id: `accordion-item-${i}`,
-		trigger: document.querySelector(`#accordion-trigger-${i + 1}`),
-		content: document.querySelector(`#accordion-content-${i + 1}`),
-		icon: document.querySelector(`#icon-${i + 1}`),
-	}));
+<script is:inline>
+	document.addEventListener('astro:page-load', () => {
+		const accordionItems = [...Array(3)].map((_, i) => ({
+			id: `accordion-item-${i}`,
+			trigger: document.querySelector(`#accordion-trigger-${i + 1}`),
+			content: document.querySelector(`#accordion-content-${i + 1}`),
+			icon: document.querySelector(`#icon-${i + 1}`),
+		}));
 
-	accordionItems.forEach(({ id, trigger, content, icon }, i) => {
-		if (trigger && content && icon) {
-			trigger.addEventListener('click', () => {
-				icon.classList.toggle('icon-rotated');
-				content.classList.toggle('accordion-expanded');
-				content.classList.toggle(`item-${i + 1}`);
-				trigger.classList.toggle('trigger-selected');
+		accordionItems.forEach(({ id, trigger, content, icon }, i) => {
+			if (trigger && !trigger.hasAttribute('data-click-initialized')) {
+				trigger.addEventListener('click', () => {
+					icon.classList.toggle('icon-rotated');
+					content.classList.toggle('accordion-expanded');
+					content.classList.toggle(`item-${i + 1}`);
+					trigger.classList.toggle('trigger-selected');
 
-				const notSelectedItems = accordionItems.filter(item => item.id !== id);
+					const notSelectedItems = accordionItems.filter(item => item.id !== id);
 
-				notSelectedItems.forEach(({ id, trigger, content, icon }) => {
-					if (trigger && content && icon) {
-						icon.classList.remove('icon-rotated');
-						content.classList.remove('accordion-expanded');
-						content.classList.remove(`item-${accordionItems.findIndex(i => i.id === id) + 1}`);
-						trigger.classList.remove('trigger-selected');
-					}
+					notSelectedItems.forEach(({ id, trigger, content, icon }) => {
+						if (trigger && content && icon) {
+							icon.classList.remove('icon-rotated');
+							content.classList.remove('accordion-expanded');
+							content.classList.remove(`item-${accordionItems.findIndex(i => i.id === id) + 1}`);
+							trigger.classList.remove('trigger-selected');
+						}
+					});
 				});
-			});
-		}
+
+				trigger.setAttribute('data-click-initialized', 'true');
+			}
+		});
 	});
 </script>
 
