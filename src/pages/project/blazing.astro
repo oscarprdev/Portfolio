@@ -1,4 +1,5 @@
 ---
+import Header from '../../components/Header.astro';
 import ProjectGallery from '../../components/ProjectGallery.astro';
 import ProjectHero from '../../components/ProjectHero.astro';
 import CheckIcon from '../../icons/CheckIcon.astro';
@@ -13,6 +14,7 @@ import Layout from '../../layouts/Layout.astro';
 ---
 
 <Layout title="Blazing db">
+	<Header />
 	<main class="bg-dark w-screen flex flex-col items-center">
 		<ProjectHero
 			id="1"

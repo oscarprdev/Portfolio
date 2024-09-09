@@ -1,5 +1,6 @@
 ---
 import About from '../components/About.astro';
+import Header from '../components/Header.astro';
 import Hero from '../components/Hero.astro';
 import Projects from '../components/Projects.astro';
 import Stack from '../components/Stack.astro';
@@ -7,6 +8,16 @@ import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout title="Oscar Perez Romero">
+	<Header>
+		<nav slot="nav" class="flex items-center gap-5 text-sm text-light2">
+			<a href="#projects" class="nav-item relative overflow-hidden hover:text-light duration-200 cursor-pointer"
+				>Projects</a
+			>
+			<a href="#about" class="nav-item relative overflow-hidden hover:text-light duration-200 cursor-pointer"
+				>About</a
+			>
+		</nav>
+	</Header>
 	<main class="bg-dark w-screen flex flex-col items-center">
 		<Hero />
 		<Projects />

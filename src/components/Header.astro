@@ -3,14 +3,7 @@
 		<a href="/" class="cursor-pointer">
 			<h3 class="uppercase text-light1">Opr</h3>
 		</a>
-		<nav class="flex items-center gap-5 text-sm text-light2">
-			<a href="#projects" class="nav-item relative overflow-hidden hover:text-light duration-200 cursor-pointer"
-				>Projects</a
-			>
-			<a href="#about" class="nav-item relative overflow-hidden hover:text-light duration-200 cursor-pointer"
-				>About</a
-			>
-		</nav>
+		<slot name="nav" />
 	</div>
 </header>
 
