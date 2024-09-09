@@ -14,12 +14,12 @@ interface Props {
 const { id, title, description, imageUrl, projectUrl, codeUrl, ready } = Astro.props;
 ---
 
-<section class="w-full grid place-items-center h-fit">
+<section class="w-screen grid place-items-center h-fit max-w-[95vw]">
 	<div
-		class="w-max max-w-[95vw] border-x border-dark2 flex flex-col gap-10 px-20 pt-32 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(54,54,54,0.3),rgba(54,54,54,0))]">
-		<div class="flex items-center w-full justify-between">
-			<div class="flex flex-col items-start gap-2">
-				<h2 transition:name={`title-${id}`} class="text-5xl text-light1 italic">{title}</h2>
+		class="w-[95vw] sm:w-max border-x border-dark2 flex flex-col items-center gap-10 px-2 sm:px-20 pt-20 sm:pt-32 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(54,54,54,0.3),rgba(54,54,54,0))]">
+		<div class="flex items-start sm:items-center w-full justify-between">
+			<div class="flex flex-col items-start gap-2 w-screen">
+				<h2 transition:name={`title-${id}`} class="text-2xl sm:text-5xl text-light1 italic">{title}</h2>
 				<div class="flex items-center gap-2 py-2">
 					<div class="grid place-items-center">
 						<span
@@ -41,30 +41,30 @@ const { id, title, description, imageUrl, projectUrl, codeUrl, ready } = Astro.p
 				<a
 					href={codeUrl}
 					target="_blank"
-					class="flex items-center text-sm gap-2 px-5 pr-2 py-3 border border-dark3 rounded-full text-light2 font-light hover:text-light hover:bg-dark1 duration-200 cursor-pointer"
+					class="flex items-center text-xs sm:text-sm gap-2 px-2 sm:px-5 pr-2 py-1 sm:py-3 border border-dark3 rounded-full text-light2 font-light hover:text-light hover:bg-dark1 duration-200 cursor-pointer"
 					>Source<span class="rotate-45 scale-[0.8]"><ArrowUpIcon /></span></a
 				>
 				<a
 					href={projectUrl}
 					target="_blank"
-					class="flex items-center text-sm gap-2 px-5 pr-2 py-2 bg-light border border-dark3 rounded-full text-dark font-light hover:bg-light2 duration-200 cursor-pointer"
+					class="flex items-center text-xs sm:text-sm gap-2 px-2 sm:px-5 pr-2 py-1 sm:py-3 bg-light border border-dark3 rounded-full text-dark font-light hover:bg-light2 duration-200 cursor-pointer"
 					>Website<span class="rotate-45 scale-[0.8]"><ArrowUpIcon /></span></a
 				>
 			</div>
 		</div>
 		<picture
-			class="animate-fade-up delay opacity-0 group relative overflow-hidden border-none w-full max-h-[75vh] rounded-xl -mt-7">
+			class="animate-fade-up delay opacity-0 group relative overflow-hidden border-none w-full max-w-[100vw] sm:max-h-[75vh] rounded-xl -mt-7">
 			<img src={imageUrl} class="rounded-xl group-hover:scale-[1.05] duration-500" />
 		</picture>
 		<div class="flex flex-col gap-5 text-light1">
 			<h4 class="text-xl">Description</h4>
-			<p class="text-md text-light2 max-w-[70ch]">{description}</p>
-			<div class="flex items-start mr-auto gap-20 w-full">
-				<div class="flex w-[50%] flex-col mt-2">
+			<p class="text-sm sm:text-md text-light2 max-w-[70ch]">{description}</p>
+			<div class="flex flex-col sm:flex-row items-start mr-auto gap-5 sm:gap-20 w-full">
+				<div class="flex w-full sm:w-[50%] flex-col mt-2">
 					<h4 class="text-xl">Features</h4>
 					<slot name="features" />
 				</div>
-				<div class="flex flex-col mt-3">
+				<div class="flex flex-col mt-0 sm:mt-3">
 					<h4 class="text-xl">Stack</h4>
 					<slot name="stack" />
 				</div>

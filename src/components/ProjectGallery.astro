@@ -4,8 +4,8 @@ import ArrowUpIcon from '../icons/ArrowUpIcon.astro';
 const { projectUrl, codeUrl } = Astro.props;
 ---
 
-<section class="w-full grid place-items-center h-fit">
-	<div class="w-max max-w-[95vw] border-x border-dark2 grid place-items-center px-20 py-20">
+<section class="w-full max-w-[95vw] grid place-items-center h-fit">
+	<div class="w-max max-w-[95vw] border-x border-dark2 flex flex-col items-center px-5 sm:px-20 py-20">
 		<h2 class="text-3xl text-light1 mr-auto">Screenshots</h2>
 		<slot name="grid" />
 		<h3 class="py-10 text-xl text-light1">Thanks for watching!</h3>
