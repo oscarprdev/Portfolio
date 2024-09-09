@@ -8,7 +8,7 @@ import HeroTitle from './HeroTitle.astro';
 <section
 	class="bg-dark h-full pb-20 w-max max-w-[95vw] border-x border-dark2 flex flex-col gap-20 items-center justify-between bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(54,54,54,0.3),rgba(54,54,54,0))]">
 	<div class="mt-[20vh]">
-		<div class="block md:hidden">
+		<div class="block">
 			<h1 class="flex flex-col items-center w-full text-4xl sm:text-5xl lg:text-7xl uppercase">
 				<span class="text-transparent bg-clip-text bg-gradient-to-r from-dark2 via-light to-dark2">
 					Oscar Perez Romero
@@ -20,9 +20,6 @@ import HeroTitle from './HeroTitle.astro';
 				</span>
 			</h2>
 		</div>
-		<span class="hidden md:block">
-			<HeroTitle client:visible />
-		</span>
 	</div>
 	<div class="flex items-end justify-between w-full px-40 pb-32 opacity-0 animate-fade-up delay">
 		<div class="flex flex-col items-start gap-5">
