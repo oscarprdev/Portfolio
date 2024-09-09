@@ -10,25 +10,26 @@ import ReactIcon from '../icons/ReactIcon.astro';
 ---
 
 <section class="w-full grid place-items-center pt-10" id="projects">
-	<div class="w-max max-w-[95vw] border-x border-dark2 flex flex-col gap-10 px-20 pb-40">
-		<h2 class="text-5xl text-light1">Projects</h2>
-		<div class="grid sm:grid-rows-2 gap-2 w-full">
-			<div class="grid grid-cols-5 w-full gap-2">
+	<div class="w-max max-w-[95vw] border-x border-dark2 flex flex-col gap-10 px-5 sm:px-10 md:px-20 pb-40">
+		<h2 class="text-3xl md:text-5xl text-light1">Projects</h2>
+		<div class="grid grid-rows-2 gap-2 w-full">
+			<div class="grid grid-cols-1 sm:grid-cols-5 w-full gap-0 sm:gap-2">
+				<!--Project 1 -->
 				<div
-					class="group hover:border-dark4 relative col-span-3 border border-dark3 rounded-xl p-10 overflow-hidden duration-200 h-[350px]">
+					class="group w-full hover:border-dark4 relative col-span-3 border border-dark3 rounded-xl p-5 sm:p-10 overflow-hidden duration-200 h-[300px] sm:h-[350px]">
 					<div
 						class="absolute top-0 h-[1px] w-full bg-gradient-to-r from-dark via-light to-dark opacity-0 group-hover:opacity-100 duration-300">
 					</div>
-					<h4 class="text-3xl italic text-light1" transition:name="title-1">Blazingdb</h4>
+					<h4 class="text-xl sm:text-3xl italic text-light1" transition:name="title-1">Blazingdb</h4>
 					<p class="text-light3 text-sm my-3">Database management with AI generated queries support.</p>
-					<div class="flex flex-col gap-2 items-center absolute top-32 text-light4">
+					<div class="flex sm:flex-col gap-2 items-center sm:absolute sm:top-32 text-light4">
 						<TypescriptIcon />
 						<NextIcon />
 						<CloudflareIcon />
 						<TailwindIcon />
 					</div>
 					<picture
-						class="group-hover:scale-[1.05] duration-500 absolute top-12 -right-20 bottom overflow-hidden w-full border-none">
+						class="group-hover:scale-[1.05] duration-500 absolute top-24 sm:top-12 -right-30 sm:-right-20 bottom overflow-hidden w-[450px] sm:w-full border-none">
 						<img
 							src="https://pub-40348015f8234717ad672ff274c3fc81.r2.dev/832shots_so.png"
 							class="rounded-lg"
@@ -43,21 +44,22 @@ import ReactIcon from '../icons/ReactIcon.astro';
 						>
 					</div>
 				</div>
+				<!--Project 2 -->
 				<div
-					class="group hover:border-dark4 relative col-span-2 border border-dark3 rounded-xl p-10 overflow-hidden duration-200 h-[350px]">
+					class="group w-full hover:border-dark4 relative col-span-2 border mt-10 sm:mt-0 border-dark3 rounded-xl p-5 sm:p-10 overflow-hidden duration-200 h-[300px] sm:h-[350px]">
 					<div
 						class="absolute top-0 h-[1px] w-full bg-gradient-to-r from-dark via-light to-dark opacity-0 group-hover:opacity-100 duration-300">
 					</div>
-					<h4 class="text-3xl italic text-light1" transition:name="title-2">Resssources dev</h4>
+					<h4 class="text-xl sm:text-3xl italic text-light1" transition:name="title-2">Resssources dev</h4>
 					<p class="text-light3 text-sm my-3">Find, share and store dev ressources.</p>
-					<div class="flex flex-col gap-2 items-center absolute top-32 text-light4">
+					<div class="flex sm:flex-col gap-2 items-center sm:absolute sm:top-32 text-light4">
 						<TypescriptIcon />
 						<NextIcon />
 						<PrismaIcon />
 						<TailwindIcon />
 					</div>
 					<picture
-						class="group-hover:scale-[1.05] duration-500 absolute top-16 -right-32 bottom overflow-hidden w-[450px] border-none">
+						class="group-hover:scale-[1.05] duration-500 absolute top-20 sm:top-16 -right-30 sm:-right-32 bottom overflow-hidden w-[450px] border-none">
 						<img
 							src="https://pub-40348015f8234717ad672ff274c3fc81.r2.dev/137shots_so.png"
 							class="rounded-lg"
@@ -74,15 +76,16 @@ import ReactIcon from '../icons/ReactIcon.astro';
 				</div>
 			</div>
 
-			<div class="grid grid-cols-5 w-full gap-2">
+			<div class="grid grid-cols-1 sm:grid-cols-5 w-full gap-0 sm:gap-2">
+				<!--Project 3 -->
 				<div
-					class="group hover:border-dark4 relative col-span-2 border border-dark3 rounded-xl p-10 overflow-hidden duration-200 h-[350px]">
+					class="group hover:border-dark4 relative col-span-2 border mt-10 sm:mt-0 border-dark3 rounded-xl p-5 sm:p-10 overflow-hidden duration-200 h-[300px] sm:h-[350px]">
 					<div
 						class="absolute top-0 h-[1px] w-full bg-gradient-to-r from-dark via-light to-dark opacity-0 group-hover:opacity-100 duration-300">
 					</div>
-					<h4 class="text-3xl italic text-light1" transition:name="title-3">Resume builder</h4>
+					<h4 class="text-xl sm:text-3xl italic text-light1" transition:name="title-3">Resume builder</h4>
 					<p class="text-light3 text-sm my-3">Minimalistic resume builder app.</p>
-					<div class="flex flex-col gap-2 items-center absolute top-32 text-light4">
+					<div class="flex sm:flex-col gap-2 items-center sm:absolute sm:top-32 text-light4">
 						<TypescriptIcon />
 						<NextIcon />
 						<CloudflareIcon />
@@ -90,7 +93,7 @@ import ReactIcon from '../icons/ReactIcon.astro';
 					</div>
 
 					<picture
-						class="group-hover:scale-[1.05] duration-500 absolute top-16 -right-32 bottom overflow-hidden w-[450px] border-none">
+						class="group-hover:scale-[1.05] duration-500 absolute top-20 sm:top-16 -right-30 sm:-right-32 bottom overflow-hidden w-[450px] border-none">
 						<img
 							src="https://pub-40348015f8234717ad672ff274c3fc81.r2.dev/766shots_so.png"
 							class="rounded-lg"
@@ -105,21 +108,22 @@ import ReactIcon from '../icons/ReactIcon.astro';
 						>
 					</div>
 				</div>
+				<!--Project 4 -->
 				<div
-					class="group hover:border-dark4 relative col-span-3 bg-dark border border-dark3 rounded-xl p-10 overflow-hidden duration-200 h-[350px]">
+					class="group hover:border-dark4 relative col-span-3 mt-10 sm:mt-0 bg-dark border border-dark3 rounded-xl p-5 sm:p-10 overflow-hidden duration-200 h-[300px] sm:h-[350px]">
 					<div
 						class="absolute top-0 h-[1px] w-full bg-gradient-to-r from-dark via-light to-dark opacity-0 group-hover:opacity-100 duration-300">
 					</div>
-					<h4 class="text-3xl italic text-light1" transition:name="title-4">OPlink</h4>
+					<h4 class="text-xl sm:text-3xl italic text-light1" transition:name="title-4">OPlink</h4>
 					<p class="text-light3 text-sm my-3">Short url app. Share and store your urls.</p>
-					<div class="flex flex-col gap-2 items-center absolute top-32 text-light4">
+					<div class="flex sm:flex-col gap-2 items-center sm:absolute sm:top-32 text-light4">
 						<TypescriptIcon />
 						<ReactIcon />
 						<GolangIcon />
 						<TailwindIcon />
 					</div>
 					<picture
-						class="group-hover:scale-[1.05] duration-500 absolute top-16 -right-5 bottom overflow-hidden w-[550px] border-none">
+						class="group-hover:scale-[1.05] duration-500 absolute top-16 -right-66 sm:-right-5 bottom overflow-hidden w-[550px] border-none">
 						<img
 							src="https://pub-40348015f8234717ad672ff274c3fc81.r2.dev/492shots_so.png"
 							class="rounded-lg"

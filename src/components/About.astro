@@ -4,12 +4,13 @@ import PlusIcon from '../icons/PlusIcon.astro';
 ---
 
 <section class="w-full grid place-items-center" id="about">
-	<div class="w-max max-w-[95vw] border-x border-dark2 flex flex-col items-center gap-10 px-2 sm:px-20 pb-40 pt-10">
-		<h2 class="text-5xl text-light1 mr-auto">About me</h2>
+	<div
+		class="w-max max-w-[95vw] border-x border-dark2 flex flex-col items-center gap-10 px-2 sm:px-20 pb-20 sm:pb-40 pt-10">
+		<h2 class="text-3xl md:text-5xl text-light1 mr-auto">About me</h2>
 
 		<div class="flex flex-col w-[800px] max-w-[90vw] h-fit">
 			<h5 class="text-light text-lg">Oscar Perez Romero</h5>
-			<p class="w-[50ch] text-pretty text-light2 mb-5 mr-auto">
+			<p class="w-[50ch] max-w-[90vw] text-pretty text-light2 mb-5 mr-auto text-sm sm:text-md">
 				100% focused on becoming a world-class frontend developer.
 			</p>
 			<div class="flex flex-col items-start bg-dark">
@@ -23,10 +24,10 @@ import PlusIcon from '../icons/PlusIcon.astro';
 						id="accordion-content-1"
 						class="list-disc flex flex-col gap-5 pl-2 md:pl-10 h-0 opacity-0 duration-200 ease-in translate-y-[-20px]">
 						<li class="flex flex-col items-start gap-2 -mt-5">
-							<div class="relative flex items-start gap-3 w-full justify-between">
+							<div class="relative flex items-center sm:items-start gap-3 w-full justify-between">
 								<span class="absolute top-0 -left-6 scale-[0.3] -rotate-90"><TriangleIcon /></span>
 								<div class="flex items-center gap-3">
-									<p class="text-md text-light">Frontend developer</p>
+									<p class="text-xs sm:text-md text-light">Frontend developer</p>
 									<a
 										href="https://www.adhara.io/"
 										target="_blank"
@@ -34,19 +35,20 @@ import PlusIcon from '../icons/PlusIcon.astro';
 										Adhara
 									</a>
 								</div>
-								<p class="text-xs text-light5 font-light">October 2022 - Now</p>
+								<p class="hidden sm:inline text-xs text-light5 font-light">October 2022 - Now</p>
+								<p class="inline sm:hidden text-xs text-light5 font-light">+2 years</p>
 							</div>
-							<p class="text-light2 text-sm">
+							<p class="text-light2 text-xs sm:text-sm">
 								Developing the UI of a banking management liquidity application. Applying clean
 								architecture, strong test coverage with unit tests and e2e tests and updating our own
 								Design System Library.
 							</p>
 						</li>
 						<li class="flex flex-col items-start gap-2">
-							<div class="relative flex items-start gap-3 w-full justify-between">
+							<div class="relative flex items-center sm:items-start gap-3 w-full justify-between">
 								<span class="absolute top-0 -left-6 scale-[0.3] -rotate-90"><TriangleIcon /></span>
 								<div class="flex items-center gap-3">
-									<p class="text-md text-light">Junior Frontend developer</p>
+									<p class="text-xs sm:text-md text-light">Junior Frontend developer</p>
 									<a
 										href="https://www.minsait.com/"
 										target="_blank"
@@ -54,17 +56,20 @@ import PlusIcon from '../icons/PlusIcon.astro';
 										Minsait
 									</a>
 								</div>
-								<p class="text-xs text-light5 font-light">August 2022 - October 2022</p>
+								<p class="hidden sm:inline text-xs text-light5 font-light">
+									August 2022 - October 2022
+								</p>
+								<p class="inline sm:hidden text-xs text-light5 font-light">3 moths</p>
 							</div>
-							<p class="text-light2 text-sm">
+							<p class="text-light2 text-xs sm:text-sm">
 								Web components migrations using web components and Lit element.
 							</p>
 						</li>
 						<li class="flex flex-col items-start gap-2">
-							<div class="relative flex items-start gap-3 w-full justify-between">
+							<div class="relative flex items-center sm:items-start gap-3 w-full justify-between">
 								<span class="absolute top-0 -left-6 scale-[0.3] -rotate-90"><TriangleIcon /></span>
 								<div class="flex items-center gap-3">
-									<p class="text-md text-light">Automotive engineer</p>
+									<p class="text-xs sm:text-md text-light">Automotive engineer</p>
 									<a
 										href="https://btechc.com/"
 										target="_blank"
@@ -72,9 +77,10 @@ import PlusIcon from '../icons/PlusIcon.astro';
 										Btech
 									</a>
 								</div>
-								<p class="text-xs text-light5 font-light">July 2016 - August 2022</p>
+								<p class="hidden sm:inline text-xs text-light5 font-light">July 2016 - August 2022</p>
+								<p class="inline sm:hidden text-xs text-light5 font-light">~6 years</p>
 							</div>
-							<p class="text-light2 text-sm">
+							<p class="text-light2 text-xs sm:text-sm">
 								Leading teams in highly demaning multidisciplinary and international environment
 								developing automotive components for Tier 1 companies.
 							</p>
@@ -96,30 +102,39 @@ import PlusIcon from '../icons/PlusIcon.astro';
 							<div class="relative flex items-start gap-3 w-full justify-between">
 								<span class="absolute top-0 -left-6 scale-[0.3] -rotate-90"><TriangleIcon /></span>
 								<div class="flex flex-col gap-1">
-									<p class="text-md text-light">Fullstack bootcamp</p>
+									<p class="text-xs sm:text-md text-light">Fullstack bootcamp</p>
 									<p class="text-xs text-light3">Upgrade hub</p>
 								</div>
-								<p class="text-xs text-light5 font-light">February 2022 - September 2022</p>
+								<p class="hidden sm:inline text-xs text-light5 font-light">
+									February 2022 - September 2022
+								</p>
+								<p class="inline sm:hidden text-xs text-light5 font-light">~6 months</p>
 							</div>
 						</li>
 						<li class="flex flex-col items-start gap-2">
 							<div class="relative flex items-start gap-3 w-full justify-between">
 								<span class="absolute top-0 -left-6 scale-[0.3] -rotate-90"><TriangleIcon /></span>
 								<div class="flex flex-col gap-1">
-									<p class="text-md text-light">Automotive engineering</p>
+									<p class="text-xs sm:text-md text-light">Automotive engineering</p>
 									<p class="text-xs text-light3">Polythecnic University of Catalonia - UPC</p>
 								</div>
-								<p class="text-xs text-light5 font-light">September 2015 - July 2016</p>
+								<p class="hidden sm:inline text-xs text-light5 font-light">
+									September 2015 - July 2016
+								</p>
+								<p class="inline sm:hidden text-xs text-light5 font-light">1 year</p>
 							</div>
 						</li>
 						<li class="flex flex-col items-start gap-2">
-							<div class="relative flex items-start gap-3 w-full justify-between">
+							<div class="relative flex items-center sm:items-start gap-3 w-full justify-between">
 								<span class="absolute top-0 -left-6 scale-[0.3] -rotate-90"><TriangleIcon /></span>
 								<div class="flex flex-col gap-1">
-									<p class="text-md text-light">Industrial design engineering</p>
+									<p class="text-xs sm:text-md text-light">Industrial design engineering</p>
 									<p class="text-xs text-light3">Polythecnic University of Valencia - UPV</p>
 								</div>
-								<p class="text-xs text-light5 font-light">September 2011 - July 2015</p>
+								<p class="hidden sm:inline text-xs text-light5 font-light">
+									September 2011 - July 2015
+								</p>
+								<p class="inline sm:hidden text-xs text-light5 font-light">~4 years</p>
 							</div>
 						</li>
 					</ul>
@@ -133,7 +148,7 @@ import PlusIcon from '../icons/PlusIcon.astro';
 				>
 				<div class="border-b border-dark3 w-full">
 					<div id="accordion-content-3" class="h-0 opacity-0 duration-200 ease-in translate-y-[-20px]">
-						<p class="text-md text-light3 font-light -mt-5">
+						<p class="text-sm sm:text-md text-light3 font-light -mt-5">
 							I love to travel and experience different cultures. When I'm not learning software skills,
 							you can find me out hikking with my pet Buddy 🐶, or shredding the slopes on my skiies
 							during the winter season. Also a big fan of brocoli 🥦 but never mind :)
@@ -189,7 +204,7 @@ import PlusIcon from '../icons/PlusIcon.astro';
 	}
 
 	.item-1 {
-		height: 280px;
+		height: 300px;
 	}
 
 	.item-2 {
