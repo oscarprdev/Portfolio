@@ -21,7 +21,7 @@ import LinkedinIcon from '../icons/LinkedinIcon.astro';
 	<div
 		class="flex items-end justify-between w-full max-w-[90vw] sm:w-full flex-col md:flex-row md:px-40 pb-32 opacity-0 animate-fade-up delay">
 		<div class="flex flex-col items-start gap-5 max-w-[90vw]">
-			<picture class="group relative border-dark3 w-[150px] sm:w-[150px] md:w-[200px] p-1.5">
+			<picture class="group relative border-dark3 w-full max-w-[150px] md:max-w-[200px] p-1.5 aspect-square">
 				<img
 					src="https://pub-40348015f8234717ad672ff274c3fc81.r2.dev/personal-image.webp"
 					alt="personal image"
@@ -34,10 +34,11 @@ import LinkedinIcon from '../icons/LinkedinIcon.astro';
 		</div>
 
 		<div class="flex flex-col items-end gap-3 w-[200px]">
-			<div
+			<a
+				href=""
 				class="p-3 grid place-items-center border border-dark3 rounded-full text-light2 hover:text-light1 duration-200">
 				oscarpr@protonmail.com
-			</div>
+			</a>
 			<div class="flex items-center gap-2 justify-end w-full">
 				<a
 					href="https://github.com/oscarprdev"
