@@ -25,3 +25,22 @@ import Layout from '../layouts/Layout.astro';
 		<Stack />
 	</main>
 </Layout>
+
+<style>
+	.nav-item::before {
+		content: '';
+		position: absolute;
+		bottom: 0;
+		width: 0px;
+		height: 1px;
+		background-color: white;
+		transition: all 0.3s ease;
+	}
+
+	.nav-item:hover::before {
+		content: '';
+		width: 50%;
+		height: 1px;
+		background-color: white;
+	}
+</style>
