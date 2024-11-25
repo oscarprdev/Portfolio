@@ -5,17 +5,16 @@
 
 <img width="1447" alt="Captura de pantalla 2024-09-10 a las 20 09 45" src="https://github.com/user-attachments/assets/ced81ca3-be6f-43e5-848b-9a8105063031">
 
-
 ## Description
 
 Personal portfolio where there are my last side projects done just for fun.
 
 ## Stack
 
-- Frontend
-  - Typescript
-  - Astro
-  - TailwindCSS
+-   Frontend
+    -   Typescript
+    -   Astro
+    -   TailwindCSS
 
 ## Screenshots
 

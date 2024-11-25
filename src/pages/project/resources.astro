@@ -1,49 +1,37 @@
 ---
 import ProjectHero from '../../components/ProjectHero.astro';
 import CheckIcon from '../../icons/CheckIcon.astro';
-import NextIcon from '../../icons/NextIcon.astro';
-import PrismaIcon from '../../icons/PrismaIcon.astro';
-import SQLIcon from '../../icons/SQLIcon.astro';
-import TailwindIcon from '../../icons/TailwindIcon.astro';
 import TypescriptIcon from '../../icons/TypescriptIcon.astro';
 import Layout from '../../layouts/Layout.astro';
 import ProjectGallery from '../../components/ProjectGallery.astro';
-import TestIcon from '../../icons/TestIcon.astro';
-import GithubIcon from '../../icons/GithubIcon.astro';
 import Header from '../../components/Header.astro';
+import CssIcon from '../../icons/CssIcon.astro';
+import AstroIcon from '../../icons/AstroIcon.astro';
 ---
 
-<Layout title="Resssources dev">
+<Layout title="Resources">
 	<Header />
 	<main class="bg-dark w-screen flex flex-col items-center">
 		<ProjectHero
 			id="2"
-			title="Resssources dev"
-			ready={false}
-			projectUrl="https://resssources-dev.vercel.app/"
-			codeUrl="https://github.com/oscarprdev/Resssources_dev"
-			imageUrl="https://pub-40348015f8234717ad672ff274c3fc81.r2.dev/106shots_so.png"
-			description="Store, find and share your favourite dev ressources in one place. List your favourites ressources to find them in a fast way.">
+			title="Resources"
+			ready={true}
+			projectUrl="https://resourcesop.vercel.app/"
+			codeUrl="https://github.com/oscarprdev/Resources"
+			imageUrl="https://pub-40348015f8234717ad672ff274c3fc81.r2.dev/727shots_so.png"
+			description="Useful resources list for every web developer. Add to bookmarks your favourites ressources to find them in a fast way.">
 			<ul class="flex flex-col items-start mr-auto text-light2 gap-2 mt-2" slot="features">
 				<li class="hover:text-light1 flex items-center gap-1 duration-200">
 					<span class="scale-75"><CheckIcon /></span>
-					<p class="text-sm">Create your own user.</p>
+					<p class="text-sm">Find your favourite ressources by categories.</p>
 				</li>
 				<li class="hover:text-light1 flex items-center gap-1 duration-200">
 					<span class="scale-75"><CheckIcon /></span>
-					<p class="text-sm">Create your ressources.</p>
+					<p class="text-sm">Find your resources by search.</p>
 				</li>
 				<li class="hover:text-light1 flex items-center gap-1 duration-200">
 					<span class="scale-75"><CheckIcon /></span>
-					<p class="text-sm">See the new ressources arrivals.</p>
-				</li>
-				<li class="hover:text-light1 flex items-center gap-1 duration-200">
-					<span class="scale-75"><CheckIcon /></span>
-					<p class="text-sm">Manage your ressources as favourites or shared.</p>
-				</li>
-				<li class="hover:text-light1 flex items-center gap-1 duration-200">
-					<span class="scale-75"><CheckIcon /></span>
-					<p class="text-sm">Dashboard to edit, publish or unpublish ressources.</p>
+					<p class="text-sm">Add to bookmarks your favourite ressources.</p>
 				</li>
 			</ul>
 			<ul class="flex flex-wrap items-start mr-auto text-light3 gap-2 mt-2" slot="stack">
@@ -53,34 +41,14 @@ import Header from '../../components/Header.astro';
 					Typescript
 				</li>
 				<li
-					class="flex font-light text-sm items-center gap-2 hover:text-light2 duration-200 p-2 border border-dark3 rounded-xl hover:bg-dark1">
-					<NextIcon />
-					NextJs
+					class="flex font-light text-sm items-center gap-2 hover:text-light2 duration-200 p-2 border border-dark3 rounded-xl hover:bg-blue-200">
+					<CssIcon />
+					Css
 				</li>
 				<li
-					class="flex font-light text-sm items-center gap-2 duration-200 p-2 border border-dark3 rounded-xl hover:bg-dark1 hover:text-blue-300">
-					<TailwindIcon />
-					Tailwind
-				</li>
-				<li
-					class="flex font-light text-sm items-center gap-2 duration-200 p-2 border border-dark3 rounded-xl hover:bg-dark1 hover:text-light2">
-					<PrismaIcon />
-					Prisma
-				</li>
-				<li
-					class="flex font-light text-sm items-center gap-2 duration-200 p-2 border border-dark3 rounded-xl hover:bg-dark1 hover:text-cyan-700">
-					<SQLIcon />
-					SQL
-				</li>
-				<li
-					class="flex font-light text-sm items-center gap-2 duration-200 p-2 border border-dark3 rounded-xl hover:bg-dark1 hover:text-emerald-600">
-					<TestIcon />
-					Playwright
-				</li>
-				<li
-					class="flex font-light text-sm items-center gap-2 duration-200 p-2 border border-dark3 rounded-xl hover:bg-dark1 hover:text-light2">
-					<GithubIcon />
-					CD/Ci
+					class="flex font-light text-sm items-center gap-2 duration-200 p-2 border border-dark3 rounded-xl hover:bg-dark1 hover:text-orange-300">
+					<AstroIcon />
+					Astro
 				</li>
 			</ul>
 		</ProjectHero>
@@ -91,7 +59,7 @@ import Header from '../../components/Header.astro';
 				<picture
 					class="group relative overflow-hidden border-none w-full max-w-[90vw] sm:max-w-[800px] aspect-square grid place-items-center rounded-lg sm:aspect-auto">
 					<img
-						src="https://pub-40348015f8234717ad672ff274c3fc81.r2.dev/239shots_so.png"
+						src="https://pub-40348015f8234717ad672ff274c3fc81.r2.dev/864shots_so.png"
 						class="rounded-lg group-hover:scale-[1.05] duration-500"
 					/>
 				</picture>
@@ -99,7 +67,7 @@ import Header from '../../components/Header.astro';
 				<picture
 					class="group relative overflow-hidden border-none w-full max-w-[90vw] sm:max-w-[800px] aspect-square grid place-items-center rounded-lg sm:aspect-auto">
 					<img
-						src="https://pub-40348015f8234717ad672ff274c3fc81.r2.dev/282shots_so.png"
+						src="https://pub-40348015f8234717ad672ff274c3fc81.r2.dev/514shots_so.png"
 						class="rounded-lg group-hover:scale-[1.05] duration-500"
 					/>
 				</picture>
@@ -107,35 +75,10 @@ import Header from '../../components/Header.astro';
 				<picture
 					class="group relative overflow-hidden border-none w-full max-w-[90vw] sm:max-w-[800px] aspect-square grid place-items-center rounded-lg sm:aspect-auto">
 					<img
-						src="https://pub-40348015f8234717ad672ff274c3fc81.r2.dev/878shots_so.png"
+						src="https://pub-40348015f8234717ad672ff274c3fc81.r2.dev/136shots_so.png"
 						class="rounded-lg group-hover:scale-[1.05] duration-500"
 					/>
 				</picture>
-
-				<picture
-					class="group relative overflow-hidden border-none w-full max-w-[90vw] sm:max-w-[800px] aspect-square grid place-items-center rounded-lg sm:aspect-auto">
-					<img
-						src="https://pub-40348015f8234717ad672ff274c3fc81.r2.dev/172shots_so.png"
-						class="rounded-lg group-hover:scale-[1.05] duration-500"
-					/>
-				</picture>
-
-				<div class="flex flex-col sm:flex-row gap-5 w-full max-w-[90vw] sm:max-w-[800px]">
-					<picture
-						class="group relative overflow-hidden border-none w-fit grid place-items-center rounded-lg aspect-square sm:aspect-auto">
-						<img
-							src="https://pub-40348015f8234717ad672ff274c3fc81.r2.dev/769shots_so.png"
-							class="rounded-lg group-hover:scale-[1.05] duration-500"
-						/>
-					</picture>
-					<picture
-						class="group relative overflow-hidden border-none grid w-fit place-items-center rounded-lg aspect-square sm:aspect-auto">
-						<img
-							src="https://pub-40348015f8234717ad672ff274c3fc81.r2.dev/560shots_so.png"
-							class="rounded-lg group-hover:scale-[1.05] duration-500"
-						/>
-					</picture>
-				</div>
 			</div>
 		</ProjectGallery>
 	</main>
